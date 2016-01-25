@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]> <html class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="" lang="en"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- GOOGLE FONT -->
+    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic' %>
+    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Montserrat' %>
+    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700,700italic' %>
+
+    <!-- CSS LIBRARY -->
+    <%= stylesheet_link_tag '/frontend/css/lib/bootstrap.min.css' %>
+    <%= stylesheet_link_tag '/frontend/css/lib/owl.carousel.css' %>
+    <%= stylesheet_link_tag '/frontend/css/lib/font-awesome.min.css' %>
+
+    <!-- AWE FONT -->
+    <%= stylesheet_link_tag '/frontend/css/awe-fonts.css' %>
+    
+    <!-- Favicons -->
+    <%= favicon_link_tag '/frontend/images/favicon.png', rel: 'icon', type: 'image/png' %>
+
+    <!-- PAGE STYLE -->
+    <%= stylesheet_link_tag '/frontend/css/style.css' %>
+    <%= stylesheet_link_tag '/frontend/stylesheets/custom.css' %>
+    <!--[if lt IE 9]>
+        <%= javascript_include_tag 'http://html5shim.googlecode.com/svn/trunk/html5.js' %>
+        <%= javascript_include_tag 'http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js' %>
+    <![endif]-->
+    
+    <title>Lotus - Vietnames Cuisine</title>
+</head>
+
+<!-- BODY -->
+    <%= yield %>
+<!-- END / BODY -->
+
+</html>

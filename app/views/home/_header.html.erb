@@ -1,0 +1,96 @@
+<header id="header" class="header header-2">
+    <div class="container">
+        <!-- LOGO -->
+        <div class="logo"><a href="<%= root_path %>"><img src="images/logo-main.jpg" alt=""></a></div>
+        <!-- END / LOGO -->
+
+        <!-- OPEN MENU MOBILE -->
+        <div class="open-menu-mobile">
+            <span>Toggle menu mobile</span>
+        </div>
+        <!-- END / OPEN MENU MOBILE -->
+
+        <!-- NAVIGATION -->
+        <nav class="navigation text-right" data-menu-type="1200">
+            <!-- NAV -->
+            <ul class="nav text-uppercase">
+                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "About", {controller: "about", action: "index"} %></li>
+                <li><%= link_to "Menu", "#" %></li>
+                <li><%= link_to "Reservation", {controller: "reservation", action: "index"} %></li>
+                <li><%= link_to "Events", "#" %></li>
+                <li><%= link_to "Contact", {controller: "contact", action: "index"} %></li>
+            </ul>
+            <!-- END / NAV -->
+
+            <!-- MINICART -->
+            <div class="minicart-wrap">
+                <div class="toggle-minicart active">
+                    <span class="text-uppercase">Cart</span>
+                </div>
+                <div class="minicart-body">
+                    <h4 class="xsm text-uppercase text-center">Your cart</h4>
+                    <ul class="minicart-list">
+                        <li>
+                            <div class="product-thumb">
+                                <img src="images/shop/img-2.jpg" alt="">
+                            </div>
+                            <div class="product-name">
+                                <a href="#">Name of the Dish ( L )</a>
+                            </div>
+                            <div class="qty-wrap">
+                                <span class="product-quantity">
+                                    <span class="quantity">2</span> serves.
+                                </span>
+                                <span class="amount">$48</span>
+                            </div>
+                            <div class="product-remove">
+                                <a href="#"><i class="icon awe_close"></i></a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="product-thumb">
+                                <img src="images/shop/img-2.jpg" alt="">
+                            </div>
+                            <div class="product-name">
+                                <a href="#">Name of the Dish ( L )</a>
+                            </div>
+                            <div class="qty-wrap">
+                                <span class="product-quantity">
+                                    <span class="quantity">2</span> serves.
+                                </span>
+                                <span class="amount">$48</span>
+                            </div>
+                            <div class="product-remove">
+                                <a href="#"><i class="icon awe_close"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="minicart-total">
+                        Total
+                        <span class="amount pull-right">$120</span>
+                    </div>
+                    <div class="minicart-footer">
+                        <%= link_to "View Cart", {controller: "cart", action: "index"}, {class: "awe-btn awe-btn-2 awe-btn-default text-uppercase"} %>
+                    </div>
+                    <div class="minicart-footer">
+                        <%= link_to "Check out", {controller: "checkout", action: "index"}, {class: "awe-btn awe-btn-1 awe-btn-default text-uppercase"} %>
+                    </div>
+
+                </div>
+            </div>
+            <!-- END / MINICART -->
+            
+            <!-- SOCIAL -->
+            <div class="head-social">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-pinterest"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+            </div>
+            <!-- END / SOCIAL -->
+        </nav>
+        <!-- END / NAVIGATION -->
+    </div>
+
+</header>

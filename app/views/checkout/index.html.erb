@@ -1,0 +1,210 @@
+<body>
+
+<!-- PRELOADER -->
+<div class="preloader">
+    <div class="inner">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+    </div>
+</div>
+<!-- END / PRELOADER -->
+
+<!-- PAGE WRAP -->
+<div id="page-wrap">
+    
+    <!-- HEADER -->
+        <%= render "home/header" %>
+    <!-- END / HEADER -->
+
+    <!-- SUB BANNER -->
+    <section class="sub-banner text-center section">
+        <div class="awe-parallax bg-4"></div>
+        <div class="awe-title awe-title-3">
+            <h3 class="lg text-uppercase">Checkout</h3>
+        </div>
+    </section>
+    <!-- END / SUB BANNER -->
+
+    <!-- SHOP PAGE -->
+    <section id="shop-page" class="shop-page section">
+        <div class="container">
+            <div class="row">
+                <div class="checkout">
+                    <!-- YOUR ORDER -->
+                    <div class="col-md-3">
+                        <div class="your-order">
+                            <h4 class="xmd text-capitalize">Your order</h4>
+                            <ul class="list-product">
+                                <li>
+                                    <div class="product-image">
+                                        <img src="images/shop/img-2.jpg" alt="">
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="#">Name of the Dish ( L )</a>
+                                    </div>
+                                    <div class="qty-wrap">
+                                        <span class="product-quantity">
+                                            <span class="quantity">2</span> serves.
+                                        </span>
+                                        <span class="amount">$48</span>
+                                    </div>
+                                    <div class="product-remove">
+                                        <a href="#"><i class="icon awe_close"></i></a>
+                                    </div>
+                                </li>
+                            
+                                <li>
+                                    <div class="product-image">
+                                        <img src="images/shop/img-2.jpg" alt="">
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="#">Name of the Dish ( L )</a>
+                                    </div>
+                                    <div class="qty-wrap">
+                                        <span class="product-quantity">
+                                            <span class="quantity">2</span> serves.
+                                        </span>
+                                        <span class="amount">$48</span>
+                                    </div>
+                                    <div class="product-remove">
+                                        <a href="#"><i class="icon awe_close"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="list-price">
+                                <li class="total">
+                                    Total
+                                    <span class="amount pull-right">$120</span>
+                                </li>
+                                <li class="coupon">
+                                    Coupon
+                                    <span class="amount pull-right">-$20</span>
+                                </li>
+                                <li class="shipping">
+                                    Shipping
+                                </li>
+                            </ul>
+                            <div class="payment">
+                                Payment
+                                <span class="amount pull-right">$100</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END / YOUR ORDER -->
+
+
+                    <!-- CHECKOUT CONTENT -->
+                    <div class="col-md-9">
+                        <div class="checkout-content">
+                            
+                            <h4 class="xmd text-capitalize">Your Info</h4>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="billing_first_name">
+                                        First Name <abbr class="required">*</abbr>
+                                    </label>
+                                    <input type="text" id="billing_first_name">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="billing_last_name">
+                                        Last Name <abbr class="required">*</abbr>
+                                    </label>
+                                    <input type="text" id="billing_last_name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="billing_company">
+                                        Company Name
+                                    </label>
+                                    <input type="text" id="billing_company">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="billing_email">
+                                        Email Address <abbr class="required">*</abbr>
+                                    </label>
+                                    <input type="text" id="billing_email">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="billing_phone">
+                                        Phone <abbr class="required">*</abbr>
+                                    </label>
+                                    <input type="text" id="billing_phone">
+                                </div>
+                            </div>
+
+                            <h4 class="xmd text-capitalize">Delivery Info</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>
+                                        Country <abbr class="required">*</abbr>
+                                    </label>
+                                    <div class="chosen-container-single">
+                                        <a href="#" class="chosen-single"></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="billing_address_1" class="">
+                                        Address <abbr class="required">*</abbr>
+                                    </label>
+                                    <input type="text" id="billing_address_1">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="billing_city">
+                                        Town / City <abbr class="required">*</abbr>
+                                    </label>
+                                    <input type="text" id="billing_city">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="billing_state">
+                                        County
+                                    </label>
+                                    <input type="text" id="billing_state">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="billing_postcode">
+                                        Postcode <abbr class="required">*</abbr>
+                                    </label>
+                                    <input type="text" id="billing_postcode">
+                                </div>
+                            </div>
+
+                            <input type="submit" value="confirm &amp; checkout" class="awe-btn awe-btn-3 awe-btn-default text-uppercase">
+                        </div>
+                    </div>
+                    <!-- END / CHECKOUT CONTENT -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END / SHOP PAGE -->
+
+
+    <!-- FOOTER -->
+        <%= render "home/footer" %>
+    <!-- END / FOOTER -->
+    
+
+</div>
+<!-- END / PAGE WRAP -->
+
+<!-- LOAD JQUERY -->
+<%= javascript_include_tag "/frontend/js/lib/jquery-1.11.2.min.js" %>
+
+<!-- GOOGLE MAP -->
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false" %>
+<%= javascript_include_tag "/frontend/js/lib/bootstrap.min.js" %>
+<%= javascript_include_tag "/frontend/js/lib/jquery.bxslider.min.js" %>
+<%= javascript_include_tag "/frontend/js/lib/jquery.easing.min.js" %>
+<%= javascript_include_tag "/frontend/js/lib/jquery.owl.carousel.min.js" %>
+<%= javascript_include_tag "/frontend/js/lib/masonry.pkgd.min.js" %>
+<%= javascript_include_tag "/frontend/js/lib/perfect-scrollbar.min.js" %>
+<%= javascript_include_tag "/frontend/js/lib/jquery.magnific-popup.min.js" %>
+<%= javascript_include_tag "/frontend/js/lib/jquery.parallax-1.1.3.js" %>
+<%= javascript_include_tag "/frontend/js/lib/retina.min.js" %>
+<%= javascript_include_tag "/frontend/js/scripts.js" %>
+
+</body>

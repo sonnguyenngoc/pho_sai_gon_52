@@ -1,0 +1,10 @@
+header.header .logo a img {
+    max-height: 70px;
+}
+header.header .logo {
+    float: left;
+    padding: 8px 0;
+}
+header.header .navigation {
+    padding: 22px 0;
+}

@@ -1,0 +1,167 @@
+<body>
+
+<!-- PRELOADER -->
+<div class="preloader">
+    <div class="inner">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+    </div>
+</div>
+<!-- END / PRELOADER -->
+
+<!-- PAGE WRAP -->
+<div id="page-wrap">
+    
+    <!-- HEADER -->
+        <%= render "home/header" %>
+    <!-- END / HEADER -->
+
+    <!-- SUB BANNER -->
+    <section class="sub-banner text-center section">
+        <div class="awe-parallax bg-3"></div>
+        <div class="awe-title awe-title-3">
+            <h3 class="lg text-uppercase">Contact</h3>
+        </div>
+    </section>
+    <!-- END / SUB BANNER -->
+
+    <!-- CONTACT US -->
+    <section id="contact" class="contact section">
+
+        <div class="contact-form contact-form-2">
+            <div class="divider divider-2"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <address class="find-us">
+                            <span class="md">Find Us Here</span>
+                            <div class="location-1">
+                                <i class="icon awe_map_marker"></i>
+                                <strong>Location 1: 500 CURRY RD</strong>
+                                SCHENECTADY NY 12306 (518)356-5373 
+                            </div>
+
+                            <div class="location-1">
+                                <i class="icon awe_map_marker"></i>
+                                <strong>Location 1: 500 CURRY RD</strong>
+                                SCHENECTADY NY 12306 (518)356-5373 
+                            </div>
+
+                            <div class="phone">
+                                <strong>Support Call</strong>
+                                (518)356-5373
+                            </div>
+                        </address>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-row">
+                            <form id="send-message-form" action="processContact.php" method="post">
+                                <div class="form-item form-textarea">
+                                    <textarea placeholder="Your Message" name="message"></textarea>
+                                </div>
+                                <div class="form-item form-type-name">
+                                    <input type="text" placeholder="Your Name" name="name">
+                                </div>
+                                <div class="form-item form-type-email">
+                                    <input type="text" placeholder="Your Email" name="email">
+                                </div>
+                                <div class="form-actions">
+                                    <input type="submit" value="Send message" class="awe-btn awe-btn-2 awe-btn-default text-uppercase">
+                                </div>
+                                <div id="contact-content"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-first">
+
+            <!-- OVERLAY -->
+            <div class="awe-overlay overlay-default"></div>
+            <!-- END / OVERLAY -->
+            
+            <div class="section-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="contact-body text-center">
+                                <h3 class="lg text-uppercase">CONTACT US</h3>
+                                <hr class="_hr">
+                                <address class="address-wrap">
+                                    <span class="address">Eddy Street & Gough Street, San Francisco, CA 94109</span>
+                                    <span class="phone">3792 - 7384 - 8459</span>
+                                </address>
+                            </div>
+
+                            <div class="see-map text-center">
+                                <a href="#" data-see-contact="See contact info" data-see-map="See location on map" class="awe-btn awe-btn-5 awe-btn-default text-uppercase"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MAP -->
+            <div id="map" data-map-zoom="14" data-map-latlng="45.738028, 21.224535" data-snazzy-map-theme="grayscale" data-map-marker="images/marker.png" data-map-marker-size="200*60"></div>
+            <!-- END / MAP -->
+        </div>
+
+        <div class="contact-second tb">
+        
+            <!-- NEWS LETTER -->
+            <div class="tb-cell">
+                <div class="news-letter text-center">
+                    <div class="inner wow fadeInUp" data-wow-delay=".6s">
+                        <div class="letter-heading">
+                            <h4 class="sm text-uppercase">GET NEWS LETTER FROM US</h4>
+                            <p>Doner filet mignon bacon corned beef rump, frankfurter sirloin</p>
+                        </div>
+                        <form>
+                            <div class="form-item">
+                                <input type="text" placeholder="Your email" class="text-uppercase" name="email">
+                            </div>
+                            <div class="form-actions">
+                                <input type="submit" value="Subscribe" class="awe-btn awe-btn-2 awe-btn-default text-uppercase">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- END / NEWS LETTER -->
+        </div>
+
+    </section>
+
+    <!-- END / CONTACT US -->
+
+
+    <!-- FOOTER -->
+        <%= render "home/footer" %>
+    <!-- END / FOOTER -->
+    
+
+</div>
+<!-- END / PAGE WRAP -->
+
+<!-- LOAD JQUERY -->
+<%= javascript_include_tag '/frontend/js/lib/jquery-1.11.2.min.js' %>
+<script type="text/javascript" src=""></script>
+
+<!-- GOOGLE MAP -->
+<%= javascript_include_tag 'http://maps.google.com/maps/api/js?sensor=false' %>
+<%= javascript_include_tag '/frontend/js/lib/bootstrap.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/jquery.bxslider.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/jquery.easing.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/jquery.owl.carousel.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/masonry.pkgd.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/perfect-scrollbar.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/jquery.magnific-popup.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/jquery.parallax-1.1.3.js' %>
+<%= javascript_include_tag '/frontend/js/lib/retina.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/jquery.form.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/jquery.validate.min.js' %>
+<%= javascript_include_tag '/frontend/js/scripts.js' %>
+
+</body>

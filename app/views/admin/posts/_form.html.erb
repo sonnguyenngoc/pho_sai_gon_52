@@ -1,0 +1,44 @@
+<% if @post.errors.any? %>
+  <div id="error_explanation">
+    <h6><%= pluralize(@post.errors.count, "error") %> prohibited this tag from being saved:</h6>
+
+    <% @post.errors.full_messages.each do |message| %>
+      <p class="label label-warning"><%= message %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_for [:admin, @post], html: {class: "form-horizontal"} do |f| %>
+
+    <div class="form-group">
+        <%= f.label "Picture: ", class: "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+          <%= f.file_field :image_url, class: "file-styled" %>
+          <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
+          <%= image_tag(@post.image_url, size: "244x244", class: "img-rouded") %>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label "Tiêu đề: ", class: "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+            <%= f.text_field :title, placeholder: "Enter title of post (required)", class: "form-control" %>
+        </div>
+    </div>
+        
+    <div class="form-group">
+        <%= f.label "Type: ", class: "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+            <%= f.collection_select(:type_id, Type.all, :id, :title, {:prompt => "Choose type of post..."}, {class: "select"}) %>
+        </div>
+    </div>
+        
+    <div class="mb-15">
+        <%= f.text_area :content, rows: "4", cols: "4", id: "editor-full" %>
+    </div>
+
+    <div class="text-right">
+        <%= button_tag 'Save <i class="icon-plus22 position-right"></i>'.html_safe, class: "btn btn-primary"%>
+        <%= link_to 'Cancel <i class="icon-cross2"></i>'.html_safe, admin_posts_path,class: "btn bg-warning-400"%>
+    </div>
+<% end %>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Phở Sài Gòn 52 - Management</title>
+
+	<!-- Global stylesheets -->
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' %>
+    <%= stylesheet_link_tag '/backend/assets/css/icons/icomoon/styles.css' %>
+    <%= stylesheet_link_tag '/backend/assets/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag '/backend/assets/css/core.min.css' %>
+    <%= stylesheet_link_tag '/backend/assets/css/components.min.css' %>
+    <%= stylesheet_link_tag '/backend/assets/css/colors.min.css' %>
+	<%= stylesheet_link_tag '/backend/stylesheets/custom_frontend.css' %>
+	<!-- /global stylesheets -->
+	
+	<!-- JS and meta for Rails -->
+
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+
+	<!-- /js and meta for rails -->
+
+	<!-- Core JS files -->
+    <%= javascript_include_tag '/backend/assets/js/plugins/loaders/pace.min.js' %>
+    <%= javascript_include_tag '/backend/assets/js/core/libraries/jquery.min.js' %>
+    <%= javascript_include_tag '/backend/assets/js/core/libraries/bootstrap.min.js' %>
+    <%= javascript_include_tag '/backend/assets/js/plugins/loaders/blockui.min.js' %>
+	<!-- /core JS files -->
+
+</head>
+
+<body>
+	<%= yield %>
+</body>
+</html>

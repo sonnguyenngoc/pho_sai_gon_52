@@ -1,0 +1,2 @@
+module DemoLogoHelper
+end

@@ -98,37 +98,21 @@
             <!-- END / MAP -->
         </div>
 
-        <div class="contact-second tb">
-        
-            <!-- NEWS LETTER -->
-            <div class="tb-cell">
-                <div class="news-letter text-center">
-                    <div class="inner wow fadeInUp" data-wow-delay=".6s">
-                        <div class="letter-heading">
-                            <h4 class="sm text-uppercase">GET NEWS LETTER FROM US</h4>
-                            <p>Doner filet mignon bacon corned beef rump, frankfurter sirloin</p>
-                        </div>
-                        <form>
-                            <div class="form-item">
-                                <input type="text" placeholder="Your email" class="text-uppercase" name="email">
-                            </div>
-                            <div class="form-actions">
-                                <input type="submit" value="Subscribe" class="awe-btn awe-btn-2 awe-btn-default text-uppercase">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- END / NEWS LETTER -->
-        </div>
-
     </section>
 
     <!-- END / CONTACT US -->
 
 
     <!-- FOOTER -->
-        <%= render "home/footer" %>
+        <footer id="footer" class="footer">
+        <div class="divider divider-1 divider-color"></div>
+        <div class="awe-color"></div>
+        <div class="container">
+            <div class="copyright text-center">
+                <%= render "home/footer" %>
+            </div>
+        </div>
+    </footer>
     <!-- END / FOOTER -->
     
 
@@ -137,7 +121,6 @@
 
 <!-- LOAD JQUERY -->
 <%= javascript_include_tag '/frontend/js/lib/jquery-1.11.2.min.js' %>
-<script type="text/javascript" src=""></script>
 
 <!-- GOOGLE MAP -->
 <%= javascript_include_tag 'http://maps.google.com/maps/api/js?sensor=false' %>

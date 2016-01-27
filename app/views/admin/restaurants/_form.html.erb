@@ -1,0 +1,78 @@
+<% if @restaurant.errors.any? %>
+  <div id="error_explanation">
+    <h6><%= pluralize(@restaurant.errors.count, "error") %> prohibited this tag from being saved:</h6>
+
+    <% @restaurant.errors.full_messages.each do |message| %>
+      <p class="label label-warning"><%= message %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_for [:admin, @restaurant], html: {class: "form-horizontal"} do |f| %>
+
+    <div class="panel-body">
+      
+        <div class="form-group">
+            <%= f.label "Logo/Picture", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.file_field :image_url, class: "file-styled" %>
+              <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
+              <%= image_tag(@restaurant.image_url, size: "250x150", alt: "Picture/logo's Manufacturer", class: "img-rouded") %>
+            </div>
+        </div>
+        
+        <div class="form-group field">
+            <%= f.label "Name", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.text_field :name, placeholder: "Tiêu đề loại bài viết...", class: "form-control" %>
+            </div>
+        </div>
+            
+        <div class="form-group field">
+            <%= f.label "Address", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.text_field :address, placeholder: "Tiêu đề loại bài viết...", class: "form-control" %>
+            </div>
+        </div>
+            
+        <div class="form-group field">
+            <%= f.label "Phone", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.text_field :phone, placeholder: "Tiêu đề loại bài viết...", class: "form-control" %>
+            </div>
+        </div>
+            
+        <div class="form-group field">
+            <%= f.label "Fax", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.text_field :fax, placeholder: "Tiêu đề loại bài viết...", class: "form-control" %>
+            </div>
+        </div>
+            
+        <div class="form-group field">
+            <%= f.label "Email", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.text_field :email, placeholder: "Tiêu đề loại bài viết...", class: "form-control" %>
+            </div>
+        </div>
+            
+        <div class="form-group field">
+            <%= f.label "Wesite", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.text_field :website, placeholder: "Tiêu đề loại bài viết...", class: "form-control" %>
+            </div>
+        </div>
+
+        <div class="form-group field">
+            <%= f.label "Description", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.text_area :description, rows: "5", cols: "5", placeholder: "Mô tả loại bài viết...", class: "form-control" %>
+            </div>
+        </div>
+
+        <div class="text-right">
+          <%= button_tag 'Save <i class="icon-plus22 position-right"></i>'.html_safe, class: "btn btn-primary"%>
+          <%= link_to 'Cancel <i class="icon-cross2"></i>'.html_safe, admin_restaurants_path,class: "btn bg-warning-400"%>
+        </div>
+    </div>
+<% end %>

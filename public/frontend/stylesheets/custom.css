@@ -8,3 +8,10 @@ header.header .logo {
 header.header .navigation {
     padding: 22px 0;
 }
+.the-menu-item .the-menu-body .xsm {
+    overflow: visible;
+    margin-bottom: 29px;
+}
+.the-menu-item .the-menu-body p {
+    height: auto;
+}

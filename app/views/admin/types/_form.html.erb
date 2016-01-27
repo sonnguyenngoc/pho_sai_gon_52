@@ -1,0 +1,34 @@
+<% if @type.errors.any? %>
+  <div id="error_explanation">
+    <h6><%= pluralize(@type.errors.count, "error") %> prohibited this tag from being saved:</h6>
+
+    <% @type.errors.full_messages.each do |message| %>
+      <p class="label label-warning"><%= message %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_for [:admin, @type], html: {class: "form-horizontal"} do |f| %>
+
+    <div class="panel-body">
+        
+        <div class="form-group field">
+            <%= f.label "Title", class: "col-lg-3 control-label" %>
+            <div class="col-lg-9">
+              <%= f.text_field :title, placeholder: "Enter title of type (required).....", class: "form-control" %>
+            </div>
+        </div>
+
+        <div class="form-group field">
+            <%= f.label "Description", class: "col-lg-3 control-label" %>
+            <div class="col-lg-9">
+              <%= f.text_area :description, rows: "5", cols: "5", placeholder: "Enter description of type.....", class: "form-control" %>
+            </div>
+        </div>
+
+        <div class="text-right">
+          <%= button_tag 'Save <i class="icon-plus22 position-right"></i>'.html_safe, class: "btn btn-primary"%>
+          <%= link_to 'Cancel <i class="icon-cross2"></i>'.html_safe, admin_types_path,class: "btn bg-warning-400"%>
+        </div>
+    </div>
+<% end %>

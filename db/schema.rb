@@ -11,9 +11,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160127100020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "parent_categories", force: :cascade do |t|
+    t.integer  "parent_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image_url"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.datetime "time_order"
+    t.text     "note"
+    t.string   "customer_name"
+    t.string   "customer_phone"
+    t.string   "customer_email"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string   "image_url"
+    t.string   "name"
+    t.string   "email"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "website"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
 end

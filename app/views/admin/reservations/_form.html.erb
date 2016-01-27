@@ -1,0 +1,48 @@
+<% if @reservation.errors.any? %>
+  <div id="error_explanation">
+    <h6><%= pluralize(@reservation.errors.count, "error") %> prohibited this tag from being saved:</h6>
+
+    <% @reservation.errors.full_messages.each do |message| %>
+      <p class="label label-warning"><%= message %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_for [:admin, @reservation], html: {class: "form-horizontal"} do |f| %>
+
+    <div class="panel-body">
+        
+        <div class="form-group field">
+            <%= f.label "Customer name", class: "col-lg-3 control-label" %>
+            <div class="col-lg-9">
+              <%= f.text_field :customer_name, placeholder: "Enter customer name (required).....", class: "form-control" %>
+            </div>
+        </div>
+        
+        <div class="form-group field">
+            <%= f.label "Customer phone", class: "col-lg-3 control-label" %>
+            <div class="col-lg-9">
+              <%= f.text_field :customer_phone, placeholder: "Enter customer phone (required).....", class: "form-control" %>
+            </div>
+        </div>
+            
+        <div class="form-group field">
+            <%= f.label "Customer email", class: "col-lg-3 control-label" %>
+            <div class="col-lg-9">
+              <%= f.text_field :customer_email, placeholder: "Enter customer email (required).....", class: "form-control" %>
+            </div>
+        </div>
+        
+        <div class="form-group field">
+            <%= f.label "Note", class: "col-lg-3 control-label" %>
+            <div class="col-lg-9">
+              <%= f.text_area :note, rows: "5", cols: "5", placeholder: "Note for this reservation .....", class: "form-control" %>
+            </div>
+        </div>
+
+        <div class="text-right">
+          <%= button_tag 'Save <i class="icon-plus22 position-right"></i>'.html_safe, class: "btn btn-primary"%>
+          <%= link_to 'Cancel <i class="icon-cross2"></i>'.html_safe, admin_reservations_path,class: "btn bg-warning-400"%>
+        </div>
+    </div>
+<% end %>

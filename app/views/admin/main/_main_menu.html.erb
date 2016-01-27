@@ -1,0 +1,35 @@
+<li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
+<li class="active"><%= link_to "<i class='icon-home4'></i> <span>Dashboard</span>".html_safe, {controller: "main", action: "index"} %></li>
+<li>
+    <a href="#"><i class="icon-copy"></i> <span>Restaurant Menu</span></a>
+    <ul>
+        <li><a href="#">Menus Management <span class="label bg-warning-400">Important</span></a></li>
+        <li><%= link_to "Categories Management", admin_categories_path %></li>
+    </ul>
+</li>
+<li>
+    <a href="#"><i class="icon-stack"></i> <span>Order & Reservation</span></a>
+    <ul>
+        <li><a href="#">Orders Management</a></li>
+        <li><%= link_to "Reservations Management", admin_reservations_path %></li>
+    </ul>
+</li>
+<li>
+    <a href="#"><i class="icon-stack2"></i> <span>Info's Restaurant</span></a>
+    <ul>
+        <li><%= link_to "Restaurant Management", admin_restaurants_path %></a></li>
+    </ul>
+</li>
+<li>
+    <a href="#"><i class="icon-pencil3"></i> <span>News & Events</span></a>
+    <ul>
+        <li><%= link_to "Posts Management", admin_posts_path %></li>
+        <li><%= link_to "Types Management", admin_types_path %></li>
+    </ul>
+</li>
+<li>
+    <a href="#"><i class="icon-people"></i> <span>User</span></a>
+    <ul>
+        <li><a href="#">Change Password</a></li>
+    </ul>
+</li>

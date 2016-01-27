@@ -1,0 +1,208 @@
+<body class="single-post">
+
+<!-- PRELOADER -->
+<div class="preloader">
+    <div class="inner">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+    </div>
+</div>
+<!-- END / PRELOADER -->
+
+<!-- PAGE WRAP -->
+<div id="page-wrap">
+    
+    <!-- HEADER -->
+        <%= render "home/header" %>
+    <!-- END / HEADER -->
+
+    <!-- SECTION BLOG -->
+    <section class="section-blog section">
+
+        <div class="container">
+            <div class="row">
+                <!-- BLOG LIST -->
+                <div class="col-md-9">
+                    <div class="blog-single">
+                        <!-- BREADCRUMB -->
+                        <ul class="breadcrumb">
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Recipes</a></li>
+                            <li><span>A simple autumnal bake combining some of our favourite flavours</span></li>
+                        </ul>
+                        <!-- END / BREADCRUMB -->
+
+                        <!-- POST -->
+                        <div class="post post-single">
+                            <div class="post-media">
+                                <div class="image-wrap">
+                                    <img src="images/blog/img-7.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="post-body">
+                                <div class="post-title">
+                                    <h3 class="xmd">A simple autumnal bake combining some of our favourite flavours</h3>
+                                </div>
+                                <div class="meta-info">
+                                    <span><i class="icon awe_pie_chart"></i>2serves</span>
+                                    <span><i class="icon awe_clock_2"></i>15 mins cooking</span>
+                                    <span><i class="icon awe_user"></i>By <a href="#">Anna Molly</a></span>
+                                </div>
+                                <div class="post-content">
+                                  
+                                    Content
+                                    
+                                </div>
+                            </div>
+
+                            <!-- SHARE AND TAG -->
+                            <div class="share-tags">
+                                <div class="share-box">
+                                    <h5 class="sm">Share</h5>
+                                    <div class="share">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="tag-box fr">
+                                    <h5 class="sm">Tag</h5>
+                                    <div class="tag">
+                                        <a href="#">Recipe</a>
+                                        <a href="#">Recipe</a>
+                                        <a href="#">Recipe</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END / SHARE AND TAG -->
+                        </div>
+                        <!-- END / POST -->
+                        
+                    </div>
+
+                </div>
+                <!-- END / BLOG LIST -->
+
+                <!-- SIDEBAR -->
+                <div class="col-md-3">
+                    <aside class="sidebar">
+                        <!-- WIDGET SEARCH -->
+                        <div class="widget widget_search">
+                            <h4 class="sm text-uppercase">Search</h4>
+                            <form>
+                                <input type="text" name="search" placeholder="Type keyword">
+                            </form>
+                        </div>
+                        <!-- END / WIDGET SEARCH -->
+                        
+
+                        <!-- WIDGET EVENTS -->
+                        <div class="widget widget_events">
+                            <h4 class="sm text-uppercase">Events</h4>
+                            <ul class="events">
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                    <div class="list-content">
+                                        <a href="#">Fair Trade & Organic</a>
+                                        <ul class="meta">
+                                            <li>20.October.2014</li>
+                                            <li>16:00</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                    <div class="list-content">
+                                        <a href="#">Fair Trade & Organic</a>
+                                        <ul class="meta">
+                                            <li>20.October.2014</li>
+                                            <li>16:00</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                    <div class="list-content">
+                                        <a href="#">Fair Trade & Organic</a>
+                                        <ul class="meta">
+                                            <li>20.October.2014</li>
+                                            <li>16:00</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                    <div class="list-content">
+                                        <a href="#">Fair Trade & Organic</a>
+                                        <ul class="meta">
+                                            <li>20.October.2014</li>
+                                            <li>16:00</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END / WIDGET EVENTS -->
+
+
+                        <!-- WIDGET CATEGORIES -->
+                        <div class="widget widget_categories">
+                            <h4 class="sm text-uppercase">Categories</h4>
+                            <ul>
+                                <li><a href="#">Cras condimentum</a></li>
+                                <li><a href="#">Nibh et pellentesque</a></li>
+                                <li><a href="#">Leo nibh gravida velit</a></li>
+                                <li><a href="#">Tortor augue a eros</a></li>
+                                <li><a href="#">Libero</a></li>
+                            </ul>
+                        </div>
+                        <!-- END / WIDGET CATEGORIES -->
+
+
+                    </aside>
+                </div>
+                <!-- END / SIDEBAR -->
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- END / SECTION BLOG -->
+
+
+    <!-- FOOTER -->
+    <footer id="footer" class="footer">
+        <div class="divider divider-1 divider-color"></div>
+        <div class="awe-color"></div>
+        <div class="container">
+            <div class="copyright text-center">
+                <%= render "home/footer" %>
+            </div>
+        </div>
+    </footer>
+    <!-- END / FOOTER -->
+    
+
+</div>
+<!-- END / PAGE WRAP -->
+
+<!-- LOAD JQUERY -->
+<%= javascript_include_tag '/frontend/js/lib/jquery-1.11.2.min.js' %>
+
+<!-- GOOGLE MAP -->
+<%= javascript_include_tag 'http://maps.google.com/maps/api/js?sensor=false' %>
+<%= javascript_include_tag '/frontend/js/lib/bootstrap.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/jquery.bxslider.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/jquery.easing.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/jquery.owl.carousel.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/masonry.pkgd.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/perfect-scrollbar.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/jquery.magnific-popup.min.js' %>
+<%= javascript_include_tag '/frontend/js/lib/jquery.parallax-1.1.3.js' %>
+<%= javascript_include_tag '/frontend/js/lib/retina.min.js' %>
+<%= javascript_include_tag '/frontend/js/scripts.js' %>
+
+</body>

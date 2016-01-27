@@ -72,6 +72,7 @@
 						<table class="table datatable-categories">
 							<thead>
 								<tr>
+									<th>Level</th>
 									<th>Title</th>
 									<th>Description</th>
 									<th>Status</th>
@@ -80,27 +81,92 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td><a href="#">Title 1</a></td>
-									<td>Description 1</td>
-                                    <td><span class="label label-success">Active</span></td>
-									<td>Created At 1</td>
-									<td class="text-center">
-										<ul class="icons-list">
-											<li class="dropdown">
-												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-													<i class="icon-menu9"></i>
-												</a>
-
-												<ul class="dropdown-menu dropdown-menu-right">
-													<li><a href="#"><i class="icon-file-pdf"></i> Export to .pdf</a></li>
-													<li><a href="#"><i class="icon-file-excel"></i> Export to .csv</a></li>
-													<li><a href="#"><i class="icon-file-word"></i> Export to .doc</a></li>
-												</ul>
-											</li>
-										</ul>
-									</td>
-								</tr>
+								 <% @categories.each do |item| %>
+									<% if item.parent.count == 0 %>
+										<% item.update_level(1) %>
+											<tr>
+												<td>Level <%= item.level %></td>
+												<td><%= link_to item.name, [:admin, item] %></td>
+												<td><%= truncate(strip_tags(item.description), length: 50) %></td>
+												<td><span class="label label-success">Active</span></td>
+												<td><%= item.created_at.strftime("%d/%m/%Y") %></td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li class="dropdown">
+															<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+																<i class="icon-menu9"></i>
+															</a>
+							
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li>
+																  <%= link_to '<i class="glyphicon glyphicon-edit"></i> Edit'.html_safe, edit_admin_category_path(item) %>
+																</li>
+																<li>
+																  <%= link_to '<i class="icon-cross2"></i> Destroy'.html_safe, [:admin, item], method: :delete, data: {confirm: 'Are you sure?'} %>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<% item.children.each do |child_1| %>
+											<% child_1.update_level(2) %>
+											<tr>
+												<td>---  Level <%= child_1.level %></td>
+												<td><%= link_to child_1.name, [:admin, child_1] %></td>
+												<td><%= truncate(strip_tags(child_1.description), length: 50) %></td>
+												<td><span class="label label-success">Active</span></td>
+												<td><%= child_1.created_at.strftime("%d/%m/%Y") %></td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li class="dropdown">
+															<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+																<i class="icon-menu9"></i>
+															</a>
+							
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li>
+																  <%= link_to '<i class="glyphicon glyphicon-edit"></i> Edit'.html_safe, edit_admin_category_path(child_1) %>
+																</li>
+																<li>
+																  <%= link_to '<i class="icon-cross2"></i> Destroy'.html_safe, [:admin, child_1], method: :delete, data: {confirm: 'Are you sure?'} %>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<% child_1.children.each do |child_2| %>
+											<% child_2.update_level(3) %>
+											<tr>
+												<td>------  Level <%= child_2.level %></td>
+												<td><%= link_to child_2.name, [:admin, child_2] %></td>
+												<td><%= truncate(strip_tags(child_2.description), length: 50) %></td>
+												<td><span class="label label-success">Active</span></td>
+												<td><%= child_2.created_at.strftime("%d/%m/%Y") %></td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li class="dropdown">
+															<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+																<i class="icon-menu9"></i>
+															</a>
+							
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li>
+																  <%= link_to '<i class="glyphicon glyphicon-edit"></i> Edit'.html_safe, edit_admin_category_path(child_2) %>
+																</li>
+																<li>
+																  <%= link_to '<i class="icon-cross2"></i> Destroy'.html_safe, [:admin, child_2], method: :delete, data: {confirm: 'Are you sure?'} %>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<% end %>
+										<% end %>
+									<% end %>
+								<% end %>
 							</tbody>
 						</table>
 					</div>
@@ -112,7 +178,7 @@
 					</div>
 					<!-- /footer -->
 
-				</div>
+			</div>
             <!-- /content area -->
 
         </div>

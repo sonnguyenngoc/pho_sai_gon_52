@@ -45,7 +45,13 @@ group :development do
   gem 'spring'
 end
 
+# Gem heroku
 gem 'heroku'
 gem 'thin'
 gem 'rails_12factor', group: :production
+
+# Gem upload image
+gem 'mini_magick'
+gem 'carrierwave'
+
 

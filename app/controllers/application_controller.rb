@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
        controller_name == 'blog_single' || controller_name == 'menu' || controller_name == 'demo_logo'
           'frontend'
     elsif controller_name == 'main' || controller_name == 'categories' || controller_name == 'types' ||
-        controller_name == 'restaurants' || controller_name == 'reservations' || controller_name = 'posts'
+        controller_name == 'restaurants' || controller_name == 'reservations' || controller_name = 'posts' ||
+        controller_name == 'menus'
           'backend'
     end
   end

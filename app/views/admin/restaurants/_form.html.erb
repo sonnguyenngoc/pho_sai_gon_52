@@ -17,56 +17,56 @@
             <div class="col-lg-10">
               <%= f.file_field :image_url, class: "file-styled" %>
               <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
-              <%= image_tag(@restaurant.image_url, size: "250x150", alt: "Picture/logo's Manufacturer", class: "img-rouded") %>
+              <%= image_tag(@restaurant.image_url.image_medium, size: "250x150", alt: "Picture/logo's Manufacturer", class: "img-rouded") %>
             </div>
         </div>
         
         <div class="form-group field">
             <%= f.label "Name", class: "col-lg-2 control-label" %>
             <div class="col-lg-10">
-              <%= f.text_field :name, placeholder: "Tiêu đề loại bài viết...", class: "form-control" %>
+              <%= f.text_field :name, placeholder: "Enter name of restaurant...", class: "form-control" %>
             </div>
         </div>
             
         <div class="form-group field">
             <%= f.label "Address", class: "col-lg-2 control-label" %>
             <div class="col-lg-10">
-              <%= f.text_field :address, placeholder: "Tiêu đề loại bài viết...", class: "form-control" %>
+              <%= f.text_field :address, placeholder: "Enter address of restaurant...", class: "form-control" %>
             </div>
         </div>
             
         <div class="form-group field">
             <%= f.label "Phone", class: "col-lg-2 control-label" %>
             <div class="col-lg-10">
-              <%= f.text_field :phone, placeholder: "Tiêu đề loại bài viết...", class: "form-control" %>
+              <%= f.text_field :phone, placeholder: "Enter phone of restaurant...", class: "form-control" %>
             </div>
         </div>
             
         <div class="form-group field">
             <%= f.label "Fax", class: "col-lg-2 control-label" %>
             <div class="col-lg-10">
-              <%= f.text_field :fax, placeholder: "Tiêu đề loại bài viết...", class: "form-control" %>
+              <%= f.text_field :fax, placeholder: "Enter fax of restaurant...", class: "form-control" %>
             </div>
         </div>
             
         <div class="form-group field">
             <%= f.label "Email", class: "col-lg-2 control-label" %>
             <div class="col-lg-10">
-              <%= f.text_field :email, placeholder: "Tiêu đề loại bài viết...", class: "form-control" %>
+              <%= f.text_field :email, placeholder: "Enter email of restaurant...", class: "form-control" %>
             </div>
         </div>
             
         <div class="form-group field">
             <%= f.label "Wesite", class: "col-lg-2 control-label" %>
             <div class="col-lg-10">
-              <%= f.text_field :website, placeholder: "Tiêu đề loại bài viết...", class: "form-control" %>
+              <%= f.text_field :website, placeholder: "Enter website of restaurant...", class: "form-control" %>
             </div>
         </div>
 
         <div class="form-group field">
             <%= f.label "Description", class: "col-lg-2 control-label" %>
             <div class="col-lg-10">
-              <%= f.text_area :description, rows: "5", cols: "5", placeholder: "Mô tả loại bài viết...", class: "form-control" %>
+              <%= f.text_area :description, rows: "5", cols: "5", placeholder: "Enter description of restaurant...", class: "form-control" %>
             </div>
         </div>
 

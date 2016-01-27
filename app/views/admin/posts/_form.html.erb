@@ -14,8 +14,8 @@
         <%= f.label "Picture: ", class: "col-lg-2 control-label" %>
         <div class="col-lg-10">
           <%= f.file_field :image_url, class: "file-styled" %>
-          <span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
-          <%= image_tag(@post.image_url, size: "244x244", class: "img-rouded") %>
+          <span class="help-block">Accepted formats: gif, png, jpg.</span>
+          <%= image_tag(@post.image_url.image_medium, size: "250x150", class: "img-rouded") %>
         </div>
     </div>
     

@@ -71,6 +71,7 @@
                     <table class="table datatable-posts">
                         <thead>
                             <tr>
+                                <th>Picture</th>
                                 <th>Title</th>
                                 <th>Content</th>
                                 <th>Status</th>
@@ -81,6 +82,11 @@
                         <tbody>
                             <% @posts.each do |item| %>
                                 <tr>
+                                    <td>
+                                        <div class="media-left">
+                                            <img src="<%= item.image_url.image_small if item.image_url? %>" class="img-rounded">
+                                        </div>
+                                    </td>
                                     <td><%= link_to item.title, [:admin, item] %></td>
                                     <td><%= truncate(strip_tags(item.content), length: 50) %></td>
                                     <td><span class="label label-info">Active</span></td>

@@ -1,0 +1,155 @@
+<!-- Main navbar -->
+    <%= render "/admin/main/navbar" %>
+<!-- /main navbar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main">
+            <div class="sidebar-content">
+
+                <!-- User menu -->
+                    <%= render '/admin/main/user_menu' %>
+                <!-- /user menu -->
+
+
+                <!-- Main navigation -->
+                <div class="sidebar-category sidebar-category-visible">
+                    <div class="category-content no-padding">
+                        <ul class="navigation navigation-main navigation-accordion">
+
+                            <!-- Main menu-->
+                                <%= render "/admin/main/main_menu" %>
+                            <!-- /main menu -->
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- /main navigation -->
+
+            </div>
+        </div>
+        <!-- /main sidebar -->
+
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> - Dashboard</h4>
+                    </div>
+                </div>
+
+                <div class="breadcrumb-line">
+                    <ul class="breadcrumb">
+                        <li><a href="#"><i class="icon-home2 position-left"></i> Home</a></li>
+                        <li><a href="#">Restaurant Menu</a></li>
+                        <li class="active">Product Management</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /page header -->
+            
+            <!-- Content area -->
+            <div class="content">
+                <!-- Basic datatable -->
+                <div class="panel panel-flat">
+                    <div class="panel-heading">
+                        <h5 class="panel-title"><span class="text-semibold"><%= @menu.name_1 %></span></h5><br/>
+                        
+                        <p class="color-red"><%= notice %></p><br/>
+                        
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <%= label "", "Image: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= image_tag(@menu.image_url.image_medium, alt: "Picture of Post", class: "img-rouded") %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Name Product: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @menu.name_1 %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Another Name: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @menu.name_2 %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Price: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @menu.price %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Category: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      ###
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Description: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @menu.description %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Created At: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @menu.created_at.strftime("%d/%m/%Y") %>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </form>
+                        <%= link_to '<i class="icon-backward2 position-left"></i> Back'.html_safe, admin_menus_path, class: "btn btn-primary" %>
+                    </div>
+                </div>
+                <!-- /basic datatable -->
+
+                <!-- Footer -->
+                <div class="footer text-muted">
+                    <%= render "/admin/main/footer" %>
+                </div>
+                <!-- /footer -->
+                
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+</div>
+<!-- /page container -->
+
+<!-- Theme JS files -->
+<%= javascript_include_tag '/backend/assets/js/plugins/tables/datatables/datatables.min.js' %>
+<%= javascript_include_tag '/backend/assets/js/plugins/forms/selects/select2.min.js' %>
+
+<%= javascript_include_tag '/backend/assets/js/core/app.js' %>
+<%= javascript_include_tag '/backend/assets/javascripts/datatables_types.js' %>
+<!-- /theme JS files -->

@@ -1,0 +1,64 @@
+<% if @menu.errors.any? %>
+  <div id="error_explanation">
+    <h6><%= pluralize(@menu.errors.count, "error") %> prohibited this tag from being saved:</h6>
+
+    <% @menu.errors.full_messages.each do |message| %>
+      <p class="label label-warning"><%= message %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_for [:admin, @menu], html: {class: "form-horizontal"} do |f| %>
+
+    <div class="panel-body">
+      
+        <div class="form-group">
+            <%= f.label "Image", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.file_field :image_url, class: "file-styled" %>
+              <span class="help-block">Accepted formats: gif, png, jpg. Size: 246x246</span>
+              <%= image_tag(@menu.image_url, size: "250x150", alt: "Image of Product", class: "img-rouded") %>
+            </div>
+        </div>
+        
+        <div class="form-group field">
+            <%= f.label "Name Product", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.text_field :name_1, placeholder: "Enter name of product...", class: "form-control" %>
+            </div>
+        </div>
+            
+        <div class="form-group field">
+            <%= f.label "Another Name", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.text_field :name_2, placeholder: "Enter another name of product...", class: "form-control" %>
+            </div>
+        </div>
+            
+        <div class="form-group field">
+            <%= f.label "Price", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.text_field :price, placeholder: "Enter price of product...", class: "form-control" %>
+            </div>
+        </div>
+            
+        <div class="form-group">
+            <%= f.label "Category: ", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+                <%= f.collection_select(:category_id, Category.where("categories.level = '2'"), :id, :name, {:prompt => "Choose category of product..."}, {class: "select"}) %>
+            </div>
+        </div>
+
+        <div class="form-group field">
+            <%= f.label "Description", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.text_area :description, rows: "5", cols: "5", placeholder: "Enter description of product...", class: "form-control" %>
+            </div>
+        </div>
+
+        <div class="text-right">
+          <%= button_tag 'Save <i class="icon-plus22 position-right"></i>'.html_safe, class: "btn btn-primary"%>
+          <%= link_to 'Cancel <i class="icon-cross2"></i>'.html_safe, admin_menus_path,class: "btn bg-warning-400"%>
+        </div>
+    </div>
+<% end %>

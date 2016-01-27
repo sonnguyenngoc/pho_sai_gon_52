@@ -85,7 +85,7 @@
                                 <tr>
                                     <td>
                                         <div class="media-left">
-                                            <img src="<%= item.image_url if item.image_url? %>" style="width: 82px; height: 56px;" class="img-rounded">
+                                            <img src="<%= item.image_url.image_small if item.image_url? %>" class="img-rounded">
                                         </div>
                                     </td>
                                     <td><%= link_to item.name, [:admin, item] %></td>

@@ -1,12 +1,18 @@
 header.header .logo a img {
-    max-height: 70px;
+    max-height: 88px;
 }
 header.header .logo {
     float: left;
     padding: 8px 0;
 }
 header.header .navigation {
-    padding: 22px 0;
+    padding: 30px 0;
+}
+header.header .navigation ul.nav li a {
+    font-size: 15px;
+}
+.minicart-wrap .toggle-minicart {
+    font-size: 15px;
 }
 .the-menu-item .the-menu-body .xsm {
     overflow: visible;
@@ -14,4 +20,7 @@ header.header .navigation {
 }
 .the-menu-item .the-menu-body p {
     height: auto;
+}
+.home-media .home-fixheight {
+    max-height: 470px;
 }

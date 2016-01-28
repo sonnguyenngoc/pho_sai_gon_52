@@ -72,7 +72,6 @@
 						<table class="table datatable-categories">
 							<thead>
 								<tr>
-									<th>Level</th>
 									<th>Title</th>
 									<th>Description</th>
 									<th>Status</th>
@@ -85,7 +84,6 @@
 									<% if item.parent.count == 0 %>
 										<% item.update_level(1) %>
 											<tr>
-												<td>Level <%= item.level %></td>
 												<td><%= link_to item.name, [:admin, item] %></td>
 												<td><%= truncate(strip_tags(item.description), length: 50) %></td>
 												<td><span class="label label-success">Active</span></td>
@@ -112,7 +110,6 @@
 											<% item.children.each do |child_1| %>
 											<% child_1.update_level(2) %>
 											<tr>
-												<td>---  Level <%= child_1.level %></td>
 												<td><%= link_to child_1.name, [:admin, child_1] %></td>
 												<td><%= truncate(strip_tags(child_1.description), length: 50) %></td>
 												<td><span class="label label-success">Active</span></td>
@@ -139,7 +136,6 @@
 											<% child_1.children.each do |child_2| %>
 											<% child_2.update_level(3) %>
 											<tr>
-												<td>------  Level <%= child_2.level %></td>
 												<td><%= link_to child_2.name, [:admin, child_2] %></td>
 												<td><%= truncate(strip_tags(child_2.description), length: 50) %></td>
 												<td><span class="label label-success">Active</span></td>

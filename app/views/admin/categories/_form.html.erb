@@ -25,40 +25,6 @@
               <%= f.text_area :description, rows: "5", cols: "5", placeholder: "Enter description of category.....", class: "form-control" %>
             </div>
         </div>
-            
-        <div class="form-group field">
-            <%= f.label "Parent Categories", class: "col-lg-3 control-label" %>
-            <div class="col-lg-9">
-              <% Category.all.each do |category| %>
-                  <% if @category.id != category.id %>
-                      <% if category.level == 1 %>
-                          <div class="checkbox">
-                              <label>
-                                  <%= check_box_tag 'category[parent_ids][]', category.id, @category.parent.include?(category), :id => "category_#{category.id}", class: "styled" %>
-                                  <%= f.label category.name, :for => "category_#{category.id}" %>
-                              </label>
-                          </div>
-                        <% category.children.each do |child_1| %>
-                            <div class="checkbox">
-                                <label>
-                                    <%= check_box_tag 'category[parent_ids][]', child_1.id, @category.parent.include?(child_1), :id => "category_#{category.id}", class: "styled" %>
-                                    <%= f.label child_1.name, :for => "category_#{category.id}" %>
-                                </label>
-                            </div>
-                            <% child_1.children.each do |child_2| %>
-                                <div class="checkbox">
-                                    <label>
-                                        <%= check_box_tag 'category[parent_ids][]', child_2.id, @category.parent.include?(child_2), :id => "category_#{category.id}", class: "styled" %>
-                                        <%= f.label child_2.name, :for => "category_#{category.id}" %>
-                                    </label>
-                                </div>
-                            <% end %>
-                        <% end %>
-                      <% end %>
-                  <% end %>
-              <% end %>
-            </div>
-        </div>
 
         <div class="text-right">
           <%= button_tag 'Save <i class="icon-plus22 position-right"></i>'.html_safe, class: "btn btn-primary"%>

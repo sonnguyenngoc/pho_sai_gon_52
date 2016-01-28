@@ -45,7 +45,7 @@
         <div class="form-group">
             <%= f.label "Category: ", class: "col-lg-2 control-label" %>
             <div class="col-lg-10">
-                <%= f.collection_select(:category_id, Category.where("categories.level = '2'"), :id, :name, {:prompt => "Choose category of product..."}, {class: "select"}) %>
+                <%= f.collection_select(:category_id, Category.all, :id, :name, {:prompt => "Choose category of product..."}, {class: "select"}) %>
             </div>
         </div>
 

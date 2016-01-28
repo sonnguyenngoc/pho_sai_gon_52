@@ -29,7 +29,7 @@ header.header .navigation ul.nav li a {
 .home-media .home-fixheight {
     max-height: 470px;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
     .the-menu-item .the-menu-body {
         overflow: hidden;
         display: inline-block;

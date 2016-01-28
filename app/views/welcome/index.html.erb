@@ -1,27 +1,16 @@
 <body>
 
-<!-- PRELOADER -->
-<div class="preloader">
-    <div class="inner">
-        <div class="item item1"></div>
-        <div class="item item2"></div>
-        <div class="item item3"></div>
-    </div>
-</div>
-<!-- END / PRELOADER -->
-
 <!-- PAGE WRAP -->
 <div id="page-wrap">
 
     <!-- ABOUT STORY -->
-    <section id="about-story" class="about-story section">
-        <div class="divider divider-2"></div>
+    <section id="about-story" class="about-story section no-line">
         <div class="container">
             <div class="block-first">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="image-wrap text-center">
-                            <img src="/frontend/images/demo8.jpg" width="300" alt="">
+                            <%= link_to image_tag("/frontend/images/logo-PhoSG52.png"), {controller: "home", action: "index"} %>
                         </div>
                     </div>
                 </div>
@@ -31,7 +20,7 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h4>Take Away - Asia Buffet - Catering - Lieferung</h4>
-                        <%= link_to "CONTACT US", {controller: "info", action: "index"}, {class: "awe-btn awe-btn-2 awe-btn-default"} %>
+                        <%= link_to "GO TO THE WEBSITE", {controller: "home", action: "index"}, {class: "awe-btn awe-btn-2 awe-btn-default"} %>
                     </div>
                 </div>
             </div>

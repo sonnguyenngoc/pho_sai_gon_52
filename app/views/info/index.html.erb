@@ -12,62 +12,66 @@
 
 <!-- PAGE WRAP -->
 <div id="page-wrap">
-    
-    <!-- HEADER -->
-        <%= render "home/header" %>
-    <!-- END / HEADER -->
-
-    <!-- SUB BANNER -->
-    <section class="sub-banner text-center section">
-        <div class="awe-parallax bg-3"></div>
-        <div class="awe-title awe-title-3">
-            <h3 class="lg text-uppercase">Contact</h3>
-        </div>
-    </section>
-    <!-- END / SUB BANNER -->
-
-    <!-- CONTACT US -->
-    <section id="contact" class="contact section">
-
-        <div class="contact-form contact-form-2">
-            <div class="divider divider-2"></div>
-            <div class="container">
+  
+    <!-- ABOUT STORY -->
+    <section id="about-story" class="about-story section">
+        <div class="divider divider-2"></div>
+        <div class="container">
+            <div class="block-first">
                 <div class="row">
-                    <div class="col-md-4">
-                        <address class="find-us">
-                            <span class="md">Find Us Here</span>
-                            <div class="location-1">
-                                <i class="icon awe_map_marker"></i>
-                                <strong>Location: Zürcherstrasse 91, 8952 Schlieren, Switzerland</strong>
-                            </div>
-                            <div class="location-1">
-                                <i class="icon awe_map_marker"></i>
-                                <strong>See location: <%= link_to "here", "https://www.google.com/maps/place/Z%C3%BCrcherstrasse+91,+8952+Schlieren,+Thu%E1%BB%B5+S%C4%A9/@47.3981939,8.4569929,17z/data=!3m1!4b1!4m2!3m1!1s0x47900b8eb1097ab9:0x190058072b37d7a4", target: "_blank" %>
-                            </div>
-                        </address>
+                    <div class="col-md-5">
+                        <div class="image-wrap">
+                            <img src="/frontend/images/about/pho-01.jpg" alt="">
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <div class="form-row">
-                            <form id="send-message-form" action="processContact.php" method="post">
-                                <div class="form-item form-textarea">
-                                    <textarea placeholder="Your Message" name="message"></textarea>
+
+                    <div class="col-md-6 col-md-offset-1">
+                        <h4 class="lg text-uppercase">HEALTHY FOOD IS FUTURE</h4>
+                        <h6 class="text-uppercase">Rind-Reisnudelsuppe (Vietnam's Nationalgericht)</h6>
+                        <h6 class="text-uppercase">Phở Bò / Main dish with Rice noodles soups!!!</h6>
+                        <p>In Vietnam wird sie in den vielen Garküchen auf den Strassen rund um die Uhr als Frühstück, Mittags- oder Nachtimbiss gegessen. Eine gute Phở Bò verlangt bei der Zubereitung viel Zeit und viele Zutaten. Das Geheimnis der Phở ist die Würzmischung, die jeder Suppenkoch anders zusammenstellt.</p>
+                        <p>Zutaten: Hausgemachte klare Rindbrühe mit breiten Reisnudeln, Rinderfilet, Zwiebeln, vietnamesischen Kräutern, Sojasprossen, dazu schmackhafte Rind-Bällchen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block-last">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="image-wrap">
+                                    <img src="/frontend/images/temp/1.jpg" alt="">
                                 </div>
-                                <div class="form-item form-type-name">
-                                    <input type="text" placeholder="Your Name" name="name">
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="image-wrap">
+                                    <img src="/frontend/images/temp/2.jpg" alt="">
                                 </div>
-                                <div class="form-item form-type-email">
-                                    <input type="text" placeholder="Your Email" name="email">
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="image-wrap">
+                                    <img src="/frontend/images/temp/3.jpg" alt="">
                                 </div>
-                                <div class="form-actions">
-                                    <input type="submit" value="Send message" class="awe-btn awe-btn-2 awe-btn-default text-uppercase">
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="image-wrap">
+                                    <img src="/frontend/images/temp/4.jpg" alt="">
                                 </div>
-                                <div id="contact-content"></div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    <!-- ABOUT STORY -->
+  
+    <!-- CONTACT US -->
+    <section id="contact" class="contact section">
 
         <div class="contact-first">
 

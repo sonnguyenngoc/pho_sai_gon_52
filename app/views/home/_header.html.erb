@@ -1,7 +1,7 @@
 <header id="header" class="header header-2">
     <div class="container">
         <!-- LOGO -->
-        <div class="logo"><a href="<%= root_path %>"><img src="images/logo-PhoSG52.png" alt=""></a></div>
+        <div class="logo"><a href="#"><img src="images/logo-PhoSG52.png" alt=""></a></div>
         <!-- END / LOGO -->
 
         <!-- OPEN MENU MOBILE -->
@@ -14,10 +14,11 @@
         <nav class="navigation text-right" data-menu-type="1200">
             <!-- NAV -->
             <ul class="nav text-uppercase">
-                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "Home", {controller: "home", action: "index"} %></li>
                 <li><%= link_to "About", {controller: "about", action: "index"} %></li>
                 <li><%= link_to "Menu", {controller: "menu", action: "index"} %></li>
                 <li><%= link_to "Reservation", {controller: "reservation", action: "index"} %></li>
+                <li><%= link_to "Catering", "#" %></li>
                 <li><%= link_to "Events", {controller: "blog", action: "index"} %></li>
                 <li><%= link_to "Contact", {controller: "contact", action: "index"} %></li>
             </ul>

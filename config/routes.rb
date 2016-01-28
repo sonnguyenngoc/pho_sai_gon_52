@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'welcome#index'
+  get 'info' => "info#index", as: :info
+  get 'home' => "home#index", as: :home
   get 'about' => "about#index", as: :about
   get 'menu' => "menu#index", as: :menu
   get 'reservation' => "reservation#index", as: :reservation

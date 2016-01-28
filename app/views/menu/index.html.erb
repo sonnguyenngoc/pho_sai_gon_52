@@ -33,9 +33,9 @@
                 <ul class="nav-tabs text-center" role="tablist">
                     <% @category.each do |category| %>
                         <% if category.id == @category.first.id %>
-                            <li class="active"><a href="<%= category.id %>" role="tab" data-toggle="tab"><%= category.name %></a></li>
+                            <li class="active"><a href="#<%= category.id %>" role="tab" data-toggle="tab"><%= category.name %></a></li>
                         <% else %>
-                            <li><a href="<%= category.id %>" role="tab" data-toggle="tab"><%= category.name %></a></li>
+                            <li><a href="#<%= category.id %>" role="tab" data-toggle="tab"><%= category.name %></a></li>
                         <% end %>
                     <% end %>
                 </ul>
@@ -46,75 +46,69 @@
                 <div class="tab-menu-content tab-content">
                     <% @category.each do |category| %>
                         <% if category.id == @category.first.id %>
-                            <!-- BREAKFAST -->
+                            
+                            <!-- CATEGORIES -->
                             <div class="tab-pane fade in active" id="<%= category.id %>">
                                 <div class="row">
-                                    <!-- THE MENU ITEM -->
-                                    <div class="col-sm-6 col-md-4 col-lg-3">
-                                        <div class="product-item">
-                                            <div class="image-wrap">
-                                                <img src="images/blog/img-1.jpg" alt="">
-                                            </div>
-                                            <div class="product-body">
-                                                <div class="item-price">
-                                                    <span class="amount">$12</span>
-                                                </div>
-                                                <div class="item-name">
-                                                    <h4 class="sm">
-                                                        Active
-                                                    </h4>
-                                                </div>
-                                                <div class="categories">
-                                                    <ul>
-                                                        <li><a href="#"><i class="icon awe_check"></i>Healthy food</a></li>
-                                                        <li><a href="#"><i class="icon awe_check"></i>Low-carb</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                    <% @product.each do |item| %>  
+                                        <% if item.category_id == category.id %>
                                             
+                                        <!-- THE MENU ITEM -->
+                                        <div class="col-lg-12">
+                                            <div class="the-menu-item">
+                                                <div class="image-wrap">
+                                                    <img src="images/themenu/img-1.jpg" width="120" height="120" alt="">
+                                                </div>
+                                                <div class="the-menu-body">
+                                                    <h4 class="xsm"><%= item.name_1 %></h4>
+                                                    <p>+ <%= item.name_2 %></p>
+                                                    <em>+ <%= item.description %></em>
+                                                </div>
+                                                <div class="prices">
+                                                    <span class="price xsm"><%= item.price %></span>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- END / THE MENU ITEM -->
-        
+                                        <!-- END / THE MENU ITEM -->
+                                            
+                                        <% end %>
+                                    <% end %>        
                                 </div>
                                 
                             </div>
-                            <!-- END / BREAKFAST -->
+                            <!-- END / CATEGORIES -->
+                            
                         <% else %>
-                            <!-- BREAKFAST -->
+                            <!-- CATEGORIES -->
                             <div class="tab-pane fade" id="<%= category.id %>">
                                 <div class="row">
-                                    <!-- THE MENU ITEM -->
-                                    <div class="col-sm-6 col-md-4 col-lg-3">
-                                        <div class="product-item">
-                                            <div class="image-wrap">
-                                                <img src="images/blog/img-1.jpg" alt="">
-                                            </div>
-                                            <div class="product-body">
-                                                <div class="item-price">
-                                                    <span class="amount">$12</span>
-                                                </div>
-                                                <div class="item-name">
-                                                    <h4 class="sm">
-                                                        Cereal Strawbery & Milk
-                                                    </h4>
-                                                </div>
-                                                <div class="categories">
-                                                    <ul>
-                                                        <li><a href="#"><i class="icon awe_check"></i>Healthy food</a></li>
-                                                        <li><a href="#"><i class="icon awe_check"></i>Low-carb</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                    <% @product.each do |item| %>  
+                                        <% if item.category_id == category.id %>
                                             
+                                        <!-- THE MENU ITEM -->
+                                        <div class="col-lg-12">
+                                            <div class="the-menu-item">
+                                                <div class="image-wrap">
+                                                    <img src="images/themenu/img-1.jpg" width="120" height="120" alt="">
+                                                </div>
+                                                <div class="the-menu-body">
+                                                    <h4 class="xsm"><%= item.name_1 %></h4>
+                                                    <p>+ <%= item.name_2 %></p>
+                                                    <em>+ <%= item.description %></em>
+                                                </div>
+                                                <div class="prices">
+                                                    <span class="price xsm"><%= item.price %></span>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- END / THE MENU ITEM -->
-        
+                                        <!-- END / THE MENU ITEM -->
+                                            
+                                        <% end %>
+                                    <% end %>        
                                 </div>
                                 
                             </div>
-                            <!-- END / BREAKFAST -->
+                            <!-- END / CATEGORIES -->
                         <% end %>
                     <% end %>
                 </div>

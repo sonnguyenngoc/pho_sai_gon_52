@@ -18,9 +18,21 @@ header.header .navigation ul.nav li a {
     overflow: visible;
     margin-bottom: 29px;
 }
+.the-menu-item .the-menu-body {
+    overflow: hidden;
+    display: inline-block;
+    padding: 5px 100px;
+}
 .the-menu-item .the-menu-body p {
     height: auto;
 }
 .home-media .home-fixheight {
     max-height: 470px;
+}
+@media screen and (max-width: 480px) {
+    .the-menu-item .the-menu-body {
+    overflow: hidden;
+    display: inline-block;
+    padding: 5px 0px;
+}
 }

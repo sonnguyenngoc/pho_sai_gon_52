@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :line_items
   root 'welcome#index'
   get 'info' => "info#index", as: :info
   get 'home' => "home#index", as: :home
@@ -11,9 +12,11 @@ Rails.application.routes.draw do
   get 'blog' => "blog#index", as: :blog
   get 'blog_single' => "blog_single#index", as: :blog_single
   get 'contact' => "contact#index", as: :contact
+  get 'finish_contact' => "finish_contact#index", as: :finish_contact
   get 'demo_logo' => "demo_logo#index", as: :demo_logo
   get 'cart' => "cart#index", as: :cart
   get 'checkout' => "checkout#index", as: :checkout
+  
   namespace :admin, path: "phosg52" do
     get 'main' => "main#index", as: :main
     resources :types
@@ -22,5 +25,8 @@ Rails.application.routes.draw do
     resources :reservations
     resources :posts
     resources :menus
+    resources :contacts
+    
+    resources :carts
   end
 end

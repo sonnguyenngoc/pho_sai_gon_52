@@ -21,7 +21,7 @@
     <section class="reservation section pd">
         <div class="divider divider-2"></div>
         <div class="reservation-content">
-            <form id="reservation-form" action="processReservation.php" method="post">
+            <%= form_for @reservation, url: admin_reservations_path do |f| %>
                 <div class="row">
                     <div class="col-md-6">
                         <table class="form-table table-first">
@@ -30,7 +30,7 @@
                                     <td colspan="2">
                                         <label for="date">Date</label>
                                         <div class="form-item">
-                                            <input type="text" id="date" name="date" placeholder="dd/mm/yyyy">
+                                            <%= f.text_field :time_order, value: @reservation.time_order.strftime("%Y/%m/%d"), placeholder: 'yy/mm/dd' %>
                                             <i class="icon awe_calendar"></i>
                                         </div>
                                     </td>
@@ -39,39 +39,8 @@
                                     <td class="t-time">
                                         <label for="time">Time</label>
                                         <div class="form-item">
-                                            <select name="time">
-                                                <option>1:00</option>
-                                                <option>2:00</option>
-                                                <option>3:00</option>
-                                                <option>4:00</option>
-                                                <option>5:00</option>
-                                                <option>6:00</option>
-                                                <option>7:00</option>
-                                                <option>8:00</option>
-                                                <option>9:00</option>
-                                                <option>10:00</option>
-                                                <option>11:00</option>
-                                                <option>12:00</option>
-                                                <option>13:00</option>
-                                                <option>14:00</option>
-                                                <option>15:00</option>
-                                                <option>16:00</option>
-                                                <option>17:00</option>
-                                                <option>18:00</option>
-                                                <option>19:00</option>
-                                                <option>20:00</option>
-                                                <option>21:00</option>
-                                                <option>22:00</option>
-                                                <option>23:00</option>
-                                                <option>24:00</option>
-                                            </select>
+                                            <%= text_field_tag "time", @reservation.time_order.strftime("%I:%M"), placeholder: "hh:mm" %>
                                             <i class="icon awe_clock_2"></i>
-                                        </div>
-                                    </td>
-                                    <td class="t-pers">
-                                        <label for="pers">Pers</label>
-                                        <div class="form-item">
-                                            <input type="text" id="pers" name="pers">
                                         </div>
                                     </td>
                                 </tr>
@@ -79,7 +48,7 @@
                                     <td colspan="2">
                                         <label for="note">Note</label>
                                         <div class="form-item">
-                                            <input type="text" id="note" name="note">
+                                            <%= f.text_field :note, placeholder: 'Your Note' %>
                                         </div>
                                     </td>
                                 </tr>
@@ -94,7 +63,7 @@
                                     <td>
                                         <label for="name">Customer Name</label>
                                         <div class="form-item">
-                                            <input type="text" id="name" name="name">
+                                            <%= f.text_field :customer_name, placeholder: 'Customer Name (*)', required: true %>
                                         </div>
                                     </td>
                                 </tr>
@@ -102,7 +71,7 @@
                                     <td>
                                         <label for="telephone">Telephone</label>
                                         <div class="form-item">
-                                            <input type="text" id="telephone" name="phone">
+                                            <%= f.text_field :customer_phone, placeholder: 'Telephone (*)', required: true %>
                                         </div>
                                     </td>
                                 </tr>
@@ -110,7 +79,7 @@
                                     <td>
                                         <label for="email">Email</label>
                                         <div class="form-item">
-                                            <input type="text" id="email" name="email">
+                                            <%= f.text_field :customer_email, placeholder: 'Email' %>
                                         </div>
                                     </td>
                                 </tr>
@@ -120,11 +89,11 @@
                 </div>
                 <div class="form-footer text-center">
                     <div class="form-item reservation-submit">
-                        <input type="submit" value="CHECK AVAILABILITY" class="awe-btn awe-btn-3 awe-btn-default text-uppercase">
+                        <%= f.submit "SEND RESERVATION", class: "awe-btn awe-btn-3 awe-btn-default text-uppercase" %>
                     </div>
                 </div>
                 <div id="reservation-form-content" class="text-center"></div>
-            </form>
+            <% end %>
         </div>
     </section>
     <!-- END / RESERVATION -->

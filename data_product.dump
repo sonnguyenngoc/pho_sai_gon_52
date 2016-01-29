@@ -26,163 +26,8 @@ COPY categories (id, name, description, created_at, updated_at, level) FROM stdi
 18	Schwein		2016-01-28 02:21:13.844188	2016-01-28 02:21:19.762208	1
 19	Haus spezialitäten		2016-01-28 02:21:28.482395	2016-01-28 02:21:33.262	1
 20	Tintenfische		2016-01-28 02:21:37.604432	2016-01-28 02:21:39.260469	1
-\.
-
-
---
--- Name: categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
---
-
-SELECT pg_catalog.setval('categories_id_seq', 20, true);
-
-
---
--- Data for Name: menus; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
---
-
-COPY menus (id, image_url, name_1, name_2, description, price, category_id, created_at, updated_at) FROM stdin;
-4	\N	Sommerrollen mit Crevetten (2 Stk.)	Gỏi cuốn tôm / Summerrolls with Shrimps	Reisnudeln, Salat, Sojasprossen, vietnamesischen Kräutern, dazu Hoi-sin Sauce	10.50	11	2016-01-28 02:38:07.158861	2016-01-28 02:38:07.158861
-5	\N	Wan Tan Suppe (Ravioli Suppe)	Súp Wan-tan / Wan-Tan Soup with Shrimps	Hausgemachte Fleischbrühe, Teigtaschen mit gefüllten Crevettenfleisch!!	8.50	12	2016-01-28 02:44:13.64688	2016-01-28 02:44:13.64688
-6	\N	Tom Yum-Gung mit Crevetten		Köstliche Suppe mit Zitronenblätter, Pilze, Tomaten, Zitronengras, Koriander	11.50	12	2016-01-28 02:47:36.772302	2016-01-28 02:47:49.413654
-7	\N	Rindfleisch - Salat	Gỏi bò / picy Seared Beef Salad	Gemischter Salat mit zarten, würzigen angebratenen Rindsfilet streifen, dazu hausgemachtes Nước Mắm Dressing und geröstete Erdnüsse!	18.50	13	2016-01-28 02:51:24.110903	2016-01-28 02:51:24.110903
-\.
-
-
---
--- Name: menus_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
---
-
-SELECT pg_catalog.setval('menus_id_seq', 7, true);
-
-
---
--- Data for Name: parent_categories; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
---
-
-COPY parent_categories (id, parent_id, category_id, created_at, updated_at) FROM stdin;
-\.
-
-
---
--- Name: parent_categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
---
-
-SELECT pg_catalog.setval('parent_categories_id_seq', 2, true);
-
-
---
--- Data for Name: posts; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
---
-
-COPY posts (id, title, content, type_id, created_at, updated_at, image_url) FROM stdin;
-\.
-
-
---
--- Name: posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
---
-
-SELECT pg_catalog.setval('posts_id_seq', 4, true);
-
-
---
--- Data for Name: reservations; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
---
-
-COPY reservations (id, time_order, note, customer_name, customer_phone, customer_email, created_at, updated_at) FROM stdin;
-\.
-
-
---
--- Name: reservations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
---
-
-SELECT pg_catalog.setval('reservations_id_seq', 1, true);
-
-
---
--- Data for Name: restaurants; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
---
-
-COPY restaurants (id, image_url, name, email, address, phone, fax, website, description, created_at, updated_at) FROM stdin;
-3	demo9.jpg	Phở Sài Gòn 52		Zürcherstrasse 91, 8952 Schlieren, Switzerland	043 495 00 22	043 495 00 22	http://phosaigon52.ch/		2016-01-27 14:06:23.259124	2016-01-27 14:06:23.259124
-\.
-
-
---
--- Name: restaurants_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
---
-
-SELECT pg_catalog.setval('restaurants_id_seq', 3, true);
-
-
---
--- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
---
-
-COPY schema_migrations (version) FROM stdin;
-20160127023513
-20160127023614
-20160127030529
-20160127044258
-20160127063819
-20160127065148
-20160127100020
-20160127142442
-20160127152636
-\.
-
-
---
--- Data for Name: types; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
---
-
-COPY types (id, title, description, created_at, updated_at) FROM stdin;
-1	News		2016-01-27 03:49:26.804362	2016-01-27 03:49:26.804362
-2	Events		2016-01-27 03:49:40.061088	2016-01-27 03:49:40.061088
-\.
-
-
---
--- Name: types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
---
-
-SELECT pg_catalog.setval('types_id_seq', 2, true);
-
-
---
--- PostgreSQL database dump complete
---
-
---
--- PostgreSQL database dump
---
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-
-SET search_path = public, pg_catalog;
-
---
--- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
---
-
-COPY categories (id, name, description, created_at, updated_at, level) FROM stdin;
-11	Vorspeise		2016-01-28 02:19:30.520312	2016-01-28 02:19:32.49877	1
-12	Vorspeise spezialitäten		2016-01-28 02:19:54.640483	2016-01-28 02:19:56.36262	1
-13	Salat		2016-01-28 02:20:13.91839	2016-01-28 02:20:15.684618	1
-14	Rind		2016-01-28 02:20:24.561507	2016-01-28 02:20:27.750347	1
-15	Fisch		2016-01-28 02:20:36.315931	2016-01-28 02:20:37.972344	1
-16	Poulet		2016-01-28 02:20:48.437856	2016-01-28 02:20:53.102247	1
-17	Crevetten		2016-01-28 02:21:00.159864	2016-01-28 02:21:09.484447	1
-18	Schwein		2016-01-28 02:21:13.844188	2016-01-28 02:21:19.762208	1
-19	Haus spezialitäten		2016-01-28 02:21:28.482395	2016-01-28 02:21:33.262	1
-20	Tintenfische		2016-01-28 02:21:37.604432	2016-01-28 02:21:39.260469	1
 21	Drink		2016-01-28 08:51:27.420607	2016-01-28 09:08:58.458398	1
+22	None		2016-01-29 10:00:53.274566	2016-01-29 10:00:57.744488	1
 \.
 
 
@@ -190,7 +35,22 @@ COPY categories (id, name, description, created_at, updated_at, level) FROM stdi
 -- Name: categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
 --
 
-SELECT pg_catalog.setval('categories_id_seq', 21, true);
+SELECT pg_catalog.setval('categories_id_seq', 22, true);
+
+
+--
+-- Data for Name: contacts; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY contacts (id, name, email, message, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: contacts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('contacts_id_seq', 5, true);
 
 
 --
@@ -203,7 +63,10 @@ COPY menus (id, image_url, name_1, name_2, description, price, category_id, crea
 7	\N	Rindfleisch - Salat	Gỏi bò / picy Seared Beef Salad	Gemischter Salat mit zarten, würzigen angebratenen Rindsfilet streifen, dazu hausgemachtes Nước Mắm Dressing und geröstete Erdnüsse!	18.50	13	2016-01-28 02:51:24.110903	2016-01-28 02:51:24.110903
 8	\N	Sommerrollen mit Tofu (2 Stk.)	Gỏi cuốn chay / Vegetarian Tofu Summerolls	Karotten, Tofu, Salat und vietnamesischen Kräutern, dazu Hoi-sin Sauce	9.50	11	2016-01-28 03:50:15.490988	2016-01-28 03:50:15.490988
 9	\N	Suppe Chua cay poulet			9.50	12	2016-01-28 04:34:09.083068	2016-01-28 04:34:09.083068
+26	\N	Fisch in Tontöpfen	Cá kho tộ/ "Pangasius fish" in caramel sauce	Pangasius Fisch in Karamellsauce gekocht klingt nicht appetitlich und doch ist es eine der leckersten Sachen. Cá kho, um gehört zu jenen beliebt, authentische vietnamesische Schmorgerichte, die in Tontöpfen gekocht wird. Schalotten und Knoblauch zusammen mit der Fischsauce und Karamellsauce verleihen unglaublich herzhaften süßen Aromen. Cá Kho ist hervorragend, und mit gedämpftem Reis und Gurken gepaart	18.50	15	2016-01-29 08:15:15.089387	2016-01-29 08:15:15.089387
 4	\N	Sommerrollen mit Crevetten (2 Stk.)	Gỏi cuốn tôm / Summerrolls with Shrimps	Reisnudeln, Salat, Sojasprossen, vietnamesischen Kräutern, dazu Hoi-sin	10.50	11	2016-01-28 02:38:07.158861	2016-01-28 05:00:31.798353
+27	\N	Geschnetzelte Pouletprust mit Ananas an süss und sauer Sauce	Gà xào thơm/ Sweet and sour chicken		20.50	16	2016-01-29 08:22:00.294708	2016-01-29 08:22:00.294708
+28	\N	Geschnetzelte Pouletprust mit Lauch und chili 	Gà xào Szechuan/ Sliced chicken with leek and chili 		\N	16	2016-01-29 08:30:56.02787	2016-01-29 08:30:56.02787
 10	\N	Cha gio (Nem) (6 Stk.)	Chả giò Việt Nam/ Spring Rolls	Knusprig fritierte Frühlingsröllchen mit gehacktem Schweinefleisch, Krevetten, Karotten und Glasnudeln, serviert mit grünem Salat, Pfefferminz, Fischsauce.	16.00	11	2016-01-29 02:19:28.090864	2016-01-29 02:43:12.17019
 11	\N	Vietnamesische Vegi- Frühlingsrollen (2 Stk.)	Chả giò chay/ Spring Rolls Vegi	mit Tofu, dazu süss-sauer Sauce	8.50	11	2016-01-29 02:28:23.702324	2016-01-29 02:46:49.559957
 13	\N	Pouletspiessli an hausgematchter Erdnusssauce (2 Stk.)	Gà lụi nướng/ Barbecue Chicken Skewer	Marinierte Pouletspiessli an hausgemachter Erdnusssauce	9.50	11	2016-01-29 02:58:26.564105	2016-01-29 02:58:26.564105
@@ -215,6 +78,43 @@ COPY menus (id, image_url, name_1, name_2, description, price, category_id, crea
 20	\N	Papaya Salat	Gỏi đu đủ/ Vietnamese Papaya Salad with Shrimps	Frischer grüner Papayastreifen, Karotten, Crevetten, Schweinefleisch, Koriander, frische Kräuter und gerösteten Erdnüssen, dazu Nước Mắm Dressing und Knoblauch	17.50	13	2016-01-29 07:05:09.938324	2016-01-29 07:05:09.938324
 21	\N	Mango Salat mit Crevetten	Gỏi xoài/ Vietnamese Green Mango Salad with Shrimp	Frische grüner Mango mit Karotten, Crevetten, Koriander, gerösteten Erdnüssen, Chili, und frischen Kräutern, dazu Nước Mắm   Dressing und Knoblauch	17.50	13	2016-01-29 07:13:28.365578	2016-01-29 07:13:28.365578
 22	\N	Rindwürfel gebraten	Bò lúc lắc/ Tender and spicy beef tenderloin with vegetables	Im Wok kurz angebratenes, zart-würziges Rindsfilet in Würfel mit Gemüse, dazu Nước mắm Sauce und Reis	28.50	14	2016-01-29 07:29:27.387319	2016-01-29 07:29:27.387319
+23	\N	Bun bo xao	Bún bò xào/ Sauted beef on rice noodles 	Sautiertes Rindfleisch auf Reisnudeln mit  grünem Salat, Gurken, Sojasprossen, Pfefferminze, gerösteten Zwiebeln, Erdnusssplittern, serviert mit Fischsauce	23.50	14	2016-01-29 07:39:45.521648	2016-01-29 07:39:45.521648
+24	\N	Rindgebraten mit Reisnudeln	Bún bò nướng/ in short fried beef fillet with rice noodles 	In kurzen gebratenen Rindsfilet mit Zitronengras, serviert mit Reisnudeln	24.50	14	2016-01-29 07:51:24.320005	2016-01-29 07:51:24.320005
+25	\N	Geschnetzeltes Rindfleisch mit Lauch und Chili	Bò xào Tứ Xuyên (Szechuan)/ Sliced beef with leek and chili		24.50	14	2016-01-29 07:57:15.791461	2016-01-29 07:57:15.791461
+39	\N		Tôm xào chua ngọt		25.50	17	2016-01-29 09:15:09.842483	2016-01-29 09:15:09.842483
+29	\N	Gebratene Weizenmudeln mit Gemüse und Pouletfleisch	Gà xào mì/ Fried wheat noodles with vegetables and chicken		20.50	16	2016-01-29 08:37:18.422689	2016-01-29 08:38:55.942432
+30	\N	Fritierte Weizennudeln mit Poulet- Schweine- Rindfleisch, Krevetten und Gemüse	Mì xào giòn/ Fried wheat noodles with chicken, beef, pork, shrimp and vegetables		29.50	16	2016-01-29 08:42:27.00736	2016-01-29 08:42:27.00736
+31	\N	Sautiertes Pouletprust mit Zitronengras und Chili 	Gà xào sả ớt/ Sauteed chicken with lemon grass and chili 		23.50	16	2016-01-29 08:44:23.529617	2016-01-29 08:44:23.529617
+32	\N	Fritiertes Pouletflügel mit Fisch- Sauce	Cánh gà chiên nước mắm/ Fried chickenwings with fish sauce		17.50	16	2016-01-29 08:47:19.617206	2016-01-29 08:47:19.617206
+33	\N	Sautiertes Pouletprust mit Choisam	Gà xào cải ngọt/ Sauteed chicken with Choisam		23.50	16	2016-01-29 08:48:55.664806	2016-01-29 08:48:55.664806
+34	\N	Tamarinden Suppe mit Fisch (Süss- sauer)	Canh chua cá/ Sweet & Sour tamarin soup with fish		\N	15	2016-01-29 08:55:00.311311	2016-01-29 08:55:00.311311
+35	\N	Knusprig gebratener Fisch und Fisch Sauer mango + gedämpften Reis	Cá chiên giòn		\N	15	2016-01-29 08:59:30.927251	2016-01-29 09:00:25.210895
+36	\N	Geschnetzelte Pouletprust an Kokonussmilch mit Ananas	Gà xào cari/ Sliced chicken breast in coconut milk with pineapple 		\N	16	2016-01-29 09:05:27.544019	2016-01-29 09:05:27.544019
+38	\N		Tôm rau cải mít Szechuan Sauee		25.50	17	2016-01-29 09:12:57.240896	2016-01-29 09:12:57.240896
+37	\N		Tôm Cari		25.50	17	2016-01-29 09:11:05.005067	2016-01-29 09:13:35.685429
+40	\N		Gỏi gà		15.50	13	2016-01-29 09:17:39.859095	2016-01-29 09:17:39.859095
+42	\N		Bò xào mì		23.50	14	2016-01-29 09:22:21.083419	2016-01-29 09:22:21.083419
+43	\N		Bò xào sả ớt		25.50	14	2016-01-29 09:23:14.477152	2016-01-29 09:23:14.477152
+44	\N		Bò xào cải ngọt		25.50	14	2016-01-29 09:23:53.185479	2016-01-29 09:23:53.185479
+45	\N		Heo kho tiêu 		20.50	18	2016-01-29 09:25:44.298939	2016-01-29 09:25:44.298939
+46	\N		Heo Szechuan		20.50	18	2016-01-29 09:26:18.636172	2016-01-29 09:26:18.636172
+47	\N		Heo nướng		21.50	18	2016-01-29 09:27:10.795562	2016-01-29 09:27:10.795562
+48	\N		Heo xào gừng		20.50	18	2016-01-29 09:27:55.038858	2016-01-29 09:27:55.038858
+49	\N	Pho Bac	Phở Bắc/ Beef soup with rice noodle and Beef	Fleischbrühe mit Reisnudeln und Rindshuft	20.50	19	2016-01-29 09:32:38.379343	2016-01-29 09:32:38.379343
+50	\N	Bun bo Hue	Bún bò Huế/ Beef soup with lemongrass and chili, rice noodle and beef	Fleischbrühe mit Zitronengras chili pikant gewürzt mit feinen Reisnudeln und Rindhuft	20.50	19	2016-01-29 09:36:05.488284	2016-01-29 09:36:05.488284
+41	\N		Hoành thánh suppe		8.50	22	2016-01-29 09:20:27.901118	2016-01-29 10:07:00.045381
+51	\N	Hu Tieu	Hủ tiếu/ Chicken soup with rice noodle, pork and shrimp	Fleischbrühe mit Reisnudeln, Schweinefleisch und Crevetten	20.50	19	2016-01-29 09:38:59.574197	2016-01-29 09:38:59.574197
+52	\N	Mien Ga	Miến gà/ Glass noodle soup with chicken breast	Glasnudelnsuppe mit Pouletbruststückchen	19.50	19	2016-01-29 09:41:26.223282	2016-01-29 09:41:26.223282
+53	\N	Tamarinden Suppe mit Fisch (Süss- sauer)/Cravetten/ Poulet 	Canh chua cá+ tôm+ gà/ Sweet& Sour temarin soup with fish, shrimp, chicken		\N	19	2016-01-29 09:46:50.399186	2016-01-29 09:46:50.399186
+54	\N	Wonton gefüllit mit Pouletfleisch und Crevetten	Hoành thánh + mì/ Wonton stuffed with chicken and shrimp		20.50	19	2016-01-29 09:52:15.928116	2016-01-29 09:52:15.928116
+55	\N	Tofu Suppe mit Gemüse	Đậu hủ súp/ Tofu soup with vegetable		20.50	19	2016-01-29 09:54:19.284626	2016-01-29 09:54:19.284626
+56	\N		Mục nướng muối ớt		\N	20	2016-01-29 09:56:36.879293	2016-01-29 09:56:36.879293
+57	\N		Mực xào chua ngọt		\N	20	2016-01-29 09:57:04.974735	2016-01-29 09:57:04.974735
+58	\N		Mực xào sả ớt		\N	20	2016-01-29 09:57:41.99441	2016-01-29 09:57:41.99441
+59	\N		Cơm thịt nướng		20.00	22	2016-01-29 10:02:49.794879	2016-01-29 10:02:49.794879
+60	\N		Bánh hỏi + heo quay		24.50	22	2016-01-29 10:03:38.358502	2016-01-29 10:03:38.358502
+61	\N		Bánh mì Việt Nam		12.00	22	2016-01-29 10:04:18.004536	2016-01-29 10:04:18.004536
+62	\N		Bánh mì heo quay		18.00	22	2016-01-29 10:05:28.696416	2016-01-29 10:05:28.696416
 \.
 
 
@@ -222,7 +122,7 @@ COPY menus (id, image_url, name_1, name_2, description, price, category_id, crea
 -- Name: menus_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
 --
 
-SELECT pg_catalog.setval('menus_id_seq', 22, true);
+SELECT pg_catalog.setval('menus_id_seq', 62, true);
 
 
 --
@@ -300,6 +200,7 @@ COPY schema_migrations (version) FROM stdin;
 20160127100020
 20160127142442
 20160127152636
+20160129082445
 \.
 
 

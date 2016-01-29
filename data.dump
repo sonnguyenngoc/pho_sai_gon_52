@@ -154,3 +154,173 @@ SELECT pg_catalog.setval('types_id_seq', 2, true);
 -- PostgreSQL database dump complete
 --
 
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+SET search_path = public, pg_catalog;
+
+--
+-- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY categories (id, name, description, created_at, updated_at, level) FROM stdin;
+11	Vorspeise		2016-01-28 02:19:30.520312	2016-01-28 02:19:32.49877	1
+12	Vorspeise spezialitäten		2016-01-28 02:19:54.640483	2016-01-28 02:19:56.36262	1
+13	Salat		2016-01-28 02:20:13.91839	2016-01-28 02:20:15.684618	1
+14	Rind		2016-01-28 02:20:24.561507	2016-01-28 02:20:27.750347	1
+15	Fisch		2016-01-28 02:20:36.315931	2016-01-28 02:20:37.972344	1
+16	Poulet		2016-01-28 02:20:48.437856	2016-01-28 02:20:53.102247	1
+17	Crevetten		2016-01-28 02:21:00.159864	2016-01-28 02:21:09.484447	1
+18	Schwein		2016-01-28 02:21:13.844188	2016-01-28 02:21:19.762208	1
+19	Haus spezialitäten		2016-01-28 02:21:28.482395	2016-01-28 02:21:33.262	1
+20	Tintenfische		2016-01-28 02:21:37.604432	2016-01-28 02:21:39.260469	1
+21	Drink		2016-01-28 08:51:27.420607	2016-01-28 09:08:58.458398	1
+\.
+
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('categories_id_seq', 21, true);
+
+
+--
+-- Data for Name: menus; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY menus (id, image_url, name_1, name_2, description, price, category_id, created_at, updated_at) FROM stdin;
+5	\N	Wan Tan Suppe (Ravioli Suppe)	Súp Wan-tan / Wan-Tan Soup with Shrimps	Hausgemachte Fleischbrühe, Teigtaschen mit gefüllten Crevettenfleisch!!	8.50	12	2016-01-28 02:44:13.64688	2016-01-28 02:44:13.64688
+6	\N	Tom Yum-Gung mit Crevetten		Köstliche Suppe mit Zitronenblätter, Pilze, Tomaten, Zitronengras, Koriander	11.50	12	2016-01-28 02:47:36.772302	2016-01-28 02:47:49.413654
+7	\N	Rindfleisch - Salat	Gỏi bò / picy Seared Beef Salad	Gemischter Salat mit zarten, würzigen angebratenen Rindsfilet streifen, dazu hausgemachtes Nước Mắm Dressing und geröstete Erdnüsse!	18.50	13	2016-01-28 02:51:24.110903	2016-01-28 02:51:24.110903
+8	\N	Sommerrollen mit Tofu (2 Stk.)	Gỏi cuốn chay / Vegetarian Tofu Summerolls	Karotten, Tofu, Salat und vietnamesischen Kräutern, dazu Hoi-sin Sauce	9.50	11	2016-01-28 03:50:15.490988	2016-01-28 03:50:15.490988
+9	\N	Suppe Chua cay poulet			9.50	12	2016-01-28 04:34:09.083068	2016-01-28 04:34:09.083068
+4	\N	Sommerrollen mit Crevetten (2 Stk.)	Gỏi cuốn tôm / Summerrolls with Shrimps	Reisnudeln, Salat, Sojasprossen, vietnamesischen Kräutern, dazu Hoi-sin	10.50	11	2016-01-28 02:38:07.158861	2016-01-28 05:00:31.798353
+10	\N	Cha gio (Nem) (6 Stk.)	Chả giò Việt Nam/ Spring Rolls	Knusprig fritierte Frühlingsröllchen mit gehacktem Schweinefleisch, Krevetten, Karotten und Glasnudeln, serviert mit grünem Salat, Pfefferminz, Fischsauce.	16.00	11	2016-01-29 02:19:28.090864	2016-01-29 02:43:12.17019
+11	\N	Vietnamesische Vegi- Frühlingsrollen (2 Stk.)	Chả giò chay/ Spring Rolls Vegi	mit Tofu, dazu süss-sauer Sauce	8.50	11	2016-01-29 02:28:23.702324	2016-01-29 02:46:49.559957
+13	\N	Pouletspiessli an hausgematchter Erdnusssauce (2 Stk.)	Gà lụi nướng/ Barbecue Chicken Skewer	Marinierte Pouletspiessli an hausgemachter Erdnusssauce	9.50	11	2016-01-29 02:58:26.564105	2016-01-29 02:58:26.564105
+15	\N	Gedämpfte Teigtaschen (4 Stk.)	Há cảo	Aus Reismehl, gefüllt mit Crevettenfleisch an Sojasauce	8.50	11	2016-01-29 03:23:03.759831	2016-01-29 03:23:03.759831
+16	\N	Won- ton (5 Stk.)	Hoành thánh chiên	Knusprig fritierte Ravioli aus Pouletbrust und Krevetten mit süss- und- sauer Sauce	8.50	11	2016-01-29 03:38:33.64086	2016-01-29 03:38:33.64086
+18	\N	Banh khot (6 Stk.)	Bánh khọt/ Tumeric fragrant cup cake filled with shrimp and coconut 	Kurkuma duftenden Tasse Kuchen gefüllt mit Garnelen und Kokosnuss. Mit frischen Salat und Minze serviert mit Fisch-Sauce	14.00	11	2016-01-29 03:53:27.400909	2016-01-29 03:53:27.400909
+12	\N	Tim Sum 4 Saigon (4 Stk.)	Vietnamesische Tim Sum mit 4 verschiedenen Spezialitäten		14.50	11	2016-01-29 02:51:56.365003	2016-01-29 04:10:10.563571
+17	\N	Knusprige Cretten mit Weizenmehl fritiert (6 Stk.)	Tôm chiên giòn/ Crispy fried shrimp		11.50	11	2016-01-29 03:43:11.803962	2016-01-29 04:19:08.563024
+20	\N	Papaya Salat	Gỏi đu đủ/ Vietnamese Papaya Salad with Shrimps	Frischer grüner Papayastreifen, Karotten, Crevetten, Schweinefleisch, Koriander, frische Kräuter und gerösteten Erdnüssen, dazu Nước Mắm Dressing und Knoblauch	17.50	13	2016-01-29 07:05:09.938324	2016-01-29 07:05:09.938324
+21	\N	Mango Salat mit Crevetten	Gỏi xoài/ Vietnamese Green Mango Salad with Shrimp	Frische grüner Mango mit Karotten, Crevetten, Koriander, gerösteten Erdnüssen, Chili, und frischen Kräutern, dazu Nước Mắm   Dressing und Knoblauch	17.50	13	2016-01-29 07:13:28.365578	2016-01-29 07:13:28.365578
+22	\N	Rindwürfel gebraten	Bò lúc lắc/ Tender and spicy beef tenderloin with vegetables	Im Wok kurz angebratenes, zart-würziges Rindsfilet in Würfel mit Gemüse, dazu Nước mắm Sauce und Reis	28.50	14	2016-01-29 07:29:27.387319	2016-01-29 07:29:27.387319
+\.
+
+
+--
+-- Name: menus_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('menus_id_seq', 22, true);
+
+
+--
+-- Data for Name: parent_categories; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY parent_categories (id, parent_id, category_id, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: parent_categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('parent_categories_id_seq', 2, true);
+
+
+--
+-- Data for Name: posts; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY posts (id, title, content, type_id, created_at, updated_at, image_url) FROM stdin;
+\.
+
+
+--
+-- Name: posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('posts_id_seq', 4, true);
+
+
+--
+-- Data for Name: reservations; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY reservations (id, time_order, note, customer_name, customer_phone, customer_email, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: reservations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('reservations_id_seq', 1, true);
+
+
+--
+-- Data for Name: restaurants; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY restaurants (id, image_url, name, email, address, phone, fax, website, description, created_at, updated_at) FROM stdin;
+3	demo9.jpg	Phở Sài Gòn 52		Zürcherstrasse 91, 8952 Schlieren, Switzerland	043 495 00 22	043 495 00 22	http://phosaigon52.ch/		2016-01-27 14:06:23.259124	2016-01-27 14:06:23.259124
+\.
+
+
+--
+-- Name: restaurants_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('restaurants_id_seq', 3, true);
+
+
+--
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY schema_migrations (version) FROM stdin;
+20160127023513
+20160127023614
+20160127030529
+20160127044258
+20160127063819
+20160127065148
+20160127100020
+20160127142442
+20160127152636
+\.
+
+
+--
+-- Data for Name: types; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY types (id, title, description, created_at, updated_at) FROM stdin;
+1	News		2016-01-27 03:49:26.804362	2016-01-27 03:49:26.804362
+2	Events		2016-01-27 03:49:40.061088	2016-01-27 03:49:40.061088
+\.
+
+
+--
+-- Name: types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('types_id_seq', 2, true);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

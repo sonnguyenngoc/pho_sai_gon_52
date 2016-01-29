@@ -29,12 +29,21 @@ header.header .navigation ul.nav li a {
 .home-media .home-fixheight {
     max-height: 470px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 749px) {
+    .the-menu-item .the-menu-body {
+        overflow: hidden;
+        display: inline-block;
+        padding: 5px 70px;
+    }
+}
+@media screen and (max-width: 480px) {
     .the-menu-item .the-menu-body {
         overflow: hidden;
         display: inline-block;
         padding: 5px 0px;
     }
+}
+@media screen and (max-width: 768px) {
     .about-story .block-first, .about-story .block-last {
         margin: 20px 0;
     }
@@ -43,7 +52,7 @@ header.header .navigation ul.nav li a {
     }
 }
 .about-story .block-first .image-wrap img {
-   max-width: 300px
+   max-width: 350px;
 }
 .contact-first .contact-body .address {
     display: block;
@@ -56,4 +65,7 @@ header.header .navigation ul.nav li a {
 .no-line {
     padding-top: 0px;
     padding-bottom: 0px;
+}
+.color-white {
+    color: white;
 }

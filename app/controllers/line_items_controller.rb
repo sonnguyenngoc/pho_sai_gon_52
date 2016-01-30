@@ -24,11 +24,12 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    @line_item = LineItem.new(line_item_params)
+    menu = Menu.find(params[:menu_id])
+    @line_item = @order.add_menu(menu.id)
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item, notice: 'Line item was successfully created.' }
+        format.html { redirect_to controller: 'cart', action: 'index', notice: 'Line item was successfully created.' }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
@@ -69,6 +70,6 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:menu_id, :cart_id)
+      params.require(:line_item).permit(:menu_id, :order_id)
     end
 end

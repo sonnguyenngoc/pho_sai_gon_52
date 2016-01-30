@@ -27,58 +27,33 @@
                         <div class="your-order">
                             <h4 class="xmd text-capitalize">Your order</h4>
                             <ul class="list-product">
-                                <li>
-                                    <div class="product-image">
-                                        <img src="images/shop/img-2.jpg" alt="">
-                                    </div>
-                                    <div class="product-name">
-                                        <a href="#">Name of the Dish ( L )</a>
-                                    </div>
-                                    <div class="qty-wrap">
-                                        <span class="product-quantity">
-                                            <span class="quantity">2</span> serves.
-                                        </span>
-                                        <span class="amount">$48</span>
-                                    </div>
-                                    <div class="product-remove">
-                                        <a href="#"><i class="icon awe_close"></i></a>
-                                    </div>
-                                </li>
-                            
-                                <li>
-                                    <div class="product-image">
-                                        <img src="images/shop/img-2.jpg" alt="">
-                                    </div>
-                                    <div class="product-name">
-                                        <a href="#">Name of the Dish ( L )</a>
-                                    </div>
-                                    <div class="qty-wrap">
-                                        <span class="product-quantity">
-                                            <span class="quantity">2</span> serves.
-                                        </span>
-                                        <span class="amount">$48</span>
-                                    </div>
-                                    <div class="product-remove">
-                                        <a href="#"><i class="icon awe_close"></i></a>
-                                    </div>
-                                </li>
+                                <% @order.line_items.each do |item| %>
+                                    <li>
+                                        <div class="product-image">
+                                            <img src="images/shop/img-2.jpg" alt="">
+                                        </div>
+                                        <div class="product-name">
+                                            <a href="#"><%= item.menu.name_1 %></a>
+                                        </div>
+                                        <hr/>
+                                        <div class="qty-wrap">
+                                            <span class="amount">Mount: <strong><%= item.total_item %></strong>/<%= item.quantity %> items</span>
+                                        </div>
+                                        <div class="product-remove">
+                                            <%= link_to "<i class='icon awe_close'></i>".html_safe , {controller: "checkout", action: "index", do: 'remove_item', line_item_id: item.id } %>
+                                        </div>
+                                    </li>
+                                <% end %>
                             </ul>
                             <ul class="list-price">
                                 <li class="total">
                                     Total
-                                    <span class="amount pull-right">$120</span>
-                                </li>
-                                <li class="coupon">
-                                    Coupon
-                                    <span class="amount pull-right">-$20</span>
-                                </li>
-                                <li class="shipping">
-                                    Shipping
+                                    <span class="amount pull-right"><%= @order.total_order %></span>
                                 </li>
                             </ul>
                             <div class="payment">
                                 Payment
-                                <span class="amount pull-right">$100</span>
+                                <span class="amount pull-right"><%= @order.total_order %></span>
                             </div>
                         </div>
                     </div>
@@ -90,80 +65,54 @@
                         <div class="checkout-content">
                             
                             <h4 class="xmd text-capitalize">Your Info</h4>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <label for="billing_first_name">
-                                        First Name <abbr class="required">*</abbr>
-                                    </label>
-                                    <input type="text" id="billing_first_name">
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="billing_last_name">
-                                        Last Name <abbr class="required">*</abbr>
-                                    </label>
-                                    <input type="text" id="billing_last_name">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="billing_company">
-                                        Company Name
-                                    </label>
-                                    <input type="text" id="billing_company">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="billing_email">
-                                        Email Address <abbr class="required">*</abbr>
-                                    </label>
-                                    <input type="text" id="billing_email">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="billing_phone">
-                                        Phone <abbr class="required">*</abbr>
-                                    </label>
-                                    <input type="text" id="billing_phone">
-                                </div>
-                            </div>
-
-                            <h4 class="xmd text-capitalize">Delivery Info</h4>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>
-                                        Country <abbr class="required">*</abbr>
-                                    </label>
-                                    <div class="chosen-container-single">
-                                        <a href="#" class="chosen-single"></a>
+                            <%= form_for @customer_order do |f| %>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="billing_first_name">
+                                            First Name <abbr class="required">*</abbr>
+                                        </label>
+                                        <%= f.text_field :first_name, required: true %>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="billing_last_name">
+                                            Last Name <abbr class="required">*</abbr>
+                                        </label>
+                                        <%= f.text_field :last_name, required: true %>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="billing_company">
+                                            Company Name
+                                        </label>
+                                        <%= f.text_field :company_name %>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="billing_address_1" class="">
-                                        Address <abbr class="required">*</abbr>
-                                    </label>
-                                    <input type="text" id="billing_address_1">
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="billing_email">
+                                            Email Address
+                                        </label>
+                                        <%= f.text_field :email %>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="billing_phone">
+                                            Phone <abbr class="required">*</abbr>
+                                        </label>
+                                        <%= f.text_field :phone, required: true %>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label for="billing_city">
-                                        Town / City <abbr class="required">*</abbr>
-                                    </label>
-                                    <input type="text" id="billing_city">
+    
+                                <h4 class="xmd text-capitalize">Delivery Info</h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="billing_address_1" class="">
+                                            Address <abbr class="required">*</abbr>
+                                        </label>
+                                        <%= f.text_field :address, required: true %>
+                                    </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <label for="billing_state">
-                                        County
-                                    </label>
-                                    <input type="text" id="billing_state">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="billing_postcode">
-                                        Postcode <abbr class="required">*</abbr>
-                                    </label>
-                                    <input type="text" id="billing_postcode">
-                                </div>
-                            </div>
-
-                            <input type="submit" value="confirm order" class="awe-btn awe-btn-3 awe-btn-default text-uppercase">
+                                <%= f.submit "confirm order", class: "awe-btn awe-btn-3 awe-btn-default text-uppercase" %>
+                            <% end %>
                         </div>
                     </div>
                     <!-- END / CHECKOUT CONTENT -->

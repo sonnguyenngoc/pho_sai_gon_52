@@ -32,52 +32,36 @@
                 <div class="minicart-body">
                     <h4 class="xsm text-uppercase text-center">Your cart</h4>
                     <ul class="minicart-list">
-                        <li>
-                            <div class="product-thumb">
-                                <img src="images/shop/img-2.jpg" alt="">
-                            </div>
-                            <div class="product-name">
-                                <a href="#">Name of the Dish ( L )</a>
-                            </div>
-                            <div class="qty-wrap">
-                                <span class="product-quantity">
-                                    <span class="quantity">2</span> serves.
-                                </span>
-                                <span class="amount">$48</span>
-                            </div>
-                            <div class="product-remove">
-                                <a href="#"><i class="icon awe_close"></i></a>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="product-thumb">
-                                <img src="images/shop/img-2.jpg" alt="">
-                            </div>
-                            <div class="product-name">
-                                <a href="#">Name of the Dish ( L )</a>
-                            </div>
-                            <div class="qty-wrap">
-                                <span class="product-quantity">
-                                    <span class="quantity">2</span> serves.
-                                </span>
-                                <span class="amount">$48</span>
-                            </div>
-                            <div class="product-remove">
-                                <a href="#"><i class="icon awe_close"></i></a>
-                            </div>
-                        </li>
+                        <% @order.line_items.each do |item| %>
+                            <input type="hidden" name="line_items[id]" value="<%= item.id %>">
+                            <li>
+                                <div class="product-thumb">
+                                    <img src="images/shop/img-2.jpg" alt="">
+                                </div>
+                                <div class="product-name">
+                                    <a href="#"><%= item.menu.name_1 %></a>
+                                </div>
+                                <div class="qty-wrap">
+                                    <span class="amount">Mount: <strong><%= item.total_item %></strong>/<%= item.quantity %> items</span>
+                                </div>
+                                <div class="product-remove">
+                                    <%= link_to "<i class='icon awe_close'></i>".html_safe , {controller: "cart", action: "index", do: 'remove_item', line_item_id: item.id } %>
+                                </div>
+                            </li>
+                        <% end %>
                     </ul>
                     <div class="minicart-total">
                         Total
-                        <span class="amount pull-right">$120</span>
+                        <span class="amount pull-right"><%= @order.total_order %></span>
                     </div>
                     <div class="minicart-footer">
                         <%= link_to "View Cart", {controller: "cart", action: "index"}, {class: "awe-btn awe-btn-2 awe-btn-default text-uppercase"} %>
                     </div>
-                    <div class="minicart-footer">
-                        <%= link_to "Check out", {controller: "checkout", action: "index"}, {class: "awe-btn awe-btn-1 awe-btn-default text-uppercase"} %>
-                    </div>
+                    <% if @order.line_items.count > 0%>
+                        <div class="minicart-footer">
+                            <%= link_to "Check out", {controller: "checkout", action: "index"}, {class: "awe-btn awe-btn-1 awe-btn-default text-uppercase"} %>
+                        </div>
+                    <% end %>
 
                 </div>
             </div>

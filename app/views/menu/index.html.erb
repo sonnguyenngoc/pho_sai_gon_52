@@ -41,7 +41,7 @@
                             <!-- CATEGORIES -->
                             <div class="tab-pane fade in active" id="<%= category.id %>">
                                 <div class="row">
-                                    <% @product.each do |item| %>  
+                                    <% @menu.each do |item| %>  
                                         <% if item.category_id == category.id %>
                                             
                                         <!-- THE MENU ITEM -->
@@ -54,10 +54,13 @@
                                                     <h4 class="xsm"><%= item.name_1 %></h4>
                                                     <p>+ <%= item.name_2 %></p>
                                                     <em>+ <%= item.description %></em>
+                                                    <hr/>
+                                                    <div><%= button_to 'Add to Cart', line_items_path(menu_id: item), class: "btn btn-info" %></div>
                                                 </div>
                                                 <div class="prices">
                                                     <span class="price xsm"><%= item.price %></span>
                                                 </div>
+                                                
                                             </div>
                                         </div>
                                         <!-- END / THE MENU ITEM -->
@@ -73,7 +76,7 @@
                             <!-- CATEGORIES -->
                             <div class="tab-pane fade" id="<%= category.id %>">
                                 <div class="row">
-                                    <% @product.each do |item| %>  
+                                    <% @menu.each do |item| %>  
                                         <% if item.category_id == category.id %>
                                             
                                         <!-- THE MENU ITEM -->
@@ -86,6 +89,8 @@
                                                     <h4 class="xsm"><%= item.name_1 %></h4>
                                                     <p>+ <%= item.name_2 %></p>
                                                     <em>+ <%= item.description %></em>
+                                                    <hr/>
+                                                    <div><%= button_to 'Add to Cart', line_items_path(menu_id: item), class: "btn btn-info" %></div>
                                                 </div>
                                                 <div class="prices">
                                                     <span class="price xsm"><%= item.price %></span>

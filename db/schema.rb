@@ -11,15 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129145949) do
+ActiveRecord::Schema.define(version: 20160130022432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "carts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -37,15 +32,36 @@ ActiveRecord::Schema.define(version: 20160129145949) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "line_items", force: :cascade do |t|
+  create_table "customer_order_details", force: :cascade do |t|
+    t.integer  "customer_order_id"
     t.integer  "menu_id"
-    t.integer  "cart_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "quantity"
+    t.decimal  "price",             precision: 8, scale: 2
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
-  add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id", using: :btree
+  create_table "customer_orders", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "company_name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "address"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "menu_id"
+    t.integer  "order_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "quantity",   default: 1
+  end
+
   add_index "line_items", ["menu_id"], name: "index_line_items_on_menu_id", using: :btree
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
 
   create_table "menus", force: :cascade do |t|
     t.string   "image_url"
@@ -56,6 +72,11 @@ ActiveRecord::Schema.define(version: 20160129145949) do
     t.integer  "category_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "parent_categories", force: :cascade do |t|
@@ -104,6 +125,6 @@ ActiveRecord::Schema.define(version: 20160129145949) do
     t.datetime "updated_at",  null: false
   end
 
-  add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "menus"
+  add_foreign_key "line_items", "orders"
 end

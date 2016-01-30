@@ -20,112 +20,71 @@
     <!-- SHOP PAGE -->
     <section id="shop-page" class="shop-page section">
         <div class="container">
-            <table class="shop-table shop-cart">
-                <thead>
-                    <tr>
-                        <th class="product-remove"></th>
-                        <th class="product-name">Product</th>
-                        <th class="product-quantity">Quantity</th>
-                        <th class="product-subtotal">Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- CART ITEM -->
-                    <tr class="cart-item">
-                        <td class="product-remove">
-                            <a href="#" title="remove"><i class="icon awe_close"></i></a>
-                        </td>
-                        <td class="product-name">
-                            <div class="product-thumbnail">
-                                <a href="#"><img src="images/shop/img-3.jpg" alt=""></a>
-                            </div>
-                            <div class="product-info">
-                                <a href="#">Cereal Strawbery & Milk (L)</a>
-                                <span>$12 per serve</span>
-                            </div>
-                        </td>
-                        <td class="product-quantity">
-                            <div class="quantity">
-                                <input type="button" value="-" class="minus">
-                                <input type="number" value="1" class="qty">
-                                <input type="button" value="+" class="plus">
-                            </div>
-                        </td>
-                        <td class="product-subtotal">
-                            <span class="amount">$48</span>
-                        </td>
-                    </tr>
-                    <!-- END / CART ITEM -->
-
-                    <!-- CART ITEM -->
-                    <tr class="cart-item">
-                        <td class="product-remove">
-                            <a href="#" title="remove"><i class="icon awe_close"></i></a>
-                        </td>
-                        <td class="product-name">
-                            <div class="product-thumbnail">
-                                <a href="#"><img src="images/shop/img-4.jpg" alt=""></a>
-                            </div>
-                            <div class="product-info">
-                                <a href="#">Cereal Strawbery & Milk (L)</a>
-                                <span>$12 per serve</span>
-                            </div>
-                        </td>
-                        <td class="product-quantity">
-                            <div class="quantity">
-                                <input type="button" value="-" class="minus">
-                                <input type="number" value="1" class="qty">
-                                <input type="button" value="+" class="plus">
-                            </div>
-                        </td>
-                        <td class="product-subtotal">
-                            <span class="amount">$48</span>
-                        </td>
-                    </tr>
-                    <!-- END / CART ITEM -->
-
-                    <!-- CART ITEM -->
-                    <tr class="cart-item">
-                        <td class="product-remove">
-                            <a href="#" title="remove"><i class="icon awe_close"></i></a>
-                        </td>
-                        <td class="product-name">
-                            <div class="product-thumbnail">
-                                <a href="#"><img src="images/shop/img-5.jpg" alt=""></a>
-                            </div>
-                            <div class="product-info">
-                                <a href="#">Cereal Strawbery & Milk (L)</a>
-                                <span>$12 per serve</span>
-                            </div>
-                        </td>
-                        <td class="product-quantity">
-                            <div class="quantity">
-                                <input type="button" value="-" class="minus">
-                                <input type="number" value="1" class="qty">
-                                <input type="button" value="+" class="plus">
-                            </div>
-                        </td>
-                        <td class="product-subtotal">
-                            <span class="amount">$48</span>
-                        </td>
-                    </tr>
-                    <!-- END / CART ITEM -->
-                </tbody>
-            </table>
-            <div class="cart-footer">
-                <div class="coupon-code">
-                     <%= button_to "Empty Cart", "#", class: "awe-btn awe-btn-2 awe-btn-plus text-uppercase", method: :delete %>
+            <%= form_for @order, url: '' do |f| %>
+                <table class="shop-table shop-cart">
+                    <thead>
+                        <tr>
+                            <th class="product-remove"></th>
+                            <th class="product-name">Product</th>
+                            <th class="product-quantity">Quantity</th>
+                            <th class="product-subtotal">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <% @order.line_items.each do |item| %>
+                            <!-- CART ITEM -->
+                            <tr class="cart-item">
+                                <input type="hidden" name="line_items[id]" value="<%= item.id %>">
+                                
+                                <td class="product-remove">
+                                    <%= link_to "<i class='icon awe_close'></i>".html_safe , {controller: "cart", action: "index", do: 'remove_item', line_item_id: item.id } %>
+                                </td>
+                                
+                                <td class="product-name">
+                                    <div class="product-thumbnail">
+                                        <a href="#"><img src="images/shop/img-3.jpg" alt=""></a>
+                                    </div>
+                                    <div class="product-info">
+                                        <h4 class="xsm"><%= item.menu.name_1 %></h4>
+                                        <p>Price: <%= number_with_delimiter item.menu.price %></p>
+                                    </div>
+                                </td>
+                                
+                                <td class="product-quantity">
+                                    <div class="quantity">
+                                        <input type="button" value="-" class="minus">
+                                        <input type="text" name="line_items[quantity]" value="<%= item.quantity %>" class="qty" >
+                                        <input type="button" value="+" class="plus">
+                                    </div>
+                                </td>
+                                
+                                <td class="product-subtotal">
+                                    <span class="amount"><%=  item.total_item %></span>
+                                </td>
+                            </tr>
+                            <!-- END / CART ITEM -->
+                        <% end %>
+                        
+                    </tbody>
+                </table>
+                <div class="cart-footer">
+                    <div class="coupon-code">
+                        <%= link_to "Empty Cart", {controller: "cart", action: "clear_items", id: @order.id}, class: "awe-btn awe-btn-2 awe-btn-plus text-uppercase", method: :delete  %>
+                    </div>
+                    <div class="total">
+                        <span>Total Order:</span>
+                        <span class="amount"><%= @order.total_order %></span>
+                    </div>
                 </div>
-                <div class="total">
-                    <span>Total Order:</span>
-                    <span class="amount">$120</span>
-                </div>
-            </div>
-            <div class="cart-submit text-center">
-                <div class="form-actions">
-                    <%= link_to "START CHECKOUT", {controller: "checkout", action: "index"}, {class: "awe-btn awe-btn-3 awe-btn-default text-uppercase"} %>
-                </div>
-            </div>
+                <% if @order.line_items.count > 0 %>
+                    <div class="cart-submit text-center">
+                        <div class="form-actions">
+                            <%= link_to "START CHECKOUT", {controller: "checkout", action: "index"}, {class: "awe-btn awe-btn-3 awe-btn-default text-uppercase"} %>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
         </div>
     </section>
     <!-- END / SHOP PAGE -->

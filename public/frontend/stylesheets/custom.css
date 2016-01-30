@@ -69,3 +69,6 @@ header.header .navigation ul.nav li a {
 .color-white {
     color: white;
 }
+.minicart-wrap .minicart-body .minicart-list li .product-remove {
+    right: 10px;
+}

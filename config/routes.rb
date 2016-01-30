@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :customer_orders
   resources :line_items
+  resources :orders
   root 'welcome#index'
   get 'info' => "info#index", as: :info
   get 'home' => "home#index", as: :home
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
   get 'demo_logo' => "demo_logo#index", as: :demo_logo
   get 'cart' => "cart#index", as: :cart
   get 'checkout' => "checkout#index", as: :checkout
+  get 'clear_items' => "cart#clear_items"
   
   namespace :admin, path: "phosg52" do
     get 'main' => "main#index", as: :main
@@ -26,7 +29,6 @@ Rails.application.routes.draw do
     resources :posts
     resources :menus
     resources :contacts
-    
-    resources :carts
-  end
+    resources :orders
+    end
 end

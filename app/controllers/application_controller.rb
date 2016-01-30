@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
   layout :layout_by_resource
   protect_from_forgery with: :exception
   
+  include CurrentOrder
+  before_action :set_order, only: [:index, :create, :clear_items]
+  
   protected
   def layout_by_resource
     if controller_name == 'home' || controller_name == 'reservation' ||

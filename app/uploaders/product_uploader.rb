@@ -35,15 +35,17 @@ class ProductUploader < CarrierWave::Uploader::Base
   # version :thumb do
   #   process :resize_to_fit => [50, 50]
   # end
-  
-  version :image_small do
-    process :resize_to_fit => [82, 56]
+  version :image_product_xsmall do
+    process :resize_to_fit => [40, 40]
   end
-  version :image_medium do
-    process :resize_to_fit => [250, 150]
+  version :image_product_small do
+    process :resize_to_fit => [82, 52]
   end
-  version :image_product do
-    process :resize_to_fit => [246, 246]
+  version :image_product_medium do
+    process :resize_to_fit => [100, 100]
+  end
+  version :image_product_large do
+    process :resize_to_fit => [160, 160]
   end
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

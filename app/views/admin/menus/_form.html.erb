@@ -17,7 +17,7 @@
             <div class="col-lg-10">
               <%= f.file_field :image_url, class: "file-styled" %>
               <span class="help-block">Accepted formats: gif, png, jpg. Size: 246x246</span>
-              <%= image_tag(@menu.image_url, size: "250x150", alt: "Image of Product", class: "img-rouded") %>
+              <%= image_tag(@menu.image_url.image_product_large, size: "160x160",alt: "Image of Product", class: "img-rouded") %>
             </div>
         </div>
         

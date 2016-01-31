@@ -43,7 +43,7 @@
                                 
                                 <td class="product-name">
                                     <div class="product-thumbnail">
-                                        <a href="#"><img src="images/shop/img-3.jpg" alt=""></a>
+                                        <a href="#"><img src="<%= item.menu.image_url.image_product_large if item.menu.image_url? %>" alt=""></a>
                                     </div>
                                     <div class="product-info">
                                         <h4 class="xsm"><%= item.menu.name_1 %></h4>

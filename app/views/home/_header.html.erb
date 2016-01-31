@@ -36,7 +36,7 @@
                             <input type="hidden" name="line_items[id]" value="<%= item.id %>">
                             <li>
                                 <div class="product-thumb">
-                                    <img src="images/shop/img-2.jpg" alt="">
+                                    <img src="<%= item.menu.image_url.image_product_xsmall if item.menu.image_url? %>" alt="">
                                 </div>
                                 <div class="product-name">
                                     <a href="#"><%= item.menu.name_1 %></a>

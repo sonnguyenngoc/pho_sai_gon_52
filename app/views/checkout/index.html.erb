@@ -30,7 +30,7 @@
                                 <% @order.line_items.each do |item| %>
                                     <li>
                                         <div class="product-image">
-                                            <img src="images/shop/img-2.jpg" alt="">
+                                            <img src="<%= item.menu.image_url.image_product_xsmall if item.menu.image_url? %>" alt="">
                                         </div>
                                         <div class="product-name">
                                             <a href="#"><%= item.menu.name_1 %></a>

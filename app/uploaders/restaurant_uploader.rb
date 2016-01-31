@@ -36,10 +36,10 @@ class RestaurantUploader < CarrierWave::Uploader::Base
   #   process :resize_to_fit => [50, 50]
   # end
   version :image_small do
-    process :resize_to_fit => [82, 56]
+    process :resize_to_fit => [82, 82]
   end
   version :image_medium do
-    process :resize_to_fill => [250, 150]
+    process :resize_to_fill => [200, 200]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

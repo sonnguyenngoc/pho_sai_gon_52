@@ -29,6 +29,7 @@
                             <li><a href="#<%= category.id %>" role="tab" data-toggle="tab"><%= category.name %></a></li>
                         <% end %>
                     <% end %>
+                    <li><a href="#drink" role="tab" data-toggle="tab">Drink</a></li>
                 </ul>
             </div>
         </div>
@@ -107,6 +108,43 @@
                             <!-- END / CATEGORIES -->
                         <% end %>
                     <% end %>
+                    
+                    <!-- CATEGORIES -->
+                    <div class="tab-pane fade" id="drink">
+                        <div class="row">
+                            <% @category_drink.each do |category| %>
+                                <!-- THE MENU ITEM -->
+                                <div class="col-lg-12">
+                                    <h5><strong><%= category.name %></strong></h5>
+                                </div>
+                                <!-- END / THE MENU ITEM -->
+                                 
+                                <% @menu.each do |item| %>  
+                                    <% if item.category_id == category.id %>
+                                        
+                                    <!-- THE MENU ITEM -->
+                                    <div class="col-lg-12">
+                                        <div class="the-menu-item">
+                                            <div class="the-menu-body">
+                                                <h4 class="xsm"><%= item.name_1 %></h4>
+                                                <% if item.name_2.nil? %><p>+ <%= item.name_2 %></p><% end %>
+                                                <% if item.description.nil? %><em>+ <%= item.description %></em><% end %>
+                                                <div><%= button_to 'Add to Cart', line_items_path(menu_id: item), class: "btn btn-info" %></div>
+                                            </div>
+                                            <div class="prices">
+                                                <span class="price xsm"><%= item.price %></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END / THE MENU ITEM -->
+                                        
+                                    <% end %>
+                                <% end %>
+                            <% end %>
+                        </div> 
+                    </div>
+                    <!-- END / CATEGORIES -->
+                    
                 </div>
             </div>
         </div>

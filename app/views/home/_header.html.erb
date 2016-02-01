@@ -57,7 +57,7 @@
                     <div class="minicart-footer">
                         <%= link_to "View Cart", {controller: "cart", action: "index"}, {class: "awe-btn awe-btn-2 awe-btn-default text-uppercase"} %>
                     </div>
-                    <% if @order.line_items.count > 0%>
+                    <% if @order.line_items.count > 0 %>
                         <div class="minicart-footer">
                             <%= link_to "Check out", {controller: "checkout", action: "index"}, {class: "awe-btn awe-btn-1 awe-btn-default text-uppercase"} %>
                         </div>

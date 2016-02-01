@@ -8,4 +8,8 @@ class Category < ActiveRecord::Base
     self.level = lvl
     self.save
   end
+  
+  def get_food_menu
+    self.where(categories: { is_drink: 'False' }).order("created_at ASC")
+  end
 end

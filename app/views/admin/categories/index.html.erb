@@ -84,7 +84,18 @@
 									<% if item.parent.count == 0 %>
 										<% item.update_level(1) %>
 											<tr>
-												<td><%= link_to item.name, [:admin, item] %></td>
+												<td>
+													<%= link_to item.name, [:admin, item] %><br/>
+													<% if item.is_drink == "True" %>
+														<%= content_tag(:p, class: "form-control-static") do %>
+															Is Drink: <span class="label label-info"><%= item.is_drink %></span>
+														<% end %>
+													<% else %>
+														<%= content_tag(:p, class: "form-control-static") do %>
+															Is Drink: <span class="label label-danger"><%= item.is_drink %></span>
+														<% end %>
+													<% end %>
+												</td>
 												<td><%= truncate(strip_tags(item.description), length: 50) %></td>
 												<td><span class="label label-success">Active</span></td>
 												<td><%= item.created_at.strftime("%d/%m/%Y") %></td>

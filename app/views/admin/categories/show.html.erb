@@ -86,10 +86,16 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <%= label "", "Parent Category: ", class: "control-label col-sm-2 text-semibold" %>
+                                <%= label "", "Is Drink: ", class: "control-label col-sm-2 text-semibold" %>
                                 <div class="col-sm-10">
-                                    <%= content_tag(:p, class: "form-control-static") do %>
-                                      
+                                    <% if @category.is_drink == "True" %>
+                                        <%= content_tag(:p, class: "form-control-static") do %>
+                                            <span class="label label-info"><%= @category.is_drink %></span>
+                                        <% end %>
+                                    <% else %>
+                                        <%= content_tag(:p, class: "form-control-static") do %>
+                                            <span class="label label-danger"><%= @category.is_drink %></span>
+                                        <% end %>
                                     <% end %>
                                 </div>
                             </div>

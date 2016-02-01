@@ -50,8 +50,8 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
-                        <li><a href="#"><i class="icon-home2 position-left"></i> Home</a></li>
-                        <li><a href="#">Order, Reservation & Contact</a></li>
+                        <li><%= link_to "<i class='icon-home2 position-left'></i> Home".html_safe, {controller: "main", action: "index"} %></li>
+                        <li><%= link_to "Order, Reservation & Contact", admin_contacts_path %></li>
                         <li class="active">Contacts Management</li>
                     </ul>
                 </div>

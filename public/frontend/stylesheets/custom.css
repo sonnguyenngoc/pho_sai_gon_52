@@ -72,3 +72,12 @@ header.header .navigation ul.nav li a {
 .minicart-wrap .minicart-body .minicart-list li .product-remove {
     right: 10px;
 }
+.bx-controls .bx-pager {
+    bottom: 30px;
+}
+.border-product {
+    border: 1px solid black;
+}
+.about-story .block-first, .about-story .block-last {
+    margin: 40px 0;
+}

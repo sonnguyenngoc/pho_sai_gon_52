@@ -50,8 +50,8 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
-                        <li><a href="#"><i class="icon-home2 position-left"></i> Home</a></li>
-                        <li><a href="#">Info's Restaurant</a></li>
+                        <li><%= link_to "<i class='icon-home2 position-left'></i> Home".html_safe, {controller: "main", action: "index"} %></li>
+                        <li><%= link_to "Info's Restaurant", admin_restaurants_path %></li>
                         <li class="active">Restaurant Management</li>
                     </ul>
                 </div>
@@ -63,8 +63,6 @@
                 <!-- Basic datatable -->
                 <div class="panel panel-flat">
                     <div class="panel-heading">
-                        <%= link_to '<i class="glyphicon glyphicon-plus"></i>  New Info'.html_safe, new_admin_restaurant_path, class: 'btn bg-teal' %>
-                        <hr/>
                         <h5 class="panel-title">Info's Management</h5>
                     </div>
                     
@@ -103,9 +101,6 @@
                                                 <ul class="dropdown-menu dropdown-menu-right">
                                                     <li>
                                                       <%= link_to '<i class="glyphicon glyphicon-edit"></i> Edit'.html_safe, edit_admin_restaurant_path(item) %>
-                                                    </li>
-                                                    <li>
-                                                      <%= link_to '<i class="icon-cross2"></i> Destroy'.html_safe, [:admin, item], method: :delete, data: {confirm: 'Are you sure?'} %>
                                                     </li>
                                                 </ul>
                                             </li>

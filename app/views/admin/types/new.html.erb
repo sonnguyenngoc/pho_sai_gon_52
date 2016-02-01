@@ -50,9 +50,9 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
-                        <li><a href="#"><i class="icon-home2 position-left"></i> Home</a></li>
-                        <li><a href="#">News & Events</a></li>
-                        <li><a href="#">Types Management</a></li>
+                        <li><%= link_to "<i class='icon-home2 position-left'></i> Home".html_safe, {controller: "main", action: "index"} %></li>
+                        <li><%= link_to "News & Events", admin_types_path %></li>
+                        <li><%= link_to "Types Management", admin_types_path %></li>
                         <li class="active">New Type</li>
                     </ul>
                 </div>

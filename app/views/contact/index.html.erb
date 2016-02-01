@@ -29,7 +29,7 @@
                             <span class="md">Find Us Here</span>
                             <div class="location-1">
                                 <i class="icon awe_map_marker"></i>
-                                <strong>Location: Zürcherstrasse 91, 8952 Schlieren, Switzerland</strong>
+                                <strong>Location: <%= @info.address %></strong>
                             </div>
                             <div class="location-1">
                                 <i class="icon awe_map_marker"></i>
@@ -73,12 +73,12 @@
                                 <h3 class="lg text-uppercase">CONTACT US</h3>
                                 <hr class="_hr">
                                 <address class="address-wrap">
-                                    <span class="phone">PHỞ SÀI GÒN 52</span>
-                                    <span class="color-white">Zürcherstrasse 91, 8952 Schlieren, Switzerland</span>
-                                    <span class="address">Email: phosaigon52@gmail.com</span>
-                                    <span class="address">Website: phosaigon52.ch</span>
-                                    <span class="address">Telefon: 043 495 00 22</span>
-                                    <span class="address">Fax: 043 495 00 22</span>
+                                    <span class="phone"><%= @info.name %></span>
+                                    <span class="color-white"><%= @info.address %></span>
+                                    <span class="address">Email: <%= @info.email %></span>
+                                    <span class="address">Website: <%= @info.website %></span>
+                                    <span class="address">Telefon: <%= @info.phone %></span>
+                                    <span class="address">Fax: <%= @info.fax %></span>
                                 </address>
                             </div>
 

@@ -32,14 +32,14 @@
                         <div class="col-sm-8">
                             <div class="item-event-body">
                                 <div class="item-event-title">
-                                    <h3>Phở Sài Gòn 52</h3>
+                                    <h3><%= @info.name %></h3>
                                     <h5>Take Away - Asia Buffet - Catering - Lieferung</h5>
                                 </div>
                                 <div class="item-event-content">
-                                    <p>Address: Zürcherstrasse 91, 8952 Schlieren, Switzerland</p>
-                                    <p>Telefon: 043 495 00 22 - Fax: 043 495 00 22</p>
-                                    <p>Email: phosaigon52@gmail.com</p>
-                                    <p>Website: <%= link_to "phosaigon52.ch", "http://phosaigon52.ch/", target: "_blank" %></p>
+                                    <p>Address: <%= @info.address %></p>
+                                    <p>Telefon: <%= @info.phone %> - Fax: <%= @info.fax %></p>
+                                    <p>Email: <%= @info.email %></p>
+                                    <p>Website: <%= link_to @info.website, @info.website, target: "_blank" %></p>
                                     <p>See location: <%= link_to "here", "https://www.google.com/maps/place/Z%C3%BCrcherstrasse+91,+8952+Schlieren,+Thu%E1%BB%B5+S%C4%A9/@47.3981939,8.4569929,17z/data=!3m1!4b1!4m2!3m1!1s0x47900b8eb1097ab9:0x190058072b37d7a4", target: "_blank" %></p>
                                 </div>
                             </div>

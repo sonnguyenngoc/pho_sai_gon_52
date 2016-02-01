@@ -50,9 +50,9 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
-                        <li><a href="#"><i class="icon-home2 position-left"></i> Home</a></li>
-                        <li><a href="#">Restaurant Menu</a></li>
-                        <li><a href="#">Product Management</a></li>
+                        <li><%= link_to "<i class='icon-home2 position-left'></i> Home".html_safe, {controller: "main", action: "index"} %></li>
+                        <li><%= link_to "Restaurant Menu", admin_menus_path %></li>
+                        <li><%= link_to "Product Management", admin_menus_path %></li>
                         <li class="active">Edit Product of Menu</li>
                     </ul>
                 </div>

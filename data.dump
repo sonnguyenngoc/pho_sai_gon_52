@@ -111,7 +111,6 @@ COPY menus (id, image_url, name_1, name_2, description, price, category_id, crea
 22	127.jpg	Rindwürfel gebraten	Bò lúc lắc/ Tender and spicy beef tenderloin with vegetables	Im Wok kurz angebratenes, zart-würziges Rindsfilet in Würfel mit Gemüse, dazu Nước mắm Sauce und Reis	28.50	14	2016-01-29 07:29:27.387319	2016-01-31 13:26:04.656954
 25	130.jpg	Geschnetzeltes Rindfleisch mit Lauch und Chili	Bò xào Tứ Xuyên (Szechuan)/ Sliced beef with leek and chili		24.50	14	2016-01-29 07:57:15.791461	2016-01-31 13:32:15.217327
 24	129.jpg	Rindgebraten mit Reisnudeln	Bún bò nướng/ in short fried beef fillet with rice noodles 	In kurzen gebratenen Rindsfilet mit Zitronengras, serviert mit Reisnudeln	24.50	14	2016-01-29 07:51:24.320005	2016-01-31 13:26:58.348291
-23	129.jpg	Bun bo xao	Bún bò xào/ Sauted beef on rice noodles 	Sautiertes Rindfleisch auf Reisnudeln mit  grünem Salat, Gurken, Sojasprossen, Pfefferminze, gerösteten Zwiebeln, Erdnusssplittern, serviert mit Fischsauce	23.50	14	2016-01-29 07:39:45.521648	2016-01-31 13:29:21.678118
 42	131.jpg		Bò xào mì		23.50	14	2016-01-29 09:22:21.083419	2016-01-31 13:33:53.775097
 43	132.jpg		Bò xào sả ớt		25.50	14	2016-01-29 09:23:14.477152	2016-01-31 13:34:07.694351
 35	135.jpg	Knusprig gebratener Fisch und Fisch Sauer mango + gedämpften Reis	Cá chiên giòn		\N	15	2016-01-29 08:59:30.927251	2016-01-31 13:36:05.90221
@@ -130,10 +129,10 @@ COPY menus (id, image_url, name_1, name_2, description, price, category_id, crea
 47	150.jpg		Heo nướng		21.50	18	2016-01-29 09:27:10.795562	2016-01-31 13:44:36.392356
 49	160.jpg	Pho Bac	Phở Bắc/ Beef soup with rice noodle and Beef	Fleischbrühe mit Reisnudeln und Rindshuft	20.50	19	2016-01-29 09:32:38.379343	2016-01-31 13:45:17.791087
 50	161.jpg	Bun bo Hue	Bún bò Huế/ Beef soup with lemongrass and chili, rice noodle and beef	Fleischbrühe mit Zitronengras chili pikant gewürzt mit feinen Reisnudeln und Rindhuft	20.50	19	2016-01-29 09:36:05.488284	2016-01-31 13:45:35.716795
-56	\N		Mục nướng muối ớt		\N	20	2016-01-29 09:56:36.879293	2016-01-29 09:56:36.879293
-61	\N		Bánh mì Việt Nam		12.00	22	2016-01-29 10:04:18.004536	2016-01-29 10:04:18.004536
 4	110.jpg	Sommerrollen mit Crevetten (2 Stk.)	Gỏi cuốn tôm / Summerrolls with Shrimps	Reisnudeln, Salat, Sojasprossen, vietnamesischen Kräutern, dazu Hoi-sin	10.50	11	2016-01-28 02:38:07.158861	2016-01-31 13:15:01.480219
 20	124.jpg	Papaya Salat	Gỏi đu đủ/ Vietnamese Papaya Salad with Shrimps	Frischer grüner Papayastreifen, Karotten, Crevetten, Schweinefleisch, Koriander, frische Kräuter und gerösteten Erdnüssen, dazu Nước Mắm Dressing und Knoblauch	17.50	13	2016-01-29 07:05:09.938324	2016-01-31 13:23:28.026862
+23	128.jpg	Bun bo xao	Bún bò xào/ Sauted beef on rice noodles 	Sautiertes Rindfleisch auf Reisnudeln mit  grünem Salat, Gurken, Sojasprossen, Pfefferminze, gerösteten Zwiebeln, Erdnusssplittern, serviert mit Fischsauce	23.50	14	2016-01-29 07:39:45.521648	2016-01-31 16:28:18.784594
+61	173.jpg		Bánh mì Việt Nam		12.00	22	2016-01-29 10:04:18.004536	2016-01-31 16:31:29.440608
 26	134.jpg	Fisch in Tontöpfen	Cá kho tộ/ "Pangasius fish" in caramel sauce	Pangasius Fisch in Karamellsauce gekocht klingt nicht appetitlich und doch ist es eine der leckersten Sachen. Cá kho, um gehört zu jenen beliebt, authentische vietnamesische Schmorgerichte, die in Tontöpfen gekocht wird. Schalotten und Knoblauch zusammen mit der Fischsauce und Karamellsauce verleihen unglaublich herzhaften süßen Aromen. Cá Kho ist hervorragend, und mit gedämpftem Reis und Gurken gepaart	18.50	15	2016-01-29 08:15:15.089387	2016-01-31 13:35:50.771261
 51	162.jpg	Hu Tieu	Hủ tiếu/ Chicken soup with rice noodle, pork and shrimp	Fleischbrühe mit Reisnudeln, Schweinefleisch und Crevetten	20.50	19	2016-01-29 09:38:59.574197	2016-01-31 13:45:51.198647
 52	163.jpg	Mien Ga	Miến gà/ Glass noodle soup with chicken breast	Glasnudelnsuppe mit Pouletbruststückchen	19.50	19	2016-01-29 09:41:26.223282	2016-01-31 13:46:07.257555
@@ -154,7 +153,9 @@ COPY menus (id, image_url, name_1, name_2, description, price, category_id, crea
 --
 
 COPY orders (id, created_at, updated_at) FROM stdin;
-1	2016-01-31 13:11:18.245929	2016-01-31 13:11:18.245929
+1	2016-01-31 16:24:16.05998	2016-01-31 16:24:16.05998
+2	2016-02-01 01:23:29.685995	2016-02-01 01:23:29.685995
+3	2016-02-01 01:49:51.657893	2016-02-01 01:49:51.657893
 \.
 
 
@@ -184,7 +185,7 @@ SELECT pg_catalog.setval('menus_id_seq', 63, true);
 -- Name: orders_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
 --
 
-SELECT pg_catalog.setval('orders_id_seq', 1, true);
+SELECT pg_catalog.setval('orders_id_seq', 3, true);
 
 
 --

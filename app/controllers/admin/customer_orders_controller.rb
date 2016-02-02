@@ -1,4 +1,4 @@
-class CustomerOrdersController < ApplicationController
+class Admin::CustomerOrdersController < ApplicationController
   before_action :set_customer_order, only: [:show, :edit, :update, :destroy]
 
   # GET /customer_orders
@@ -42,7 +42,7 @@ class CustomerOrdersController < ApplicationController
   def update
     respond_to do |format|
       if @customer_order.update(customer_order_params)
-        format.html { redirect_to @customer_order, notice: 'Customer order was successfully updated.' }
+        format.html { redirect_to [:admin, @customer_order], notice: 'Customer order was successfully updated.' }
         format.json { render :show, status: :ok, location: @customer_order }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class CustomerOrdersController < ApplicationController
   def destroy
     @customer_order.destroy
     respond_to do |format|
-      format.html { redirect_to customer_orders_url, notice: 'Customer order was successfully destroyed.' }
+      format.html { redirect_to admin_customer_orders_url, notice: 'Customer order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

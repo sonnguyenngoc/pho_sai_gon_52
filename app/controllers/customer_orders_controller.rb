@@ -8,6 +8,7 @@ class CustomerOrdersController < ApplicationController
     respond_to do |format|
       if @customer_order.save
         @customer_order.save_from_order(@order)
+        CustomerMailer.customer_order_email(@customer_order).deliver_now
         Order.destroy(session[:order_id])
         session[:order_id] = nil
         format.html { redirect_to root_path }

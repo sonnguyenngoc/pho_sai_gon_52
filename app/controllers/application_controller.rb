@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
           'frontend'
     elsif controller_name == 'main' || controller_name == 'categories' || controller_name == 'types' ||
         controller_name == 'restaurants' || controller_name == 'reservations' || controller_name = 'posts' ||
-        controller_name == 'menus' || controller_name == 'contacts'
+        controller_name == 'menus' || controller_name == 'contacts' || controller_name == 'customer_orders'
           'backend'
     end
   end

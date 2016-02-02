@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi Pho Sai Gon 52, </h1>
+    <p>This's my contact info:</p>
+    <p>
+      My name's: <%= @contact.name %>
+    </p>
+    <p>
+      My email's: <%= @contact.email %>
+    </p>
+    <p>
+      This's my message: <%= @contact.message.html_safe %>
+    </p>
+    <p>
+      Time to send contact: <%= @contact.created_at.strftime("%Y/%m/%d - %I:%M") %>
+    </p>
+  </body>
+</html>

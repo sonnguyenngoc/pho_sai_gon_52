@@ -1,0 +1,196 @@
+<!-- Main navbar -->
+    <%= render "/admin/main/navbar" %>
+<!-- /main navbar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main">
+            <div class="sidebar-content">
+
+                <!-- User menu -->
+                    <%= render '/admin/main/user_menu' %>
+                <!-- /user menu -->
+
+
+                <!-- Main navigation -->
+                <div class="sidebar-category sidebar-category-visible">
+                    <div class="category-content no-padding">
+                        <ul class="navigation navigation-main navigation-accordion">
+
+                            <!-- Main menu-->
+                                <%= render "/admin/main/main_menu" %>
+                            <!-- /main menu -->
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- /main navigation -->
+
+            </div>
+        </div>
+        <!-- /main sidebar -->
+
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> - Dashboard</h4>
+                    </div>
+                </div>
+
+                <div class="breadcrumb-line">
+                    <ul class="breadcrumb">
+                        <li><%= link_to "<i class='icon-home2 position-left'></i> Home".html_safe, {controller: "main", action: "index"} %></li>
+                        <li><%= link_to "Order, Reservation & Contact", admin_customer_orders_path %></li>
+                        <li><%= link_to "Orders Management", admin_customer_orders_path %></li>
+                        <li class="active"><%= @customer_order.last_name %></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /page header -->
+            
+            <!-- Content area -->
+            <div class="content">
+                <!-- Basic datatable -->
+                <div class="panel panel-flat">
+                    <div class="panel-heading">
+                        <h5 class="panel-title"><span class="text-semibold"><%= @customer_order.first_name %></span></h5><br/>
+                        
+                        <p class="color-red"><%= notice %></p><br/>
+                        
+                        <form class="form-horizontal" role="form">
+                           
+                            <div class="form-group">
+                                <%= label "", "First Name: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @customer_order.first_name %>
+                                    <% end %>
+                                </div>
+                            </div>
+                                <div class="form-group">
+                                <%= label "", "Last Name: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @customer_order.last_name %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Phone: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @customer_order.phone %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Email: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @customer_order.email %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Address: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @customer_order.address %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Company Name: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @customer_order.company_name %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Created At: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @customer_order.created_at.strftime("%d/%m/%Y") %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Product List: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <article>
+                                        <table class="table">
+                                          <thead>
+                                              <tr>
+                                                  <th>Product's Name</th>
+                                                  <th>Price</th>
+                                                  <th class="text-center">Quantity</th>
+                                                  <th>SubTotal</th>
+                                              </tr>
+                                          </thead>
+                                          
+                                          <tbody>
+                                                <% if @customer_order.customer_order_details.any? %>
+                                                    <% @customer_order.customer_order_details.each_with_index do |item,index| %>
+                                                        <tr class="<%= (index%2 == 1 ? "" : "alpha-teal") %>">
+                                                            <td><%= item.menu.name_1 %></td>
+                                                            <td><%= number_with_delimiter item.price.to_f %></td>
+                                                            <td class="text-center"><%= item.quantity %></td>
+                                                            <td><span class="label label-flat border-success text-success-600 font-small"><%= number_with_delimiter item.sub_total.to_f %> đ</span></td>
+                                                        </tr>
+                                                    <% end %>
+                                                <% else %>
+                                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                                        None Available
+                                                    <% end %>
+                                                <% end %>
+                                          </tbody>	
+                                        </table>
+                                        <div class="pull-right">
+                                            <strong>Sum total: </strong><span class="label label-flat border-info text-info-600 font-medium"><%= number_with_delimiter @customer_order.total_order.to_f %> đ</span></p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </form>
+                        <%= link_to '<i class="icon-backward2 position-left"></i> Back'.html_safe, admin_customer_orders_path, class: "btn btn-primary" %>
+                    </div>
+                </div>
+                <!-- /basic datatable -->
+
+                <!-- Footer -->
+                <div class="footer text-muted">
+                    <%= render "/admin/main/footer" %>
+                </div>
+                <!-- /footer -->
+                
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+</div>
+<!-- /page container -->
+
+<!-- Theme JS files -->
+<%= javascript_include_tag '/backend/assets/js/plugins/tables/datatables/datatables.min.js' %>
+<%= javascript_include_tag '/backend/assets/js/plugins/forms/selects/select2.min.js' %>
+
+<%= javascript_include_tag '/backend/assets/js/core/app.js' %>
+<%= javascript_include_tag '/backend/assets/javascripts/datatables_types.js' %>
+<!-- /theme JS files -->

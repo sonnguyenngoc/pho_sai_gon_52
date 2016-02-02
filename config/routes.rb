@@ -30,5 +30,6 @@ Rails.application.routes.draw do
     resources :menus
     resources :contacts
     resources :orders
+    resources :customer_orders
     end
 end

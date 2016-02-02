@@ -28,6 +28,7 @@ class Admin::ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
+        CustomerMailer.contact_email(@contact).deliver_now
         format.html { redirect_to root_path }
         format.json { render :show, status: :created, location: @contact }
       else

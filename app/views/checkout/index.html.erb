@@ -40,7 +40,7 @@
                                             <span class="amount">Mount: <strong><%= item.total_item %></strong>/<%= item.quantity %> items</span>
                                         </div>
                                         <div class="product-remove">
-                                            <%= link_to "<i class='icon awe_close'></i>".html_safe , {controller: "checkout", action: "index", do: 'remove_item', line_item_id: item.id } %>
+                                            <%= link_to "<i class='icon awe_close'></i>".html_safe , {controller: "cart", action: "index", do: 'remove_item', line_item_id: item.id } %>
                                         </div>
                                     </li>
                                 <% end %>
@@ -90,9 +90,9 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="billing_email">
-                                            Email Address
+                                            Email Address <abbr class="required">*</abbr>
                                         </label>
-                                        <%= f.text_field :email %>
+                                        <%= f.text_field :email, required: true %>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="billing_phone">

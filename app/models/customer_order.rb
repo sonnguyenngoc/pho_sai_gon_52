@@ -7,4 +7,8 @@ class CustomerOrder < ActiveRecord::Base
       self.customer_order_details.create(menu_id: item.menu_id, quantity: item.quantity)
     end
   end
+  
+  def total_order
+    customer_order_details.to_a.sum { |item| item.sub_total }
+  end
 end

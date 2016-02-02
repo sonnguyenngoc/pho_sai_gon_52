@@ -1,0 +1,144 @@
+<!-- Main navbar -->
+    <%= render "/admin/main/navbar" %>
+<!-- /main navbar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main">
+            <div class="sidebar-content">
+
+                <!-- User menu -->
+                    <%= render '/admin/main/user_menu' %>
+                <!-- /user menu -->
+
+
+                <!-- Main navigation -->
+                <div class="sidebar-category sidebar-category-visible">
+                    <div class="category-content no-padding">
+                        <ul class="navigation navigation-main navigation-accordion">
+
+                            <!-- Main menu-->
+                                <%= render "/admin/main/main_menu" %>
+                            <!-- /main menu -->
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- /main navigation -->
+
+            </div>
+        </div>
+        <!-- /main sidebar -->
+
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> - Dashboard</h4>
+                    </div>
+                </div>
+
+                <div class="breadcrumb-line">
+                    <ul class="breadcrumb">
+                        <li><%= link_to "<i class='icon-home2 position-left'></i> Home".html_safe, {controller: "main", action: "index"} %></li>
+                        <li><%= link_to "Order, Reservation & Contact", admin_customer_orders_path %></li>
+                        <li class="active">Orders Management</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /page header -->
+            
+            <!-- Content area -->
+            <div class="content">
+                <!-- Basic datatable -->
+                <div class="panel panel-flat">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">Orders Management</h5>
+                    </div>
+                    
+                    <table class="table datatable-customer-orders">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>Company Name</th>
+                                <th>Created At</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @customer_orders.each do |item| %>
+                                <tr>
+                                    <td>
+                                      <%= link_to item.first_name, [:admin, item] %><br/>
+                                      <span class="label label-info"><%= item.customer_order_details.count %> items</span>
+                                    </td>
+                                    <td><%= item.last_name %></td>
+                                    <td><%= item.email %></td>
+                                    <td><%= item.phone %></td>
+                                    <td><%= item.address  %></td>
+                                    <td><%= item.company_name %></td>
+                                    <td><%= item.created_at.strftime("%d/%m/%Y - %I:%M") %></td>
+                                    <td class="text-center">
+                                        <ul class="icons-list">
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="icon-menu9"></i>
+                                                </a>
+                
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li>
+                                                      <%= link_to '<i class="glyphicon glyphicon-edit"></i> Edit'.html_safe, edit_admin_customer_order_path(item) %>
+                                                    </li>
+                                                    <li>
+                                                      <%= link_to '<i class="icon-cross2"></i> Destroy'.html_safe, [:admin, item], method: :delete, data: {confirm: 'Are you sure?'} %>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /basic datatable -->
+
+                <!-- Footer -->
+                <div class="footer text-muted">
+                    <%= render "/admin/main/footer" %>
+                </div>
+                <!-- /footer -->
+                
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+</div>
+<!-- /page container -->
+
+<!-- Theme JS files -->
+<%= javascript_include_tag '/backend/assets/js/plugins/tables/datatables/datatables.min.js' %>
+<%= javascript_include_tag '/backend/assets/js/plugins/forms/selects/select2.min.js' %>
+
+<%= javascript_include_tag '/backend/assets/js/core/app.js' %>
+<%= javascript_include_tag '/backend/assets/javascripts/datatables_customer_orders.js' %>
+<!-- /theme JS files -->

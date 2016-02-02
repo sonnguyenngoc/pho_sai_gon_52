@@ -438,37 +438,37 @@
         if($('#reservation-form').length) {
             $('#reservation-form').validate({
                 rules: {
-                    name: {
+                    reservation_customer_name: {
                         required: true,
                         minlength: 2
                     },
-                    email: {
+                    reservation_customer_email: {
                         required: true,
                         email: true
                     },
-                    phone: {
+                    reservation_customer_phone: {
                         required: true,
                         minlength: 2
                     },
-                    note: {
+                    reservation_note: {
                         required: true,
                         minlength: 10
                     }
                 },
                 messages: {
-                    name: {
+                    reservation_customer_name: {
                         required: "Please enter your name.",
                         minlength: $.format("At least {0} characters required.")
                     },
-                    email: {
+                    reservation_customer_email: {
                         required: "Please enter your email.",
                         email: "Please enter a valid email."
                     },
-                    phone: {
+                    reservation_customer_name: {
                         required: "Please enter your phone.",
                         minlength: $.format("At least {0} characters required.")
                     },
-                    note: {
+                    reservation_note: {
                         required: "Please enter a note.",
                         minlength: $.format("At least {0} characters required.")
                     }

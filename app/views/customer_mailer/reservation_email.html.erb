@@ -7,22 +7,22 @@
     <h1>Hi Pho Sai Gon 52, </h1>
     <p>This's my reservation info:</p>
     <p>
-      My name's: <%= @reservation.customer_name %>
+      My name's: <%= @customer_reservation.customer_name %>
     </p>
     <p>
-      My phone's: <%= @reservation.customer_phone %>
+      My phone's: <%= @customer_reservation.customer_phone %>
     </p>
     <p>
-      My email's: <%= @reservation.customer_email %>
+      My email's: <%= @customer_reservation.customer_email %>
     </p>
     <p>
-      Order time: <%= @reservation.time_order.strftime("%m/%d/%Y - %H:%M") (format: mm/dd/yy - hh/mm) %>
+      Order time: <%= @customer_reservation.order_time %>  (format: mm/dd/yy - hh/mm)
     </p>
     <p>
-      This's my note: <%= @reservation.note %>
+      This's my note: <%= @customer_reservation.note %>
     </p>
     <p>
-      Send date: <%= @reservation.created_at.strftime("%Y/%m/%d - %H:%M") %>
+      Send date: <%= @customer_reservation.created_at %>
     </p>
   </body>
 </html>

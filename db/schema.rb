@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202014344) do
+ActiveRecord::Schema.define(version: 20160202095316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160202014344) do
     t.string   "is_drink",    default: "False"
   end
 
-  create_table "contacts", force: :cascade do |t|
+  create_table "customer_contacts", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.text     "message"
@@ -51,6 +51,16 @@ ActiveRecord::Schema.define(version: 20160202014344) do
     t.string   "address"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "customer_reservations", force: :cascade do |t|
+    t.string   "customer_name"
+    t.string   "customer_email"
+    t.string   "customer_phone"
+    t.datetime "order_time"
+    t.text     "note"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "line_items", force: :cascade do |t|
@@ -94,16 +104,6 @@ ActiveRecord::Schema.define(version: 20160202014344) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image_url"
-  end
-
-  create_table "reservations", force: :cascade do |t|
-    t.datetime "time_order"
-    t.text     "note"
-    t.string   "customer_name"
-    t.string   "customer_phone"
-    t.string   "customer_email"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
   end
 
   create_table "restaurants", force: :cascade do |t|

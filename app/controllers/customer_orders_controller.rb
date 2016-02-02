@@ -11,7 +11,7 @@ class CustomerOrdersController < ApplicationController
         CustomerMailer.customer_order_email(@customer_order).deliver_now
         Order.destroy(session[:order_id])
         session[:order_id] = nil
-        format.html { redirect_to root_path }
+        format.html { redirect_to controller: "finish_order", action: "index" }
         format.json { render :show, status: :created, location: @customer_order }
       else
         format.html { render :new }

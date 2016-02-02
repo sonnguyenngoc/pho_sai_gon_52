@@ -7,16 +7,16 @@
     <h1>Hi Pho Sai Gon 52, </h1>
     <p>This's my contact info:</p>
     <p>
-      My name's: <%= @contact.name %>
+      My name's: <%= @customer_contact.name %>
     </p>
     <p>
-      My email's: <%= @contact.email %>
+      My email's: <%= @customer_contact.email %>
     </p>
     <p>
-      This's my message: <%= @contact.message.html_safe %>
+      This's my message: <%= @customer_contact.message.html_safe %>
     </p>
     <p>
-      Time to send contact: <%= @contact.created_at.strftime("%Y/%m/%d - %H:%M") %>
+      Time to send contact: <%= @customer_contact.created_at %>
     </p>
   </body>
 </html>

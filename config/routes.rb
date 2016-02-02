@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :customer_orders
+  resources :customer_contacts
+  resources :customer_reservations
   resources :line_items
   resources :orders
   root 'welcome#index'
@@ -16,6 +18,8 @@ Rails.application.routes.draw do
   get 'blog_single' => "blog_single#index", as: :blog_single
   get 'contact' => "contact#index", as: :contact
   get 'finish_contact' => "finish_contact#index", as: :finish_contact
+  get 'finish_order' => "finish_order#index", as: :finish_order
+  get 'finish_reservation' => "finish_reservation#index", as: :finish_reservation
   get 'demo_logo' => "demo_logo#index", as: :demo_logo
   get 'cart' => "cart#index", as: :cart
   get 'checkout' => "checkout#index", as: :checkout
@@ -26,11 +30,11 @@ Rails.application.routes.draw do
     resources :types
     resources :categories
     resources :restaurants
-    resources :reservations
     resources :posts
     resources :menus
-    resources :contacts
     resources :orders
     resources :customer_orders
-    end
+    resources :customer_contacts
+    resources :customer_reservations
+  end
 end

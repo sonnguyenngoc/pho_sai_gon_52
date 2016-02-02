@@ -1,13 +1,13 @@
 class CustomerMailer < ApplicationMailer
   default from: 'sonnn@hoangkhang.com.vn'
   
-  def contact_email(contact)
-    @contact = contact
+  def contact_email(customer_contact)
+    @customer_contact = customer_contact
     mail(to: "sonnn@hoangkhang.com.vn", subject: "Contact - Phở Sài Gòn 52")
   end
   
-  def reservation_email(reservation)
-    @reservation = reservation
+  def reservation_email(customer_reservation)
+    @customer_reservation = customer_reservation
     mail(to: "sonnn@hoangkhang.com.vn", subject: "Reservation - Phở Sài Gòn 52")
   end
   

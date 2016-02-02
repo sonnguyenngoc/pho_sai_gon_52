@@ -39,7 +39,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="form-row">
-                            <%= form_for @contact, url: admin_contacts_path do |f| %>
+                            <%= form_for @customer_contact do |f| %>
                                 <div class="form-item form-textarea">
                                     <%= f.text_area :message, placeholder: 'Your Message (*)', required: true %>
                                 </div>

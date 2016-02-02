@@ -25,7 +25,7 @@
       My company name's: <%= @customer_order.company_name %>
     </p>
     <p>
-      Time to send order: <%= @customer_order.created_at.strftime("%Y/%m/%d - %H:%M") %>
+      Time to send order: <%= @customer_order.created_at %>
     </p>
     <div class="form-group">
         <%= label "", "Product List: ", class: "control-label col-sm-2 text-semibold" %>

@@ -1,7 +1,7 @@
 class ReservationController < ApplicationController
   def index
     @order.remove_item(params[:line_item_id]) if params[:do] == "remove_item"
-    @reservation = Reservation.new
-    @reservation.time_order = Time.now
+    @customer_reservation = CustomerReservation.new
+    @customer_reservation.order_time = Time.now
   end
 end

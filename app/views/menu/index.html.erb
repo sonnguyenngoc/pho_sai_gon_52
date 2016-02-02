@@ -126,9 +126,9 @@
                                     <div class="col-lg-12">
                                         <div class="the-menu-item">
                                             <div class="the-menu-body">
-                                                <h4 class="xsm"><%= item.name_1 if item.name_1.nil? %></h4>
-                                                <% if item.name_2.nil? %><p>+ <%= item.name_2 %></p><% end %>
-                                                <% if item.description.nil? %><em>+ <%= item.description %></em><% end %>
+                                                <h4 class="xsm"><%= item.name_1 if !item.name_1.nil? %></h4>
+                                                <% if !item.name_2.nil? %><p>+ <%= item.name_2 %></p><% end %>
+                                                <% if !item.description.nil? %><em>+ <%= item.description %></em><% end %>
                                                 <div><%= button_to 'Add to Cart', line_items_path(menu_id: item), class: "btn btn-info" %></div>
                                             </div>
                                             <div class="prices">

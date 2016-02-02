@@ -63,8 +63,6 @@
                 <!-- Basic datatable -->
                 <div class="panel panel-flat">
                     <div class="panel-heading">
-                        <%= link_to '<i class="glyphicon glyphicon-plus"></i>  New Reservation'.html_safe, new_admin_reservation_path, class: 'btn bg-teal' %>
-                        <hr/>
                         <h5 class="panel-title">Reservations Management</h5>
                     </div>
                     
@@ -86,7 +84,7 @@
                                     <td><%= link_to item.customer_name, [:admin, item] %></td>
                                     <td><%= item.customer_phone %></td>
                                     <td><%= item.customer_email %></td>
-                                    <td><%= item.time_order.strftime("%m/%d/%Y - %I:%M")  %></td>
+                                    <td><%= item.time_order.strftime("%m/%d/%Y - %H:%M")  %></td>
                                     <td><%= truncate(strip_tags(item.note), length: 50) %></td>
                                     <td><%= item.created_at.strftime("%d/%m/%Y") %></td>
                                     <td class="text-center">

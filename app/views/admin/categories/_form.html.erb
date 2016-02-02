@@ -1,7 +1,5 @@
 <% if @category.errors.any? %>
   <div id="error_explanation">
-    <h6><%= pluralize(@category.errors.count, "error") %> prohibited this tag from being saved:</h6>
-
     <% @category.errors.full_messages.each do |message| %>
       <p class="label label-warning"><%= message %></p>
     <% end %>

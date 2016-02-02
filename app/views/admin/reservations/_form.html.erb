@@ -1,7 +1,5 @@
 <% if @reservation.errors.any? %>
   <div id="error_explanation">
-    <h6><%= pluralize(@reservation.errors.count, "error") %> prohibited this tag from being saved:</h6>
-
     <% @reservation.errors.full_messages.each do |message| %>
       <p class="label label-warning"><%= message %></p>
     <% end %>

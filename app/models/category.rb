@@ -4,6 +4,8 @@ class Category < ActiveRecord::Base
   has_many :child_categories, :class_name => "ParentCategory", :foreign_key => "parent_id", :dependent => :destroy
   has_many :children, :through => :child_categories, :source => :category
   
+  validates :name, presence: true, :uniqueness => true
+  
   def update_level(lvl)
     self.level = lvl
     self.save

@@ -53,5 +53,7 @@ gem 'rails_12factor', group: :production
 # Gem upload image
 gem 'mini_magick'
 gem 'carrierwave'
+gem "devise"
+gem "cancan"
 
 

@@ -16,7 +16,7 @@
       This's my message: <%= @contact.message.html_safe %>
     </p>
     <p>
-      Time to send contact: <%= @contact.created_at.strftime("%Y/%m/%d - %I:%M") %>
+      Time to send contact: <%= @contact.created_at.strftime("%Y/%m/%d - %H:%M") %>
     </p>
   </body>
 </html>

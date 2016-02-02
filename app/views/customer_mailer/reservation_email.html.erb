@@ -13,16 +13,16 @@
       My phone's: <%= @reservation.customer_phone %>
     </p>
     <p>
-      My email's: <%= @reservation.customer_phone %>
+      My email's: <%= @reservation.customer_email %>
     </p>
     <p>
-      Order time: <%= @reservation.time_order.strftime("%Y/%m/%d - %I:%M") %>
+      Order time: <%= @reservation.time_order.strftime("%m/%d/%Y - %H:%M") (format: mm/dd/yy - hh/mm) %>
     </p>
     <p>
       This's my note: <%= @reservation.note %>
     </p>
     <p>
-      Send date: <%= @reservation.created_at.strftime("%Y/%m/%d - %I:%M") %>
+      Send date: <%= @reservation.created_at.strftime("%Y/%m/%d - %H:%M") %>
     </p>
   </body>
 </html>

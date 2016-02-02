@@ -14,9 +14,12 @@ class ApplicationController < ActionController::Base
        controller_name == 'welcome' || controller_name == 'info' || controller_name == 'events' || controller_name == 'news' ||
        controller_name == 'catering' || controller_name == 'finish_contact'
           'frontend'
+    elsif (devise_controller? && resource_name == :user && action_name != 'edit') || controller_name == 'passwords'
+          'login'
     elsif controller_name == 'main' || controller_name == 'categories' || controller_name == 'types' ||
         controller_name == 'restaurants' || controller_name == 'reservations' || controller_name = 'posts' ||
         controller_name == 'menus' || controller_name == 'contacts' || controller_name == 'customer_orders'
+          authenticate_user!
           'backend'
     end
   end

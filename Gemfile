@@ -55,5 +55,6 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem "devise"
 gem "cancan"
+gem 'rails-i18n', '~> 4.0.0' # for Rails 4
 
 

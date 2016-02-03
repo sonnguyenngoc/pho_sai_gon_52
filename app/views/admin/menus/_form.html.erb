@@ -16,13 +16,13 @@
             <%= f.label "Image", class: "col-lg-2 control-label" %>
             <div class="col-lg-10">
               <%= f.file_field :image_url, class: "file-styled" %>
-              <span class="help-block">Accepted formats: gif, png, jpg. Size: 246x246</span>
-              <%= image_tag(@menu.image_url.image_product_large, size: "160x160",alt: "Image of Product", class: "img-rouded") %>
+              <span class="help-block">Accepted formats: gif, png, jpg. Size: > 400x400</span>
+              <%= image_tag(@menu.image_url.image_product_large, size: "160x160",alt: "Image of Food", class: "img-rouded") %>
             </div>
         </div>
         
         <div class="form-group field">
-            <%= f.label "Name Product", class: "col-lg-2 control-label" %>
+            <%= f.label "Food Name", class: "col-lg-2 control-label" %>
             <div class="col-lg-10">
               <%= f.text_field :name_1, placeholder: "Enter name of product...", class: "form-control" %>
             </div>
@@ -32,6 +32,13 @@
             <%= f.label "Another Name", class: "col-lg-2 control-label" %>
             <div class="col-lg-10">
               <%= f.text_field :name_2, placeholder: "Enter another name of product...", class: "form-control" %>
+            </div>
+        </div>
+            
+        <div class="form-group field">
+            <%= f.label "Description", class: "col-lg-2 control-label" %>
+            <div class="col-lg-10">
+              <%= f.text_area :description, rows: "5", cols: "5", placeholder: "Enter description of product...", class: "form-control" %>
             </div>
         </div>
             
@@ -48,14 +55,7 @@
                 <%= f.collection_select(:category_id, Category.all, :id, :name, {:prompt => "Choose category of product..."}, {class: "select"}) %>
             </div>
         </div>
-
-        <div class="form-group field">
-            <%= f.label "Description", class: "col-lg-2 control-label" %>
-            <div class="col-lg-10">
-              <%= f.text_area :description, rows: "5", cols: "5", placeholder: "Enter description of product...", class: "form-control" %>
-            </div>
-        </div>
-
+            
         <div class="text-right">
           <%= button_tag 'Save <i class="icon-plus22 position-right"></i>'.html_safe, class: "btn btn-primary"%>
           <%= link_to 'Cancel <i class="icon-cross2"></i>'.html_safe, admin_menus_path,class: "btn bg-warning-400"%>

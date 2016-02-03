@@ -26,7 +26,7 @@
                         <thead>
                             <tr>
                                 <th class="product-remove"></th>
-                                <th class="product-name">Product</th>
+                                <th class="product-name">Food Name</th>
                                 <th class="product-quantity">Quantity</th>
                                 <th class="product-subtotal">Total</th>
                             </tr>
@@ -54,9 +54,7 @@
                                     
                                     <td class="product-quantity">
                                         <div class="quantity">
-                                            <input type="button" value="-" class="minus">
                                             <input type="text" name="line_items[quantity]" value="<%= item.quantity %>" class="qty" >
-                                            <input type="button" value="+" class="plus">
                                         </div>
                                     </td>
                                     
@@ -73,7 +71,6 @@
                     <div class="cart-footer">
                         <div class="coupon-code">
                             <%= link_to "Empty Cart", {controller: "cart", action: "clear_items", id: @order.id}, class: "awe-btn awe-btn-2 awe-btn-plus text-uppercase", method: :delete  %>
-                            <%= button_to "Update Cart", "#", class: "awe-btn awe-btn-3 awe-btn-default text-uppercase" %>
                         </div>
                         <div class="total">
                             <span>Total Order:</span>

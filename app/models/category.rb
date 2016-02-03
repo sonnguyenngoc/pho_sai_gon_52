@@ -5,6 +5,7 @@ class Category < ActiveRecord::Base
   has_many :children, :through => :child_categories, :source => :category
   
   validates :name, presence: true, :uniqueness => true
+  has_many :menus
   
   def update_level(lvl)
     self.level = lvl

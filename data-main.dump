@@ -1,0 +1,424 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+SET search_path = public, pg_catalog;
+
+--
+-- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY categories (id, name, description, created_at, updated_at, level, is_drink) FROM stdin;
+11	Vorspeise		2016-01-28 02:19:30.520312	2016-01-28 02:19:32.49877	1	False
+13	Salat		2016-01-28 02:20:13.91839	2016-01-28 02:20:15.684618	1	False
+14	Rind		2016-01-28 02:20:24.561507	2016-01-28 02:20:27.750347	1	False
+15	Fisch		2016-01-28 02:20:36.315931	2016-01-28 02:20:37.972344	1	False
+16	Poulet		2016-01-28 02:20:48.437856	2016-01-28 02:20:53.102247	1	False
+17	Crevetten		2016-01-28 02:21:00.159864	2016-01-28 02:21:09.484447	1	False
+18	Schwein		2016-01-28 02:21:13.844188	2016-01-28 02:21:19.762208	1	False
+19	Haus spezialitäten		2016-01-28 02:21:28.482395	2016-01-28 02:21:33.262	1	False
+20	Tintenfische		2016-01-28 02:21:37.604432	2016-01-28 02:21:39.260469	1	False
+22	None		2016-01-29 10:00:53.274566	2016-01-29 10:00:57.744488	1	False
+12	Vorspeise Suppe		2016-01-28 02:19:54.640483	2016-01-31 13:21:28.405963	1	False
+27	Apéritif		2016-02-01 03:38:46.829393	2016-02-01 03:41:58.170874	1	True
+28	Mineral Water / Soft Drinks		2016-02-01 03:46:46.098666	2016-02-01 03:46:47.553497	1	True
+29	Exotic Drinks		2016-02-01 03:47:00.798601	2016-02-01 03:47:02.569832	1	True
+30	Oishi		2016-02-01 03:48:43.132593	2016-02-01 03:48:46.012897	1	True
+31	Beer		2016-02-01 03:48:52.612696	2016-02-01 03:48:55.391588	1	True
+32	Kaffee		2016-02-01 03:49:07.26858	2016-02-01 03:49:17.881275	1	True
+33	Schaumwein / Champagner		2016-02-01 03:49:34.212277	2016-02-01 03:49:50.864262	1	True
+34	Weissweine		2016-02-01 03:51:05.611269	2016-02-01 03:51:08.42034	1	True
+35	Roséweine		2016-02-01 03:51:19.873028	2016-02-01 03:51:21.652135	1	True
+36	Rotweine		2016-02-01 03:51:57.721356	2016-02-01 03:52:06.352304	1	True
+37	Spirituosen		2016-02-01 03:52:17.497573	2016-02-01 03:52:20.590852	1	True
+38	Cognac		2016-02-01 03:52:30.191504	2016-02-01 03:52:33.475326	1	True
+39	Whisky		2016-02-01 03:52:44.680566	2016-02-01 03:52:46.240701	1	True
+40	Kaffee / Schokolade		2016-02-01 03:53:05.34829	2016-02-01 03:53:07.14085	1	True
+41	Tea leaves from Vietnam		2016-02-03 17:28:05.270311	2016-02-03 17:49:50.829934	1	True
+\.
+
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('categories_id_seq', 41, true);
+
+
+--
+-- Data for Name: customer_contacts; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY customer_contacts (id, name, email, message, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: customer_contacts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('customer_contacts_id_seq', 1, false);
+
+
+--
+-- Data for Name: customer_order_details; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY customer_order_details (id, customer_order_id, menu_id, quantity, price, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: customer_order_details_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('customer_order_details_id_seq', 1, false);
+
+
+--
+-- Data for Name: customer_orders; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY customer_orders (id, first_name, last_name, company_name, email, phone, address, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: customer_orders_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('customer_orders_id_seq', 1, false);
+
+
+--
+-- Data for Name: customer_reservations; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY customer_reservations (id, customer_name, customer_email, customer_phone, order_time, note, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: customer_reservations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('customer_reservations_id_seq', 1, false);
+
+
+--
+-- Data for Name: menus; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY menus (id, image_url, name_1, name_2, description, price, category_id, created_at, updated_at) FROM stdin;
+5	\N	Wan Tan Suppe (Ravioli Suppe)	Súp Wan-tan / Wan-Tan Soup with Shrimps	Hausgemachte Fleischbrühe, Teigtaschen mit gefüllten Crevettenfleisch!!	8.50	12	2016-01-28 02:44:13.64688	2016-01-28 02:44:13.64688
+9	\N	Suppe Chua cay poulet			9.50	12	2016-01-28 04:34:09.083068	2016-01-28 04:34:09.083068
+33	\N	Sautiertes Pouletprust mit Choisam	Gà xào cải ngọt/ Sauteed chicken with Choisam		23.50	16	2016-01-29 08:48:55.664806	2016-01-29 08:48:55.664806
+38	\N		Tôm rau cải mít Szechuan Sauee		25.50	17	2016-01-29 09:12:57.240896	2016-01-29 09:12:57.240896
+44	\N		Bò xào cải ngọt		25.50	14	2016-01-29 09:23:53.185479	2016-01-29 09:23:53.185479
+48	\N		Heo xào gừng		20.50	18	2016-01-29 09:27:55.038858	2016-01-29 09:27:55.038858
+8	111.jpg	Sommerrollen mit Tofu (2 Stk.)	Gỏi cuốn chay / Vegetarian Tofu Summerolls	Karotten, Tofu, Salat und vietnamesischen Kräutern, dazu Hoi-sin Sauce	9.50	11	2016-01-28 03:50:15.490988	2016-01-31 13:16:44.684043
+10	112.jpg	Cha gio (Nem) (6 Stk.)	Chả giò Việt Nam/ Spring Rolls	Knusprig fritierte Frühlingsröllchen mit gehacktem Schweinefleisch, Krevetten, Karotten und Glasnudeln, serviert mit grünem Salat, Pfefferminz, Fischsauce.	16.00	11	2016-01-29 02:19:28.090864	2016-01-31 13:16:58.493237
+11	113.jpg	Vietnamesische Vegi- Frühlingsrollen (2 Stk.)	Chả giò chay/ Spring Rolls Vegi	mit Tofu, dazu süss-sauer Sauce	8.50	11	2016-01-29 02:28:23.702324	2016-01-31 13:17:19.173698
+12	114.JPG	Tim Sum 4 Saigon (4 Stk.)	Vietnamesische Tim Sum mit 4 verschiedenen Spezialitäten		14.50	11	2016-01-29 02:51:56.365003	2016-01-31 13:17:45.424537
+13	115.png	Pouletspiessli an hausgematchter Erdnusssauce (2 Stk.)	Gà lụi nướng/ Barbecue Chicken Skewer	Marinierte Pouletspiessli an hausgemachter Erdnusssauce	9.50	11	2016-01-29 02:58:26.564105	2016-01-31 13:18:06.31368
+15	116.jpg	Gedämpfte Teigtaschen (4 Stk.)	Há cảo	Aus Reismehl, gefüllt mit Crevettenfleisch an Sojasauce	8.50	11	2016-01-29 03:23:03.759831	2016-01-31 13:18:24.227407
+16	117.jpg	Won- ton (5 Stk.)	Hoành thánh chiên	Knusprig fritierte Ravioli aus Pouletbrust und Krevetten mit süss- und- sauer Sauce	8.50	11	2016-01-29 03:38:33.64086	2016-01-31 13:18:40.634398
+17	118.jpg	Knusprige Cretten mit Weizenmehl fritiert (6 Stk.)	Tôm chiên xù/ Crispy fried shrimp		11.50	11	2016-01-29 03:43:11.803962	2016-01-31 13:19:13.967042
+18	119.jpg	Banh khot (6 Stk.)	Bánh khọt/ Tumeric fragrant cup cake filled with shrimp and coconut 	Kurkuma duftenden Tasse Kuchen gefüllt mit Garnelen und Kokosnuss. Mit frischen Salat und Minze serviert mit Fisch-Sauce	14.00	11	2016-01-29 03:53:27.400909	2016-01-31 13:19:31.309681
+6	121.jpg	Tom Yum-Gung mit Crevetten		Köstliche Suppe mit Zitronenblätter, Pilze, Tomaten, Zitronengras, Koriander	11.50	12	2016-01-28 02:47:36.772302	2016-01-31 13:22:09.241389
+41	120.jpg		Hoành thánh suppe		8.50	12	2016-01-29 09:20:27.901118	2016-01-31 13:21:45.416299
+7	123.jpg	Rindfleisch - Salat	Gỏi bò / picy Seared Beef Salad	Gemischter Salat mit zarten, würzigen angebratenen Rindsfilet streifen, dazu hausgemachtes Nước Mắm Dressing und geröstete Erdnüsse!	18.50	13	2016-01-28 02:51:24.110903	2016-01-31 13:23:14.678011
+21	125.jpg	Mango Salat mit Crevetten	Gỏi xoài/ Vietnamese Green Mango Salad with Shrimp	Frische grüner Mango mit Karotten, Crevetten, Koriander, gerösteten Erdnüssen, Chili, und frischen Kräutern, dazu Nước Mắm   Dressing und Knoblauch	17.50	13	2016-01-29 07:13:28.365578	2016-01-31 13:23:42.412834
+40	126.jpg		Gỏi gà		15.50	13	2016-01-29 09:17:39.859095	2016-01-31 13:24:07.067187
+22	127.jpg	Rindwürfel gebraten	Bò lúc lắc/ Tender and spicy beef tenderloin with vegetables	Im Wok kurz angebratenes, zart-würziges Rindsfilet in Würfel mit Gemüse, dazu Nước mắm Sauce und Reis	28.50	14	2016-01-29 07:29:27.387319	2016-01-31 13:26:04.656954
+25	130.jpg	Geschnetzeltes Rindfleisch mit Lauch und Chili	Bò xào Tứ Xuyên (Szechuan)/ Sliced beef with leek and chili		24.50	14	2016-01-29 07:57:15.791461	2016-01-31 13:32:15.217327
+24	129.jpg	Rindgebraten mit Reisnudeln	Bún bò nướng/ in short fried beef fillet with rice noodles 	In kurzen gebratenen Rindsfilet mit Zitronengras, serviert mit Reisnudeln	24.50	14	2016-01-29 07:51:24.320005	2016-01-31 13:26:58.348291
+42	131.jpg		Bò xào mì		23.50	14	2016-01-29 09:22:21.083419	2016-01-31 13:33:53.775097
+43	132.jpg		Bò xào sả ớt		25.50	14	2016-01-29 09:23:14.477152	2016-01-31 13:34:07.694351
+35	135.jpg	Knusprig gebratener Fisch und Fisch Sauer mango + gedämpften Reis	Cá chiên giòn		\N	15	2016-01-29 08:59:30.927251	2016-01-31 13:36:05.90221
+34	136.jpg	Tamarinden Suppe mit Fisch (Süss- sauer)	Canh chua cá/ Sweet & Sour tamarin soup with fish		\N	15	2016-01-29 08:55:00.311311	2016-01-31 13:37:23.53105
+27	137.jpg	Geschnetzelte Pouletprust mit Ananas an süss und sauer Sauce	Gà xào thơm/ Sweet and sour chicken		20.50	16	2016-01-29 08:22:00.294708	2016-01-31 13:38:14.892602
+28	138.jpg	Geschnetzelte Pouletprust mit Lauch und chili 	Gà xào Szechuan/ Sliced chicken with leek and chili 		\N	16	2016-01-29 08:30:56.02787	2016-01-31 13:38:35.506932
+29	139.jpg	Gebratene Weizenmudeln mit Gemüse und Pouletfleisch	Gà xào mì/ Fried wheat noodles with vegetables and chicken		20.50	16	2016-01-29 08:37:18.422689	2016-01-31 13:39:02.049645
+30	140.jpg	Fritierte Weizennudeln mit Poulet- Schweine- Rindfleisch, Krevetten und Gemüse	Mì xào giòn/ Fried wheat noodles with chicken, beef, pork, shrimp and vegetables		29.50	16	2016-01-29 08:42:27.00736	2016-01-31 13:39:35.314452
+31	141.jpg	Sautiertes Pouletprust mit Zitronengras und Chili 	Gà xào sả ớt/ Sauteed chicken with lemon grass and chili 		23.50	16	2016-01-29 08:44:23.529617	2016-01-31 13:40:34.319807
+32	142.jpg	Fritiertes Pouletflügel mit Fisch- Sauce	Cánh gà chiên nước mắm/ Fried chickenwings with fish sauce		17.50	16	2016-01-29 08:47:19.617206	2016-01-31 13:40:51.830093
+36	144.JPG	Geschnetzelte Pouletprust an Kokonussmilch mit Ananas	Gà xào cari/ Sliced chicken breast in coconut milk with pineapple 		\N	16	2016-01-29 09:05:27.544019	2016-01-31 13:42:39.0279
+37	145.jpg		Tôm Cari		25.50	17	2016-01-29 09:11:05.005067	2016-01-31 13:43:00.518362
+39	146.jpg		Tôm xào chua ngọt		25.50	17	2016-01-29 09:15:09.842483	2016-01-31 13:43:17.590268
+45	148.jpg		Heo kho tiêu 		20.50	18	2016-01-29 09:25:44.298939	2016-01-31 13:44:03.479222
+46	149.jpg		Heo Szechuan		20.50	18	2016-01-29 09:26:18.636172	2016-01-31 13:44:17.731712
+47	150.jpg		Heo nướng		21.50	18	2016-01-29 09:27:10.795562	2016-01-31 13:44:36.392356
+49	160.jpg	Pho Bac	Phở Bắc/ Beef soup with rice noodle and Beef	Fleischbrühe mit Reisnudeln und Rindshuft	20.50	19	2016-01-29 09:32:38.379343	2016-01-31 13:45:17.791087
+50	161.jpg	Bun bo Hue	Bún bò Huế/ Beef soup with lemongrass and chili, rice noodle and beef	Fleischbrühe mit Zitronengras chili pikant gewürzt mit feinen Reisnudeln und Rindhuft	20.50	19	2016-01-29 09:36:05.488284	2016-01-31 13:45:35.716795
+4	110.jpg	Sommerrollen mit Crevetten (2 Stk.)	Gỏi cuốn tôm / Summerrolls with Shrimps	Reisnudeln, Salat, Sojasprossen, vietnamesischen Kräutern, dazu Hoi-sin	10.50	11	2016-01-28 02:38:07.158861	2016-01-31 13:15:01.480219
+20	124.jpg	Papaya Salat	Gỏi đu đủ/ Vietnamese Papaya Salad with Shrimps	Frischer grüner Papayastreifen, Karotten, Crevetten, Schweinefleisch, Koriander, frische Kräuter und gerösteten Erdnüssen, dazu Nước Mắm Dressing und Knoblauch	17.50	13	2016-01-29 07:05:09.938324	2016-01-31 13:23:28.026862
+23	128.jpg	Bun bo xao	Bún bò xào/ Sauted beef on rice noodles 	Sautiertes Rindfleisch auf Reisnudeln mit  grünem Salat, Gurken, Sojasprossen, Pfefferminze, gerösteten Zwiebeln, Erdnusssplittern, serviert mit Fischsauce	23.50	14	2016-01-29 07:39:45.521648	2016-01-31 16:28:18.784594
+61	173.jpg		Bánh mì Việt Nam		12.00	22	2016-01-29 10:04:18.004536	2016-01-31 16:31:29.440608
+113	\N	Rivella rot/ blau / grün			4.50	28	2016-02-01 09:00:58.102096	2016-02-01 09:00:58.102096
+114	\N	Sprite 			4.50	28	2016-02-01 09:01:59.109667	2016-02-01 09:01:59.109667
+115	\N	Ice Tea Lemon 			4.50	28	2016-02-01 09:02:25.21235	2016-02-01 09:02:25.21235
+26	134.jpg	Fisch in Tontöpfen	Cá kho tộ/ "Pangasius fish" in caramel sauce	Pangasius Fisch in Karamellsauce gekocht klingt nicht appetitlich und doch ist es eine der leckersten Sachen. Cá kho, um gehört zu jenen beliebt, authentische vietnamesische Schmorgerichte, die in Tontöpfen gekocht wird. Schalotten und Knoblauch zusammen mit der Fischsauce und Karamellsauce verleihen unglaublich herzhaften süßen Aromen. Cá Kho ist hervorragend, und mit gedämpftem Reis und Gurken gepaart	18.50	15	2016-01-29 08:15:15.089387	2016-01-31 13:35:50.771261
+51	162.jpg	Hu Tieu	Hủ tiếu/ Chicken soup with rice noodle, pork and shrimp	Fleischbrühe mit Reisnudeln, Schweinefleisch und Crevetten	20.50	19	2016-01-29 09:38:59.574197	2016-01-31 13:45:51.198647
+52	163.jpg	Mien Ga	Miến gà/ Glass noodle soup with chicken breast	Glasnudelnsuppe mit Pouletbruststückchen	19.50	19	2016-01-29 09:41:26.223282	2016-01-31 13:46:07.257555
+53	164-ca.jpg	Tamarinden Suppe mit Fisch (Süss- sauer)/Cravetten/ Poulet 	Canh chua cá+ tôm+ gà/ Sweet& Sour temarin soup with fish, shrimp, chicken		\N	19	2016-01-29 09:46:50.399186	2016-01-31 13:47:32.714944
+54	165.jpg	Wonton gefüllit mit Pouletfleisch und Crevetten	Hoành thánh + mì/ Wonton stuffed with chicken and shrimp		20.50	19	2016-01-29 09:52:15.928116	2016-01-31 13:47:59.220904
+55	166.jpg	Tofu Suppe mit Gemüse	Đậu hủ súp/ Tofu soup with vegetable		20.50	19	2016-01-29 09:54:19.284626	2016-01-31 13:48:15.607811
+57	168.jpg		Mực xào chua ngọt		\N	20	2016-01-29 09:57:04.974735	2016-01-31 13:48:44.970349
+58	169.jpg		Mực xào sả ớt		\N	20	2016-01-29 09:57:41.99441	2016-01-31 13:49:30.568981
+63	167.jpg		Mực nướng muối ớt		\N	20	2016-01-31 13:49:58.983072	2016-01-31 13:50:13.349921
+59	170.jpg		Cơm thịt nướng		20.00	22	2016-01-29 10:02:49.794879	2016-01-31 13:50:33.370389
+60	171.jpg		Bánh hỏi + heo quay		24.50	22	2016-01-29 10:03:38.358502	2016-01-31 13:50:54.749568
+62	172.jpg		Bánh mì heo quay		18.00	22	2016-01-29 10:05:28.696416	2016-01-31 13:51:10.152401
+65	\N	Eiskaffee Milch	Cà phê sữa đá/ Coffee with crushed ice 	Vietnamesischer Eiskaffee mit Kondensmilch und Eiswürfel 	6.50	40	2016-02-01 04:49:29.821733	2016-02-01 04:49:29.821733
+66	\N	Zitronensaft	Nước đá chanh/ Fresh squeezed lemon juice with ice cubes	Frischer gepresste Zitronensaft mit Zucker und Eiswürfel 	5.00	40	2016-02-01 04:53:15.477073	2016-02-01 04:53:15.477073
+67	\N	Frische Pfauenzitronen	Nước đá chanh muối/ Pickled lemon peacocks (sour, salty), mineral water and ice cubes		6.50	40	2016-02-01 04:56:01.066366	2016-02-01 04:56:01.066366
+68	\N	Kaffee Cremè			4.50	40	2016-02-01 04:56:56.877081	2016-02-01 04:56:56.877081
+69	\N	Espresso 			4.50	40	2016-02-01 04:57:45.45915	2016-02-01 04:57:45.45915
+70	\N	Doppel- Espresso 			6.50	40	2016-02-01 04:58:54.183253	2016-02-01 04:58:54.183253
+71	\N	Milch Kaffee (schale)			5.00	40	2016-02-01 04:59:53.631316	2016-02-01 04:59:53.631316
+72	\N	Cappuccino			5.00	40	2016-02-01 05:00:57.179719	2016-02-01 05:00:57.179719
+73	\N	Latte Macchiato 			6.50	40	2016-02-01 05:01:50.968494	2016-02-01 05:01:50.968494
+74	\N	Warme Schokolade			4.50	40	2016-02-01 05:02:47.466788	2016-02-01 05:02:47.466788
+75	\N	Johnny Walker Red Label 		40.0% Vol	8.50	39	2016-02-01 05:04:37.199314	2016-02-01 05:04:37.199314
+76	\N	Jack Daniel's		40.0% Vol	8.50	39	2016-02-01 05:05:34.209198	2016-02-01 05:05:34.209198
+77	\N	Remy Martin VSOP		40.0% Vol 	9.50	38	2016-02-01 05:06:41.485174	2016-02-01 05:06:41.485174
+78	\N	Grappa 		40.0% Vol	7.00	37	2016-02-01 05:07:36.546856	2016-02-01 05:07:36.546856
+79	\N	Lua Moi	Vodka "new rice" Vietnam	45.0% Vol	7.50	37	2016-02-01 05:08:55.738757	2016-02-01 05:08:55.738757
+80	\N	Mei Kuei Lu Chiew	Rosenliqueur		7.50	37	2016-02-01 05:10:08.220381	2016-02-01 05:10:08.220381
+81	\N	Cointreau 	Frankreich		8.00	37	2016-02-01 05:11:39.525021	2016-02-01 05:11:39.525021
+82	\N	Vieille Prune du Pedrgors VSOP 			8.00	37	2016-02-01 07:15:21.879886	2016-02-01 07:15:21.879886
+83	\N	Gordon's Dry red 			6.50	37	2016-02-01 07:16:35.859546	2016-02-01 07:16:35.859546
+84	\N	Posecco dry 		Bosco del Merlo, Veneto, Italien 	\N	33	2016-02-01 07:49:12.393527	2016-02-01 07:49:12.393527
+85	\N	Champagner André Clouet brut Grande Réserve 		André Clouet, Champagne, Frankreich\r\n	\N	33	2016-02-01 07:50:07.894027	2016-02-01 07:50:07.894027
+86	\N	Merlot bianco La Contrada  		Guido Brivio, Tessin , Schweiz\r\nEr eignet sich sehr gut zu Fischgerichten (Süsswasserfische), aber auch zu leichteren\r\nVorspeisen und Meeresfrüchten. Auch als Aperitifwein ausgezeichnet	\N	34	2016-02-01 07:57:46.766167	2016-02-01 07:57:46.766167
+87	\N	Chardonnay 		TerraNoble, Valley de Maule, Chile\r\nEr ist ein fein- Fruchtiger  und gut strukturierter Wein mit Düften von exotischen Zitrus- Früchten der Viura- und karamell, Butter und Holunderblüten der Chardonnay Traube  	\N	34	2016-02-01 08:02:59.363416	2016-02-01 08:02:59.363416
+88	\N	Riesling Domäne Gobelsburg 		Schloss Gobelsburg, Kamptal, Österreich\r\nDieser österreichische Reisling ist von einem besonders zarten Duft geprägt, der sich auf dem Gaumen bestätigt und Erinnerungen an Marille und Pfirsiche wach werden lässt	\N	34	2016-02-01 08:17:11.688622	2016-02-01 08:17:11.688622
+89	\N	Oeil de Perdrix 		Château d'Auvernier, Neuenburg, Schweiz \r\nEin sehr harmonischer und süffiger Rosé, frisch und lebendig im Gaumen, bei dem die wunderschönen, feinen Terroirnoten zur Geltung kommen	\N	35	2016-02-01 08:22:44.649726	2016-02-01 08:22:44.649726
+90	\N	Syrah/ Pinot Noir rose 		TerraNoble, Valley de Maule, Chile\r\nGlänzendes, klares Himbeerrosa. In der Nase würzig aromatisches und auch fruchtbetontes Bouquet. Gehaltvoller und harmonischer Wein mit subtilem Geschmack, elegant und trocken 	\N	35	2016-02-01 08:29:04.072777	2016-02-01 08:29:04.072777
+91	\N	Green Tea Original 			5.00	30	2016-02-01 08:32:42.522686	2016-02-01 08:33:54.804407
+92	\N	Green Tea Honey Lemon 			5.00	30	2016-02-01 08:34:36.159613	2016-02-01 08:34:36.159613
+93	\N	Black Tea Lemon 			5.00	30	2016-02-01 08:35:14.300829	2016-02-01 08:35:14.300829
+94	\N	Lychee Aloe Vera 			6.00	30	2016-02-01 08:35:53.781412	2016-02-01 08:35:53.781412
+95	\N	Saigon Beer (Vietnam)			6.00	31	2016-02-01 08:36:53.439282	2016-02-01 08:36:53.439282
+96	\N	Singha Beer (Thailand)			6.00	31	2016-02-01 08:37:59.818929	2016-02-01 08:37:59.818929
+97	\N	Tsingtao Beer (China)			6.00	31	2016-02-01 08:38:49.748433	2016-02-01 08:38:49.748433
+98	\N	Panache 			5.00	31	2016-02-01 08:39:21.300921	2016-02-01 08:39:21.300921
+99	\N	Erdinger Weisse 			6.50	31	2016-02-01 08:40:12.428302	2016-02-01 08:40:12.428302
+100	\N	Schneider Weisse 			6.50	31	2016-02-01 08:41:00.713853	2016-02-01 08:41:00.713853
+101	\N	Feldschlösschen (Alkoholfrei)			5.00	31	2016-02-01 08:43:06.05038	2016-02-01 08:43:06.05038
+102	\N	Feldschlösschen			5.00	31	2016-02-01 08:43:53.434493	2016-02-01 08:43:53.434493
+105	\N	Japanischer Plum Wine 		17.0% Vol.	6.50	27	2016-02-01 08:54:11.840214	2016-02-01 08:54:11.840214
+108	\N	Martini bianco/ rosso 		15.0% Vol.	7.00	27	2016-02-01 08:56:15.005775	2016-02-01 08:56:15.005775
+109	\N	Cafe de Paris 		6.7 % Vol. 	7.00	\N	2016-02-01 08:57:05.579801	2016-02-01 08:57:05.579801
+110	\N	Mineralwasser mit/ ohne Kohlensäure 			4.50	28	2016-02-01 08:58:38.378168	2016-02-01 08:58:38.378168
+111	\N	Coca Cola/ Zero/ light			4.50	28	2016-02-01 08:59:14.704719	2016-02-01 08:59:14.704719
+112	\N	Apfelschole 			4.50	28	2016-02-01 09:00:07.339021	2016-02-01 09:00:07.339021
+116	\N	Orangensaft			4.50	28	2016-02-01 09:03:04.602727	2016-02-01 09:03:04.602727
+117	\N	Coconut Juice 			4.50	29	2016-02-01 09:03:42.339859	2016-02-01 09:03:42.339859
+118	\N	Mango Juice 			4.50	29	2016-02-01 09:04:37.479552	2016-02-01 09:04:37.479552
+119	\N	Lychee			4.50	29	2016-02-01 09:05:07.134002	2016-02-01 09:05:07.134002
+120	\N	Fresh Coconut 			7.50	29	2016-02-01 09:05:47.125761	2016-02-01 09:05:47.125761
+103	Lychee_Cocktail.jpg	Lychee Cocktail 			6.50	27	2016-02-01 08:49:48.113443	2016-02-03 18:35:45.873107
+106	Campari.jpg	Campari 		23.0% Vol.	7.00	27	2016-02-01 08:54:43.785208	2016-02-03 18:38:57.987802
+107	Sprite-_Weisswein.jpg	Sprite- Weisswein 			6.50	27	2016-02-01 08:55:24.427396	2016-02-03 18:39:17.843319
+121	\N	Rosen Tee - Trà hoa Thảo mộc	Reselle Flower Tea specials	Blühende Lotusknospe (blüht auf beim ziehen lassen)	6.50	41	2016-02-03 17:30:40.735889	2016-02-03 17:30:40.735889
+122	\N	Zitronengras Tee - Trà xà	Lemongrass Tea	Lemongrass Tee aus den Blättern des Zitronengras bezitzt einen Rosen- und Zitronenduft und ein rundes Aroma	5.00	41	2016-02-03 17:35:30.883984	2016-02-03 17:35:30.883984
+123	\N	Grüner Tee - Trà xanh Móc Câu	Green Tea	Eine exklusive grüne Teeblätter aus Gebirgen Nord-VietNam	5.00	41	2016-02-03 17:38:08.638373	2016-02-03 17:38:08.638373
+124	\N	Jasmin Tee - Trà Lài	Jasmin tea		5.00	41	2016-02-03 17:40:47.073761	2016-02-03 17:40:47.073761
+125	\N	Ingwer Tee - Trà Gừng	Ginger Tea	Ingwertee Ist gesund und kann bei diversen Krankheiten un Verletzungen angewendet werden. Sowohl bei Übelkeit, Magenproblemen, Erkältungen als auch oberflächliche Verletzungen der Haut wie Schürf - order Brandwunden ist eine Behandlung mit Ingwertee order -sud zu empfehlen.	5.00	41	2016-02-03 17:46:10.846045	2016-02-03 17:46:10.846045
+64	\N	Kaffee Vietnam	Cà phê Việt Nam/ Vietnamese hot coffee	Langsam gebrühter vietnamesischer Kaffee, mit Kondensmilch.	6.00	40	2016-02-01 04:47:03.045531	2016-02-03 17:56:47.696829
+126	\N	Kaffee Vietnam - Cà Phê Việt Nam	Vietnamese Hot Coffee	Langsam gebrühter vietnamesischer Kaffee, mit Kondensmilch.	6.00	32	2016-02-03 17:54:43.742794	2016-02-03 17:57:23.358852
+127	\N	Merlot Baiocco	Guido Brivio, Tessin, Schweiz	Leuchtendes Rubinrot,. In der Nase dominieren Aromen von frischen roten Beeren, am Gaumen zeigt der Wein eine schöne leichte Struktur mit guten Tanninen. dl: 6.80 - 7dl: 48.-	\N	36	2016-02-03 18:02:57.241824	2016-02-03 18:02:57.241824
+128	\N	Roija Crianze La Montesa	Alvaro Palacious, Rioja, Spanien	Ein Wein, der die Herzen vieler Weinfreunde und Weinliebhaberinnen erobert hat und immer wieder neue dazugewinnt. dl: 6.60 - 7dl: 45.-	\N	36	2016-02-03 18:05:48.581076	2016-02-03 18:05:48.581076
+129	\N	Primitivo Cuvée 168 Dalian	Principe di San Martino, Puglia, Italien	Intensives Bouquet mit Aromen von reifen Himbeeren, Kirsche und heller Schokolade. Am Gaumen zeigt er sich extrem fruchtig, beerig und einem süsslichen Auftakt. dl: 5.80 - 7dl: 40.-	\N	36	2016-02-03 18:10:26.87591	2016-02-03 18:10:26.87591
+130	\N	Cabernet Sauvignon	Bosco del Merlo, Veneto, Italien	Der Wein wird 12 Monate in kleien Eichenfässern französischer Herkunft ausgebaut.  Danach ruht er für weitere 6 Monate in der Flasche, bevor er auf den Markt gelangt. dl: 5.90 - 7dl: 39.-	\N	36	2016-02-03 18:14:16.209806	2016-02-03 18:14:16.209806
+131	\N	Amarone Barchessa Rambaldi (Corvina, Corvinone, Rondinella)	Barchessa Rambaldi, Veneto, Italien	Dichtes tiefes Kirschrot. Feines, von süssen, roten Beeren-früchten dominiertes Bukett, mit gut integrierter dezenter Holznote. Der Körper präsentiert sich dicht, mit ausgewogener Struktur un schönem, fruchtbetontem Mittelstück. Ein Klasse Amarnone mit tollem Preis-Genussverhältnis. 7dl: 72.-	\N	36	2016-02-03 18:19:42.020881	2016-02-03 18:19:42.020881
+132	\N	Syrah	TerraNoble, Valley de Maule, Chile	In der Nase  betont dicht un sehr sortentypisch nach schwarzem Pfeffer duftend. Aromatisch von rotten Früchten, besonders Cassis, und Oliven bestimmt, wirkt dieser Syrah in seinem Geschmack überaus konzentriert, wobei die Fruchttannine bereits beträchtlich rund und weich harmonisieren.  dl: 5.90 - 7dl: 39.-	\N	36	2016-02-03 18:23:55.957675	2016-02-03 18:23:55.957675
+104	Sake.jpg	Lotus Vietnam Sake (Reiswen, Hausgemacht)		25.0% Vol. \r\n1dl	6.50	27	2016-02-01 08:51:09.68554	2016-02-03 18:38:20.205384
+\.
+
+
+--
+-- Data for Name: orders; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY orders (id, created_at, updated_at) FROM stdin;
+1	2016-02-01 04:25:27.991018	2016-02-01 04:25:27.991018
+6	2016-02-01 04:28:20.23671	2016-02-01 04:28:20.23671
+7	2016-02-01 04:31:50.50582	2016-02-01 04:31:50.50582
+8	2016-02-01 04:59:07.194871	2016-02-01 04:59:07.194871
+9	2016-02-01 05:00:11.211363	2016-02-01 05:00:11.211363
+10	2016-02-01 05:06:51.630683	2016-02-01 05:06:51.630683
+11	2016-02-01 05:07:30.678383	2016-02-01 05:07:30.678383
+12	2016-02-01 06:02:53.301195	2016-02-01 06:02:53.301195
+13	2016-02-01 07:08:22.416947	2016-02-01 07:08:22.416947
+14	2016-02-01 07:21:47.14166	2016-02-01 07:21:47.14166
+15	2016-02-01 07:37:21.616777	2016-02-01 07:37:21.616777
+16	2016-02-01 07:44:17.53713	2016-02-01 07:44:17.53713
+17	2016-02-01 07:45:20.642021	2016-02-01 07:45:20.642021
+18	2016-02-01 07:47:20.215696	2016-02-01 07:47:20.215696
+19	2016-02-01 07:47:21.578976	2016-02-01 07:47:21.578976
+20	2016-02-01 07:47:29.405404	2016-02-01 07:47:29.405404
+21	2016-02-01 07:53:19.521279	2016-02-01 07:53:19.521279
+22	2016-02-01 08:39:53.011039	2016-02-01 08:39:53.011039
+23	2016-02-01 10:07:56.990645	2016-02-01 10:07:56.990645
+24	2016-02-01 12:02:16.193016	2016-02-01 12:02:16.193016
+25	2016-02-01 13:52:42.649399	2016-02-01 13:52:42.649399
+26	2016-02-01 13:53:35.999543	2016-02-01 13:53:35.999543
+27	2016-02-01 14:41:59.889688	2016-02-01 14:41:59.889688
+28	2016-02-01 14:42:56.951337	2016-02-01 14:42:56.951337
+29	2016-02-01 18:00:06.797756	2016-02-01 18:00:06.797756
+30	2016-02-01 18:00:07.003911	2016-02-01 18:00:07.003911
+31	2016-02-02 01:42:58.965495	2016-02-02 01:42:58.965495
+32	2016-02-02 02:32:29.628016	2016-02-02 02:32:29.628016
+33	2016-02-02 07:21:45.908359	2016-02-02 07:21:45.908359
+34	2016-02-03 07:55:03.589785	2016-02-03 07:55:03.589785
+35	2016-02-03 17:10:35.211125	2016-02-03 17:10:35.211125
+\.
+
+
+--
+-- Data for Name: line_items; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY line_items (id, menu_id, order_id, created_at, updated_at, quantity) FROM stdin;
+\.
+
+
+--
+-- Name: line_items_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('line_items_id_seq', 1, true);
+
+
+--
+-- Name: menus_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('menus_id_seq', 132, true);
+
+
+--
+-- Name: orders_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('orders_id_seq', 35, true);
+
+
+--
+-- Data for Name: parent_categories; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY parent_categories (id, parent_id, category_id, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: parent_categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('parent_categories_id_seq', 2, true);
+
+
+--
+-- Data for Name: posts; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY posts (id, title, content, type_id, created_at, updated_at, image_url) FROM stdin;
+\.
+
+
+--
+-- Name: posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('posts_id_seq', 4, true);
+
+
+--
+-- Data for Name: restaurants; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY restaurants (id, image_url, name, email, address, phone, fax, website, description, created_at, updated_at) FROM stdin;
+3	logo-PhoSG52.png	Phở Sài Gòn 52	phosaigon52@gmail.com	Zürcherstrasse 91, 8952 Schlieren, Switzerland	043 495 00 22	043 495 00 22	http://phosaigon52.ch/		2016-01-27 14:06:23.259124	2016-01-31 13:13:55.776237
+\.
+
+
+--
+-- Name: restaurants_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('restaurants_id_seq', 3, true);
+
+
+--
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY schema_migrations (version) FROM stdin;
+20160127023513
+20160127023614
+20160127030529
+20160127063819
+20160127065148
+20160127100020
+20160127142442
+20160127152636
+20160129155207
+20160129155442
+20160129160043
+20160130022257
+20160130022432
+20160201031211
+20160202014344
+20160202095225
+20160202095316
+\.
+
+
+--
+-- Data for Name: types; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY types (id, title, description, created_at, updated_at) FROM stdin;
+1	News		2016-01-27 03:49:26.804362	2016-01-27 03:49:26.804362
+2	Events		2016-01-27 03:49:40.061088	2016-01-27 03:49:40.061088
+\.
+
+
+--
+-- Name: types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('types_id_seq', 2, true);
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: nguyenngocson0811
+--
+
+COPY users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at) FROM stdin;
+1	admin@phosaigon52.ch	$2a$10$.L4kUOM42M4iS8f5q9rQFOXNyO4BVItdPEXuXYt/n.7ImPTfaiUIW	\N	\N	\N	2	2016-02-03 17:11:59.721675	2016-02-03 07:58:48.692306	192.168.1.94	192.168.1.94	2016-02-03 07:53:50.197339	2016-02-03 17:11:59.728593
+\.
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nguyenngocson0811
+--
+
+SELECT pg_catalog.setval('users_id_seq', 1, false);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

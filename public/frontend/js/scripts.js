@@ -464,7 +464,7 @@
                         required: "Please enter your email.",
                         email: "Please enter a valid email."
                     },
-                    reservation_customer_name: {
+                    reservation_customer_phone: {
                         required: "Please enter your phone.",
                         minlength: $.format("At least {0} characters required.")
                     },

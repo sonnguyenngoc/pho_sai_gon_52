@@ -5770,3 +5770,7 @@ textarea {
   -webkit-background-size: auto 150%  !important;
   background-attachment: scroll  !important;
 }
+.contact-form .form-item textarea {
+    background-color: #eee;
+    color: #333;
+}

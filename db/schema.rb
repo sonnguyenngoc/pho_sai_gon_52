@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20160202095316) do
     t.string   "is_drink",    default: "False"
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "customer_contacts", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -104,6 +112,16 @@ ActiveRecord::Schema.define(version: 20160202095316) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image_url"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.datetime "time_order"
+    t.text     "note"
+    t.string   "customer_name"
+    t.string   "customer_phone"
+    t.string   "customer_email"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "restaurants", force: :cascade do |t|

@@ -56,7 +56,7 @@
                                                     <p>+ <%= item.name_2 %></p>
                                                     <em>+ <%= item.description %></em>
                                                     <hr/>
-                                                    <div><%= button_to 'Add to Cart', line_items_path(menu_id: item), class: "btn btn-info" %></div>
+                                                    <div><%= button_to t(:add_to_cart), line_items_path(menu_id: item), class: "btn btn-info" %></div>
                                                 </div>
                                                 <div class="prices">
                                                     <span class="price xsm"><%= item.price %></span>

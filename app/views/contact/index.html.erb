@@ -26,14 +26,14 @@
                 <div class="row">
                     <div class="col-md-4">
                         <address class="find-us">
-                            <span class="md">Find Us Here</span>
+                            <span class="md"><%=t :find_us_here %></span>
                             <div class="location-1">
                                 <i class="icon awe_map_marker"></i>
                                 <strong>Location: <%= @info.address %></strong>
                             </div>
                             <div class="location-1">
                                 <i class="icon awe_map_marker"></i>
-                                <strong>See location: <%= link_to "here", "https://www.google.com/maps/place/Z%C3%BCrcherstrasse+91,+8952+Schlieren,+Thu%E1%BB%B5+S%C4%A9/@47.3981939,8.4569929,17z/data=!3m1!4b1!4m2!3m1!1s0x47900b8eb1097ab9:0x190058072b37d7a4", target: "_blank" %>
+                                <strong><%=t :see %> location: <%= link_to t(:here), "https://www.google.com/maps/place/Z%C3%BCrcherstrasse+91,+8952+Schlieren,+Thu%E1%BB%B5+S%C4%A9/@47.3981939,8.4569929,17z/data=!3m1!4b1!4m2!3m1!1s0x47900b8eb1097ab9:0x190058072b37d7a4", target: "_blank" %>
                             </div>
                         </address>
                     </div>
@@ -41,16 +41,16 @@
                         <div class="form-row">
                             <%= form_for @customer_contact do |f| %>
                                 <div class="form-item form-textarea">
-                                    <%= f.text_area :message, placeholder: 'Your Message (*)', required: true %>
+                                    <%= f.text_area :message, placeholder: t(:your_message) + ' (*)', required: true %>
                                 </div>
                                 <div class="form-item form-type-name">
-                                    <%= f.text_field :name, placeholder: 'Your Name (*)', required: true %>
+                                    <%= f.text_field :name, placeholder: t(:your_name) + ' (*)', required: true %>
                                 </div>
                                 <div class="form-item form-type-email">
-                                    <%= f.email_field :email, placeholder: 'Your Email (*)', required: true %>
+                                    <%= f.email_field :email, placeholder: t(:your_email) + ' (*)', required: true %>
                                 </div>
                                 <div class="form-actions">
-                                    <%= f.submit 'Send message', class: 'awe-btn awe-btn-2 awe-btn-default text-uppercase' %>
+                                    <%= f.submit t(:send_message), class: 'awe-btn awe-btn-2 awe-btn-default text-uppercase' %>
                                 </div>
                             <% end %>
                         </div>
@@ -70,7 +70,7 @@
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3">
                             <div class="contact-body text-center">
-                                <h3 class="lg text-uppercase">CONTACT US</h3>
+                                <h3 class="lg text-uppercase"><%=t :contact_us %></h3>
                                 <hr class="_hr">
                                 <address class="address-wrap">
                                     <span class="phone"><%= @info.name %></span>

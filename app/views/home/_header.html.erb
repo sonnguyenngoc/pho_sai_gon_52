@@ -14,23 +14,23 @@
         <nav class="navigation text-right" data-menu-type="1200">
             <!-- NAV -->
             <ul class="nav text-uppercase">
-                <li><%= link_to "Home", {controller: "home", action: "index"} %></li>
-                <li><%= link_to "About", {controller: "about", action: "index"} %></li>
-                <li><%= link_to "Menu", {controller: "menu", action: "index"} %></li>
-                <li><%= link_to "Reservation", {controller: "reservation", action: "index"} %></li>
-                <li><%= link_to "Catering", {controller: "catering", action: "index"} %></li>
-                <li><%= link_to "News", {controller: "news", action: "index"} %></li>
-                <li><%= link_to "Contact", {controller: "contact", action: "index"} %></li>
+                <li><%= link_to t(:home), {controller: "home", action: "index"} %></li>
+                <li><%= link_to t(:about), {controller: "about", action: "index"} %></li>
+                <li><%= link_to t(:menu), {controller: "menu", action: "index"} %></li>
+                <li><%= link_to t(:reservation), {controller: "reservation", action: "index"} %></li>
+                <li><%= link_to t(:catering), {controller: "catering", action: "index"} %></li>
+                <li><%= link_to t(:news), {controller: "news", action: "index"} %></li>
+                <li><%= link_to t(:contact), {controller: "contact", action: "index"} %></li>
             </ul>
             <!-- END / NAV -->
 
             <!-- MINICART -->
             <div class="minicart-wrap">
                 <div class="toggle-minicart active">
-                    <span class="text-uppercase">Cart</span>
+                    <span class="text-uppercase"><%=t :cart %></span>
                 </div>
                 <div class="minicart-body">
-                    <h4 class="xsm text-uppercase text-center">Your cart</h4>
+                    <h4 class="xsm text-uppercase text-center"><%=t :your_cart %></h4>
                     <ul class="minicart-list">
                         <% @order.line_items.each do |item| %>
                             <input type="hidden" name="line_items[id]" value="<%= item.id %>">
@@ -55,7 +55,7 @@
                         <span class="amount pull-right"><%= @order.total_order %></span>
                     </div>
                     <div class="minicart-footer">
-                        <%= link_to "View Cart", {controller: "cart", action: "index"}, {class: "awe-btn awe-btn-2 awe-btn-default text-uppercase"} %>
+                        <%= link_to t(:view_cart), {controller: "cart", action: "index"}, {class: "awe-btn awe-btn-2 awe-btn-default text-uppercase"} %>
                     </div>
                     <% if @order.line_items.count > 0 %>
                         <div class="minicart-footer">
@@ -72,7 +72,7 @@
                 <a href="#"><i class="fa fa-twitter"></i></a>
                 <a href="#"><i class="fa fa-pinterest"></i></a>
                 <a href="#"><i class="fa fa-facebook"></i></a>
-                <div><a href="#">EN</a>/<a href="#">DE</a></div>
+                <div><a href="<%= url_for( :locale => 'en' ) %>">EN</a>/<a href="<%= url_for( :locale => 'de' ) %>">DE</a></div>
             </div>
             <!-- END / SOCIAL -->
         </nav>

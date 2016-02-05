@@ -28,7 +28,7 @@
                             <tbody>
                                 <tr class="t-date">
                                     <td colspan="2">
-                                        <label for="date">Date</label>
+                                        <label for="date"><%=t :date_trans %></label>
                                         <div class="form-item">
                                             <%= f.text_field :order_time, value: @customer_reservation.order_time.strftime("%Y/%m/%d"), placeholder: 'yy/mm/dd' %>
                                             <i class="icon awe_calendar"></i>
@@ -37,7 +37,7 @@
                                 </tr>
                                 <tr class="t-time-pers">
                                     <td class="t-time">
-                                        <label for="time">Time</label>
+                                        <label for="time"><%=t :time_trans %></label>
                                         <div class="form-item">
                                             <%= text_field_tag "time", @customer_reservation.order_time.strftime("%I:%M"), placeholder: "hh:mm" %>
                                             <i class="icon awe_clock_2"></i>
@@ -46,9 +46,9 @@
                                 </tr>
                                 <tr class="t-note">
                                     <td colspan="2">
-                                        <label for="note">Note</label>
+                                        <label for="note"><%=t :note %></label>
                                         <div class="form-item">
-                                            <%= f.text_field :note, placeholder: 'Your Note (*)', required: true %>
+                                            <%= f.text_field :note, placeholder: t(:your_note)+' (*)', required: true %>
                                         </div>
                                     </td>
                                 </tr>
@@ -61,17 +61,17 @@
                             <tbody>
                                 <tr class="t-name">
                                     <td>
-                                        <label for="name">Customer Name</label>
+                                        <label for="name"><%=t :customer_name %></label>
                                         <div class="form-item">
-                                            <%= f.text_field :customer_name, placeholder: 'Customer Name (*)', required: true %>
+                                            <%= f.text_field :customer_name, placeholder: t(:customer_name)+' (*)', required: true %>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr class="t-telephone">
                                     <td>
-                                        <label for="telephone">Telephone</label>
+                                        <label for="telephone"><%=t :telephone %></label>
                                         <div class="form-item">
-                                            <%= f.text_field :customer_phone, placeholder: 'Telephone (*)', required: true %>
+                                            <%= f.text_field :customer_phone, placeholder: t(:telephone)+' (*)', required: true %>
                                         </div>
                                     </td>
                                 </tr>
@@ -89,7 +89,7 @@
                 </div>
                 <div class="form-footer text-center">
                     <div class="form-item reservation-submit">
-                        <%= f.submit "SEND RESERVATION", class: "awe-btn awe-btn-3 awe-btn-default text-uppercase" %>
+                        <%= f.submit t(:send_reservation), class: "awe-btn awe-btn-3 awe-btn-default text-uppercase" %>
                     </div>
                 </div>
                 <div id="reservation-form-content" class="text-center"></div>

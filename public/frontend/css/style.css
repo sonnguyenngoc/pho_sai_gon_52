@@ -2832,10 +2832,10 @@ header.header .navigation ul.nav .sub-menu .right {
   display: none;
 }
 
-.item-event .image-wrap {
+/*.item-event .image-wrap {
   display: inline-block;
   border: 10px solid #ffd34e;
-}
+}*/
 .item-event .item-event-body {
   margin-top: 40px;
   margin-left: 35px;

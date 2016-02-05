@@ -12,6 +12,17 @@
 
         <!-- NAVIGATION -->
         <nav class="navigation text-right" data-menu-type="1200">
+            
+            <!-- SOCIAL -->
+            <div class="head-social text-right">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-pinterest"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                | <a href="<%= url_for( :locale => 'en' ) %>">EN</a>/<a href="<%= url_for( :locale => 'de' ) %>">DE</a>
+            </div>
+            <!-- END / SOCIAL -->
+            <br />
+            
             <!-- NAV -->
             <ul class="nav text-uppercase">
                 <li><%= link_to t(:home), {controller: "home", action: "index"} %></li>
@@ -67,14 +78,7 @@
             </div>
             <!-- END / MINICART -->
             
-            <!-- SOCIAL -->
-            <div class="head-social">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-pinterest"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <div><a href="<%= url_for( :locale => 'en' ) %>">EN</a>/<a href="<%= url_for( :locale => 'de' ) %>">DE</a></div>
-            </div>
-            <!-- END / SOCIAL -->
+            
         </nav>
         <!-- END / NAVIGATION -->
     </div>

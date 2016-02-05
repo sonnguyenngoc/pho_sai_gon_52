@@ -81,3 +81,15 @@ header.header .navigation ul.nav li a {
 .about-story .block-first, .about-story .block-last {
     margin: 40px 0;
 }
+header.header .logo a img {
+    max-height: 126px;
+}
+header.header .navigation {
+    padding: 14px 0 34px;
+}
+header.header .head-social {
+    margin-bottom: 10px;
+}
+.section-content {
+    padding-top: 40px;
+}

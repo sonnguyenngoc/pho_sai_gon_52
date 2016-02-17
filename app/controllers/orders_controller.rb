@@ -40,15 +40,13 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
-    respond_to do |format|
-      if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-        format.json { render :show, status: :ok, location: @order }
-      else
-        format.html { render :edit }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
+    params[:quantities].each do |q|
+      #q[0] q[1]
+      li = LineItem.find(q[0])
+      li.update_attribute(:quantity, q[1])
     end
+    
+    redirect_to controller: 'cart', action: 'index'
   end
 
   # DELETE /orders/1

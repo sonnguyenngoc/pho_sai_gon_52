@@ -19,9 +19,9 @@
 
     <!-- SHOP PAGE -->
     <section id="shop-page" class="shop-page section">
-        <div class="container">
-            <%= form_for @order, :url => '' do |f| %>
-                <% if @order.line_items.count > 0 %>
+        <div class="container"> 
+            <% if @order.line_items.count > 0 %>
+                <%= form_for @order do |f| %>
                     <table class="shop-table shop-cart">
                         <thead>
                             <tr>
@@ -70,7 +70,8 @@
                 
                     <div class="cart-footer">
                         <div class="coupon-code">
-                            <%= link_to "Empty Cart", {controller: "cart", action: "clear_items", id: @order.id}, class: "awe-btn awe-btn-2 awe-btn-plus text-uppercase", method: :delete  %>
+                            <%= link_to "Empty Cart", {controller: "cart", action: "clear_items", id: @order.id}, class: "awe-btn awe-btn-1 awe-btn-plus text-uppercase", method: :delete  %>
+                            <%= button_to "Update Cart", "#", class: "awe-btn awe-btn-2 awe-btn-ar text-uppercase"  %>
                         </div>
                         <div class="total">
                             <span>Total Order:</span>
@@ -83,14 +84,14 @@
                             <%= link_to "START CHECKOUT", {controller: "checkout", action: "index"}, {class: "awe-btn awe-btn-3 awe-btn-default text-uppercase"} %>
                         </div>
                     </div>
-                <% else %>
-                    <div class="cart-submit text-center">
-                        <div class="form-actions">
-                            <h4>Your shopping cart is empty</h4>
-                            <%= link_to "SHOPPING NOW", {controller: "menu", action: "index"}, {class: "awe-btn awe-btn-3 awe-btn-default text-uppercase"} %>
-                        </div>
-                    </div>
                 <% end %>
+            <% else %>    
+                <div class="cart-submit text-center">
+                    <div class="form-actions">
+                        <h4>Your shopping cart is empty</h4>
+                        <%= link_to "SHOPPING NOW", {controller: "menu", action: "index"}, {class: "awe-btn awe-btn-3 awe-btn-default text-uppercase"} %>
+                    </div>
+                </div>
             <% end %>
         </div>
     </section>

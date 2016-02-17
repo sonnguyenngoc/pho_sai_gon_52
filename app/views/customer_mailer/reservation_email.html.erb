@@ -4,25 +4,28 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hi Pho Sai Gon 52, </h1>
-    <p>This's my reservation info:</p>
+    <p>-------- Reservation --------</p>
     <p>
-      My name's: <%= @customer_reservation.customer_name %>
+      From: <%= @customer_reservation.customer_email %>
     </p>
     <p>
-      My phone's: <%= @customer_reservation.customer_phone %>
+      Name: <%= @customer_reservation.customer_name %>
+    </p>
     </p>
     <p>
-      My email's: <%= @customer_reservation.customer_email %>
+      Phone: <%= @customer_reservation.customer_phone %>
     </p>
     <p>
-      Order time: <%= @customer_reservation.order_time %>  (format: mm/dd/yy - hh/mm)
+      Note: <%= @customer_reservation.note %>
     </p>
     <p>
-      This's my note: <%= @customer_reservation.note %>
+      Order time: <%= @customer_reservation.order_time.strftime("%d/%m/%Y %H:%M") %>  (GMT+01:00)
     </p>
     <p>
-      Send date: <%= @customer_reservation.created_at %>
+      To: phosaigon52@gmail.com
+    </p>
+    <p>
+      Date: <%= @customer_reservation.created_at.in_time_zone("Amsterdam").strftime("%d/%m/%Y %H:%M") %> (GMT+01:00)
     </p>
   </body>
 </html>

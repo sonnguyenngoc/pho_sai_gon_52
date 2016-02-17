@@ -4,31 +4,33 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hi Pho Sai Gon 52, </h1>
-    <p>This's my reservation info:</p>
+    <p>-------- Order Info --------</p>
     <p>
-      My first name's: <%= @customer_order.first_name %>
+      From: <%= @customer_order.email %>
     </p>
     <p>
-      My last name's: <%= @customer_order.last_name %>
+      First Name: <%= @customer_order.first_name %>
     </p>
     <p>
-      My email's: <%= @customer_order.email %>
+      Last Name: <%= @customer_order.last_name %>
     </p>
     <p>
-      My phone's: <%= @customer_order.phone %>
+      Phone: <%= @customer_order.phone %>
     </p>
     <p>
-      My address's: <%= @customer_order.address %>
+      Address: <%= @customer_order.address %>
     </p>
     <p>
-      My company name's: <%= @customer_order.company_name %>
+      Company name: <%= @customer_order.company_name %>
     </p>
     <p>
-      Time to send order: <%= @customer_order.created_at %>
+      Date: <%= @customer_order.created_at.in_time_zone("Amsterdam").strftime("%d/%m/%Y %H:%M") %> (GMT+01:00)
+    </p>
+    <p>
+      To: phosaigon52@gmail.com
     </p>
     <div class="form-group">
-        <%= label "", "Product List: ", class: "control-label col-sm-2 text-semibold" %>
+        <p>-------- Order Listing --------</p>
         <div class="col-sm-10">
             <article>
                 <table class="table">

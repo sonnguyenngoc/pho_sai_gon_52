@@ -4,19 +4,19 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hi Pho Sai Gon 52, </h1>
-    <p>This's my contact info:</p>
+    <p>-------- Original message --------</p>
     <p>
-      My name's: <%= @customer_contact.name %>
+      From: <%= @customer_contact.email %>
     </p>
     <p>
-      My email's: <%= @customer_contact.email %>
+      Date: <%= @customer_contact.created_at.in_time_zone("Amsterdam").strftime("%d/%m/%Y %H:%M") %> (GMT+01:00)
     </p>
     <p>
-      This's my message: <%= @customer_contact.message.html_safe %>
+      To: phosaigon52@gmail.com
     </p>
     <p>
-      Time to send contact: <%= @customer_contact.created_at %>
+      Subject: <%= @customer_contact.message.html_safe %>
     </p>
+    
   </body>
 </html>

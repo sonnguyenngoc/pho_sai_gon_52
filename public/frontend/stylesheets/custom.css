@@ -93,3 +93,6 @@ header.header .head-social {
 .section-content {
     padding-top: 40px;
 }
+.shop-table .product-quantity .quantity {
+    background-color: #ffeecc;
+}

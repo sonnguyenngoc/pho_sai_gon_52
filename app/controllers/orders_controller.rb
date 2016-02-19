@@ -46,7 +46,7 @@ class OrdersController < ApplicationController
       li.update_attribute(:quantity, q[1])
     end
     
-    redirect_to controller: 'cart', action: 'index'
+    redirect_to controller: 'cart', action: 'index', notice: 'Order was successfully updated.'
   end
 
   # DELETE /orders/1

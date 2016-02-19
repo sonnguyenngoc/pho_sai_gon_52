@@ -30,7 +30,7 @@
                                     <td colspan="2">
                                         <label for="date"><%=t :date_trans %></label>
                                         <div class="form-item">
-                                            <%= f.text_field :order_time, value: @customer_reservation.order_time.strftime("%Y/%m/%d"), placeholder: 'yy/mm/dd' %>
+                                            <%= f.text_field :order_time, value: @customer_reservation.order_time.strftime("%d/%m/%Y"), placeholder: 'dd/mm/yy' %>
                                             <i class="icon awe_calendar"></i>
                                         </div>
                                     </td>
@@ -39,7 +39,7 @@
                                     <td class="t-time">
                                         <label for="time"><%=t :time_trans %></label>
                                         <div class="form-item">
-                                            <%= text_field_tag "time", @customer_reservation.order_time.strftime("%I:%M"), placeholder: "hh:mm" %>
+                                            <%= text_field_tag "time", @customer_reservation.order_time.in_time_zone("Amsterdam").strftime("%I:%M"), placeholder: "hh:mm" %>
                                             <i class="icon awe_clock_2"></i>
                                         </div>
                                     </td>

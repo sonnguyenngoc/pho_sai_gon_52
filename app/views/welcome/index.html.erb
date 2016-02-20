@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="image-wrap text-center">
-                            <%= link_to image_tag("/frontend/images/logo-PhoSG52.png"), {controller: "home", action: "index"} %>
+                            <img src="/frontend/images/logo-PhoSG52.png" />
                         </div>
                     </div>
                 </div>
@@ -20,8 +20,7 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <%= link_to image_tag("/frontend/images/flags/icon-uk.png"), home_path(locale: "en") %>  <%= link_to image_tag("/frontend/images/flags/icon-german.png"), home_path(locale: "de") %>
-                        <h4>Take Away - Asia Buffet - <%= link_to "Catering", {controller: "catering", action: "index"} %> - Lieferung</h4>
-                        <%= link_to t(:go_to_the_website), {controller: "home", action: "index"}, {class: "awe-btn awe-btn-2 awe-btn-default"} %>
+                        <h4 class="font-welcome">Take Away - Asia Buffet - Catering - Lieferung</h4>
                     </div>
                 </div>
             </div>

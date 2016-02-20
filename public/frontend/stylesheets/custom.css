@@ -96,3 +96,7 @@ header.header .head-social {
 .shop-table .product-quantity .quantity {
     background-color: #ffeecc;
 }
+.font-welcome {
+    font-family: Quattrocento;
+    font-weight: bold;
+}

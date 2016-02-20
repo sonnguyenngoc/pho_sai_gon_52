@@ -100,3 +100,9 @@ header.header .head-social {
     font-family: Quattrocento;
     font-weight: bold;
 }
+header.header .navigation ul.nav li a {
+    font-weight: 600;
+}
+.minicart-wrap .toggle-minicart.active span {
+    font-weight: 600;
+}

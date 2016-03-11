@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202095316) do
+ActiveRecord::Schema.define(version: 20160311162510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,22 @@ ActiveRecord::Schema.define(version: 20160202095316) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "galleries", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "tag_id"
+    t.string   "image_url"
+  end
+
+  create_table "gallery_details", force: :cascade do |t|
+    t.string   "image_url"
+    t.integer  "gallery_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "line_items", force: :cascade do |t|
     t.integer  "menu_id"
     t.integer  "order_id"
@@ -106,6 +122,16 @@ ActiveRecord::Schema.define(version: 20160202095316) do
     t.string   "image_url"
   end
 
+  create_table "rails", force: :cascade do |t|
+    t.string   "g"
+    t.string   "model"
+    t.string   "GalleryDetail"
+    t.string   "image_url"
+    t.integer  "gallery_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string   "image_url"
     t.string   "name"
@@ -114,6 +140,13 @@ ActiveRecord::Schema.define(version: 20160202095316) do
     t.string   "phone"
     t.string   "fax"
     t.string   "website"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "title"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

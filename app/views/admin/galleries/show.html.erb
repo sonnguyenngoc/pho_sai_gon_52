@@ -1,0 +1,150 @@
+<!-- Main navbar -->
+    <%= render "/admin/main/navbar" %>
+<!-- /main navbar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main">
+            <div class="sidebar-content">
+
+                <!-- User menu -->
+                    <%= render '/admin/main/user_menu' %>
+                <!-- /user menu -->
+
+
+                <!-- Main navigation -->
+                <div class="sidebar-category sidebar-category-visible">
+                    <div class="category-content no-padding">
+                        <ul class="navigation navigation-main navigation-accordion">
+
+                            <!-- Main menu-->
+                                <%= render "/admin/main/main_menu" %>
+                            <!-- /main menu -->
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- /main navigation -->
+
+            </div>
+        </div>
+        <!-- /main sidebar -->
+
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> - Dashboard</h4>
+                    </div>
+                </div>
+
+                <div class="breadcrumb-line">
+                    <ul class="breadcrumb">
+                        <li><%= link_to "<i class='icon-home2 position-left'></i> Home".html_safe, {controller: "main", action: "index"} %></li>
+                        <li><%= link_to "Gallery Management", admin_galleries_path %></li>
+                        <li><%= link_to "Gallery Listing", admin_galleries_path %></li>
+                        <li class="active"><%= @gallery.title %></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /page header -->
+            
+            <!-- Content area -->
+            <div class="content">
+                <!-- Basic datatable -->
+                <div class="panel panel-flat">
+                    <div class="panel-heading">
+                        <h5 class="panel-title"><span class="text-semibold"><%= @gallery.title %></span></h5><br/>
+                        
+                        <p class="color-red"><%= notice %></p><br/>
+                        
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <%= label "", "Picture: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= image_tag(@gallery.image_url.sub_gallery, alt: "Picture of Post", class: "img-rouded") %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Title: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @gallery.title %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Title: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @gallery.tag.title %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Content: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static text-justify") do %>
+                                      <%= @gallery.description %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Created At: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <%= content_tag(:p, class: "form-control-static") do %>
+                                      <%= @gallery.created_at.strftime("%d/%m/%Y") %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= label "", "Related Images: ", class: "control-label col-sm-2 text-semibold" %>
+                                <div class="col-sm-10">
+                                    <% @gallery.gallery_details.each do |item| %>
+                                        <div class="col-sm-4">
+                                            <%= image_tag(item.image_url.sub_gallery, size: "125x75", alt: "Gallery Listing", class: "img-rouded padding-bottom") %>
+                                        </div>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </form>
+                        <%= link_to '<i class="icon-backward2 position-left"></i> Back'.html_safe, admin_galleries_path, class: "btn btn-primary" %>
+                    </div>
+                </div>
+                <!-- /basic datatable -->
+
+                <!-- Footer -->
+                <div class="footer text-muted">
+                    <%= render "/admin/main/footer" %>
+                </div>
+                <!-- /footer -->
+                
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+</div>
+<!-- /page container -->
+
+<!-- Theme JS files -->
+<%= javascript_include_tag '/backend/assets/js/plugins/tables/datatables/datatables.min.js' %>
+<%= javascript_include_tag '/backend/assets/js/plugins/forms/selects/select2.min.js' %>
+
+<%= javascript_include_tag '/backend/assets/js/core/app.js' %>
+<%= javascript_include_tag '/backend/assets/javascripts/datatables_types.js' %>
+<!-- /theme JS files -->

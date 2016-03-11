@@ -38,5 +38,7 @@ Rails.application.routes.draw do
     resources :customer_orders
     resources :customer_contacts
     resources :customer_reservations
+    resources :tags
+    resources :galleries
   end
 end

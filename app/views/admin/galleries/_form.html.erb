@@ -1,0 +1,63 @@
+<% if @gallery.errors.any? %>
+  <div id="error_explanation">
+    <% @gallery.errors.full_messages.each do |message| %>
+      <p class="label label-warning"><%= message %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_for [:admin, @gallery], html: {class: "form-horizontal"} do |f| %>
+
+    <div class="form-group">
+        <%= f.label "Picture: ", class: "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+          <%= f.file_field :image_url, class: "file-styled" %>
+          <span class="help-block">Accepted formats: gif, png, jpg. Size: >= 350x350</span>
+          <%= image_tag(@gallery.image_url.main_gallery, size: "250x250", class: "img-rouded") %>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label "Title: ", class: "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+            <%= f.text_field :title, placeholder: "Enter title of gallery (required)...", class: "form-control" %>
+        </div>
+    </div>
+        
+    <div class="form-group">
+        <%= f.label "Tag: ", class: "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+            <%= f.collection_select(:tag_id, Tag.all, :id, :title, {:prompt => "Choose tag of gallery..."}, {class: "select"}) %>
+        </div>
+    </div>
+        
+    <div class="form-group field">
+        <%= f.label "Description", class: "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+          <%= f.text_area :description, rows: "5", cols: "5", placeholder: "Enter description of gallery.....", class: "form-control" %>
+        </div>
+    </div>
+        
+    <div class="form-group">
+      <%= f.label "Related Images: ", class: "col-lg-2 control-label" %>
+      <div class="col-lg-10">
+          <%= f.fields_for :gallery_details do |ff| %>
+              <%= ff.hidden_field :id %>
+  
+              <div class="col-lg-11 padding-bottom">
+                  <%= ff.file_field :image_url, class: "file-styled margin-bottom" %>
+              </div>
+              
+              <div class="col-lg-1 padding-bottom">
+                  <%= ff.check_box :_destroy %>
+                  <%= ff.label :_destroy, 'Remove' %>
+              </div>
+          <% end %>
+      </div>
+    </div>
+
+    <div class="text-right">
+        <%= button_tag 'Save <i class="icon-plus22 position-right"></i>'.html_safe, class: "btn btn-primary"%>
+        <%= link_to 'Cancel <i class="icon-cross2"></i>'.html_safe, admin_galleries_path,class: "btn bg-warning-400"%>
+    </div>
+<% end %>

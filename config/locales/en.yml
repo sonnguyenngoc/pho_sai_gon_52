@@ -9,6 +9,7 @@ en:
   contact: "Contact"
   go_to_the_website: "GO TO THE WEBSITE"
   cart: "Cart"
+  events: "Events"
   your_cart: "Your cart"
   view_cart: "View cart"
   welcome_to: "Welcome to"
@@ -33,6 +34,8 @@ en:
   telephone: "Telephone"
   email: "Email"
   send_reservation: "SEND RESERVATION"
+  about_content_1: "In Viet Nam, Phở Bò is served on the road, in restaurant, anywhere; we can eat at breakfast, lunch, and diner, the preparation for this plat is very long time with many different ingredients, the different of each kind of Pho is the kind how you use the ingredients."
+  about_content_2: "The components are: Clear beef broth with wide noodles, beef, onion, Vietnamese herbs, the sprouting seeds of mung bean."
   activerecord:
     errors:
       messages:

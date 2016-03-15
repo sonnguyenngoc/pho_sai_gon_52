@@ -7,6 +7,7 @@ de:
   catering: "Gastronomie"
   news: "Nachrichten"
   contact: "Kontakt"
+  events: "Veranstaltungen"
   go_to_the_website: "Besuchen Sie die Website"
   cart: "Wagen"
   your_cart: "Ihr warenkorb"
@@ -33,6 +34,8 @@ de:
   telephone: "Telefon"
   email: "Email"
   send_reservation: "RESERVIERUNG SENDEN"
+  about_content_1: "In Vietnam wird sie in den vielen Garküchen auf den Strassen rund um die Uhr als Frühstück, Mittags- oder Nachtimbiss gegessen. Eine gute Phở Bò verlangt bei der Zubereitung viel Zeit und viele Zutaten. Das Geheimnis der Phở ist die Würzmischung, die jeder Suppenkoch anders zusammenstellt."
+  about_content_2: "Zutaten: Hausgemachte klare Rindbrühe mit breiten Reisnudeln, Rinderfilet, Zwiebeln, vietnamesischen Kräutern, Sojasprossen, dazu schmackhafte Rind-Bällchen."
   activerecord:
     errors:
       messages:

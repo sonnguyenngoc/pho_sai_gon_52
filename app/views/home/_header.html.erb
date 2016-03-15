@@ -15,9 +15,18 @@
             
             <!-- SOCIAL -->
             <div class="head-social text-right">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-pinterest"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56e389a44d3cfa43"></script>
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <style>
+                        .addthis_sharing_toolbox {
+                            float: left;
+                            margin-right: 20px;
+                            margin-top: 3px;
+                        }
+                    </style>
+                    <div class="addthis_sharing_toolbox"></div>
+
                 | <a href="<%= url_for( :locale => 'en' ) %>">EN</a>/<a href="<%= url_for( :locale => 'de' ) %>">DE</a>
             </div>
             <!-- END / SOCIAL -->
@@ -30,7 +39,8 @@
                 <li><%= link_to t(:menu), {controller: "menu", action: "index"} %></li>
                 <li><%= link_to t(:reservation), {controller: "reservation", action: "index"} %></li>
                 <li><%= link_to t(:catering), {controller: "catering", action: "index"} %></li>
-                <li><%= link_to t(:news), {controller: "news", action: "index"} %></li>
+                <!--<li><%= link_to t(:news), {controller: "news", action: "index"} %></li>-->
+                <li><%= link_to t(:events), {controller: "events", action: "index"} %></li>
                 <li><%= link_to t(:contact), {controller: "contact", action: "index"} %></li>
             </ul>
             <!-- END / NAV -->

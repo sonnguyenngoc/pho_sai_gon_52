@@ -15,13 +15,16 @@ class Admin::GalleriesController < ApplicationController
   # GET /galleries/new
   def new
     @gallery = Gallery.new
-    50.times do
+    30.times do
       @gallery.gallery_details.build
     end
   end
 
   # GET /galleries/1/edit
   def edit
+    (30-@gallery.gallery_details.count).times do
+      @gallery.gallery_details.build
+    end
   end
 
   # POST /galleries

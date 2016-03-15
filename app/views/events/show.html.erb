@@ -19,45 +19,70 @@
 
     <!-- EVENTS -->
     <section id="events" class="events section">
-        
         <div class="divider divider-2"></div>
         <div class="section-content">
             <div class="container">
                 
-                <h2 style="margin: 0;"><%= t(:events) %></h2>
-                
-                <div class="blog-list" style="margin-top: 0">
+                <h2 style="margin-top: 0; margin-bottom: 10px;">
+                    <a href="<%= events_path %>" class="color-tale">Events</a> / <%= @gallery.title %></h2>
+                <p><%= @gallery.description %></p>
+                <br />
+                <ul class="event-slider">
                         
-                    <% Gallery.all.each do |g| %>
-                        <!-- POST -->
-                        <div class="post post-single">
-                            <div class="post-media">
-                                <div class="image-wrap">
-                                    <img alt="" src="<%= g.image_url.big_square if g.image_url? %>">
+                        <!-- ITEM EVENT -->
+                        <li>
+                            <div class="item-event">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="image-wrap">
+                                            <img src="<%= @gallery.image_url.big_square if @gallery.image_url? %>" alt=""> 
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </div>
-                            <div class="post-body">
-                                
-                                <div class="post-title">
-                                    <h3 class="xmd"><a href="<%= show_event_path(g_id: g.id) %>"><%= g.title %></a></h3>
+                        </li>
+                        <!-- ITEM EVENT -->
+                    
+                    <% @gallery.gallery_details.each do |g| %>
+                        <!-- ITEM EVENT -->
+                        <li>
+                            <div class="item-event">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="image-wrap">
+                                            <img src="<%= g.image_url.big_square if g.image_url? %>" alt=""> 
+                                        </div>
+                                    </div>
+                                    
                                 </div>
-                                <div class="post-content">
-                                    <p><%= g.description %></p>
-                                </div>
-                                <div class="post-footer">
-                                    <div class="awe-btn awe-btn-2 awe-btn-default text-uppercase"><a class="" href="<%= show_event_path(g_id: g.id) %>"><%= t('read_more') %></a></div>
-                                </div>
+                            </div>
+                        </li>
+                        <!-- ITEM EVENT -->
+                    <% end %>
+
+
+                </ul>
+
+                <!-- EVENT PAGER -->
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-4">
+                        <div class="event-pager-scroll">
+                            <div class="event-pager">
+                                <a data-slide-index="0" href="#"><img src="<%= @gallery.image_url.sub_gallery if @gallery.image_url? %>" alt=""></a>
+                                <% @gallery.gallery_details.each_with_index do |g,i| %>
+                                    <a data-slide-index="<%= i+1 %>" href="#"><img src="<%= g.image_url.sub_gallery if g.image_url? %>" alt=""></a>
+                                <% end %>   
                             </div>
                         </div>
-                        <!-- END / POST -->
-                    <% end %>
-                        
                     </div>
-                
-                
-                
-                
-                
+                </div>
+                <style>
+                    .event-pager-scroll {
+                        margin-top: -360px !important;
+                    }
+                </style>
+                <!-- END / EVENT PAGER -->
             </div>
         </div>
     </section>
@@ -66,39 +91,40 @@
     <!-- EVENTS GALLERY -->
     <section id="events-gallery" class="events-gallery section">
         <div class="gallery-slider">
+            
             <!-- GALLERY ITEM -->
             <div class="gallery-item">
-                <img src="/frontend/images/temp/11.jpg" alt="">
+                <img src="/frontend/images/temp/news-01.jpg" alt="">
+            </div>
+            <!-- END / GALLERY ITEM -->
+            
+            <!-- GALLERY ITEM -->
+            <div class="gallery-item">
+                <img src="/frontend/images/temp/news-02.jpg" alt="">
+            </div>
+            <!-- END / GALLERY ITEM -->
+            
+            <!-- GALLERY ITEM -->
+            <div class="gallery-item">
+                <img src="/frontend/images/temp/news-03.jpg" alt="">
+            </div>
+            <!-- END / GALLERY ITEM -->
+            
+            <!-- GALLERY ITEM -->
+            <div class="gallery-item">
+                <img src="/frontend/images/temp/news-04.jpg" alt="">
             </div>
             <!-- END / GALLERY ITEM -->
 
             <!-- GALLERY ITEM -->
             <div class="gallery-item">
-                <img src="/frontend/images/temp/1.jpg" alt="">
+                <img src="/frontend/images/temp/news-05.jpg" alt="">
             </div>
             <!-- END / GALLERY ITEM -->
 
             <!-- GALLERY ITEM -->
             <div class="gallery-item">
-                <img src="/frontend/images/temp/3.jpg" alt="">
-            </div>
-            <!-- END / GALLERY ITEM -->
-
-            <!-- GALLERY ITEM -->
-            <div class="gallery-item">
-                <img src="/frontend/images/temp/4.jpg" alt="">
-            </div>
-            <!-- END / GALLERY ITEM -->
-
-            <!-- GALLERY ITEM -->
-            <div class="gallery-item">
-                <img src="/frontend/images/temp/5.jpg" alt="">
-            </div>
-            <!-- END / GALLERY ITEM -->
-
-            <!-- GALLERY ITEM -->
-            <div class="gallery-item">
-                <img src="/frontend/images/temp/10.jpg" alt="">
+                <img src="/frontend/images/temp/news-06.jpg" alt="">
             </div>
             <!-- END / GALLERY ITEM -->
 

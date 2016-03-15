@@ -3,7 +3,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   include CurrentOrder
-  before_action :set_order, only: [:index, :create, :clear_items]
+  before_action :set_order, only: [:show, :index, :create, :clear_items]
+  
+  after_filter  :set_access_control_headers
+
+  def set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+  end   
   
   protected
     def layout_by_resource

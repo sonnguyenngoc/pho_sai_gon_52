@@ -41,17 +41,27 @@
     <div class="form-group">
       <%= f.label "Related Images: ", class: "col-lg-2 control-label" %>
       <div class="col-lg-10">
+          <% index = 0 %>
           <%= f.fields_for :gallery_details do |ff| %>
+              <% g = @gallery.gallery_details[index] %>
               <%= ff.hidden_field :id %>
-  
-              <div class="col-lg-11 padding-bottom">
-                  <%= ff.file_field :image_url, class: "file-styled margin-bottom" %>
-              </div>
               
-              <div class="col-lg-1 padding-bottom">
-                  <%= ff.check_box :_destroy %>
-                  <%= ff.label :_destroy, 'Remove' %>
+              <div class="col-lg-8 padding-bottom">
+                  <%= ff.file_field :image_url, class: "file-styled margin-bottom" %>
+                  <br /><br />
               </div>
+              <% if g.image_url? %>
+                <div class="col-lg-3 padding-bottom">
+                    <img style="width: 100%; margin-bottom: 10px;" src="<%= g.image_url.sub_gallery if g.image_url? %>" />
+                </div>
+              <% end %>
+              <% if g.image_url? %>
+                <div class="col-lg-1 padding-bottom">
+                    <%= ff.check_box :_destroy %>
+                    <%= ff.label :_destroy, 'Remove' %>
+                </div>
+              <% end %>
+            <% index += 1 %>
           <% end %>
       </div>
     </div>

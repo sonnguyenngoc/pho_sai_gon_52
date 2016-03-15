@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get 'catering' => "catering#index", as: :catering
     get 'news' => "news#index", as: :news
     get 'events' => "events#index", as: :events
+    get 'events/show' => "events#show", as: :show_event
     get 'blog' => "blog#index", as: :blog
     get 'blog_single' => "blog_single#index", as: :blog_single
     get 'contact' => "contact#index", as: :contact

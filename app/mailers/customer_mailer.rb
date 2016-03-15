@@ -1,5 +1,5 @@
 class CustomerMailer < ApplicationMailer
-  default from: 'sonnn@hoangkhang.com.vn'
+  default from: 'phosaigon52@gmail.com'
   
   def contact_email(customer_contact)
     @customer_contact = customer_contact

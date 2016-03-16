@@ -34,6 +34,7 @@ de:
   telephone: "Telefon"
   email: "Email"
   send_reservation: "RESERVIERUNG SENDEN"
+  about_content_3: "WIR MACHEN AUCH ANDERE MAHLZEIT"
   about_content_1: "In Vietnam wird sie in den vielen Garküchen auf den Strassen rund um die Uhr als Frühstück, Mittags- oder Nachtimbiss gegessen. Eine gute Phở Bò verlangt bei der Zubereitung viel Zeit und viele Zutaten. Das Geheimnis der Phở ist die Würzmischung, die jeder Suppenkoch anders zusammenstellt."
   about_content_2: "Zutaten: Hausgemachte klare Rindbrühe mit breiten Reisnudeln, Rinderfilet, Zwiebeln, vietnamesischen Kräutern, Sojasprossen, dazu schmackhafte Rind-Bällchen."
   activerecord:

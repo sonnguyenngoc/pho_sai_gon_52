@@ -26,63 +26,45 @@
                 <h2 style="margin-top: 0; margin-bottom: 10px;">
                     <a href="<%= events_path %>" class="color-tale">Events</a> / <%= @gallery.title %></h2>
                 <p><%= @gallery.description %></p>
-                <br />
-                <ul class="event-slider">
-                        
-                        <!-- ITEM EVENT -->
-                        <li>
-                            <div class="item-event">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="image-wrap">
-                                            <img src="<%= @gallery.image_url.big_square if @gallery.image_url? %>" alt=""> 
+                <br />         
+                
+                <!-- SECTION BLOG -->
+                <section id="section-blog" class="section-blog section">
+            
+                    <div class="container">
+                        <div class="row">
+                            <div class="blog-grid">
+                                <div class="grid-sizer"></div>
+                                <!-- BLOG POST -->
+                                <div class="post post-single w2"> 
+                                    <div class="post-media border-product">
+                                        <img src="<%= @gallery.image_url.big_square if @gallery.image_url? %>" alt="">
+                                    </div>
+                                    <div class="post-body">
+                                        <div class="post-title">
+                                            <h2 class="text-uppercase"><%= @gallery.title %></h2>
                                         </div>
                                     </div>
-                                    
                                 </div>
-                            </div>
-                        </li>
-                        <!-- ITEM EVENT -->
-                    
-                    <% @gallery.gallery_details.each do |g| %>
-                        <!-- ITEM EVENT -->
-                        <li>
-                            <div class="item-event">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="image-wrap">
-                                            <img src="<%= g.image_url.big_square if g.image_url? %>" alt=""> 
+                                <!-- END / BLOG POST -->
+            
+                                
+                                <% @gallery.gallery_details.each do |item| %>
+                                    <!-- BLOG POST -->
+                                    <div class="post post-single">
+                                        <div class="post-media border-product">
+                                            <img src="<%= item.image_url.big_square if item.image_url? %>" alt="">
                                         </div>
                                     </div>
-                                    
-                                </div>
-                            </div>
-                        </li>
-                        <!-- ITEM EVENT -->
-                    <% end %>
-
-
-                </ul>
-
-                <!-- EVENT PAGER -->
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-4">
-                        <div class="event-pager-scroll">
-                            <div class="event-pager">
-                                <a data-slide-index="0" href="#"><img src="<%= @gallery.image_url.sub_gallery if @gallery.image_url? %>" alt=""></a>
-                                <% @gallery.gallery_details.each_with_index do |g,i| %>
-                                    <a data-slide-index="<%= i+1 %>" href="#"><img src="<%= g.image_url.sub_gallery if g.image_url? %>" alt=""></a>
-                                <% end %>   
+                                    <!-- END / BLOG POST -->
+                                <% end %>
+                            
                             </div>
                         </div>
+            
                     </div>
-                </div>
-                <style>
-                    .event-pager-scroll {
-                        margin-top: -360px !important;
-                    }
-                </style>
-                <!-- END / EVENT PAGER -->
+                </section>
+                <!-- END / SECTION BLOG -->
             </div>
         </div>
     </section>

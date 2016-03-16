@@ -27,7 +27,8 @@
                     </style>
                     <div class="addthis_sharing_toolbox"></div>
 
-                | <a href="<%= url_for( :locale => 'en' ) %>">EN</a>/<a href="<%= url_for( :locale => 'de' ) %>">DE</a>
+                |   <% params[:locale] = 'en' %><a href="<%= url_for( params ) %>">EN</a>/
+                    <% params[:locale] = 'de' %><a href="<%= url_for( params ) %>">DE</a>
             </div>
             <!-- END / SOCIAL -->
             <br />

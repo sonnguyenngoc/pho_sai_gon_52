@@ -39,7 +39,7 @@
                                     <td class="t-time">
                                         <label for="time"><%=t :time_trans %></label>
                                         <div class="form-item">
-                                            <%= text_field_tag "time", @customer_reservation.order_time.in_time_zone("Amsterdam").strftime("%I:%M"), placeholder: "hh:mm" %>
+                                            <%= text_field_tag "time", (@customer_reservation.order_time.in_time_zone("Amsterdam") + 2.hours).strftime("%I:%M"), placeholder: "hh:mm" %>
                                             <i class="icon awe_clock_2"></i>
                                         </div>
                                     </td>

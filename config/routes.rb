@@ -41,5 +41,7 @@ Rails.application.routes.draw do
     resources :customer_reservations
     resources :tags
     resources :galleries
+    
+    match 'smtp_gmail_auth' => "setting#smtp_gmail_auth", as: :smtp_gmail_auth, via: [:get, :post]
   end
 end

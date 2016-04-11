@@ -16,4 +16,8 @@ class CustomerMailer < ApplicationMailer
     mail(to: "phosaigon52@gmail.com", subject: "Customer Order - Phở Sài Gòn 52")
   end
   
+  def test_email
+    mail(from: "luanpm@hoangkhang.com.vn", to: "luanpm@live.com", subject: "Test", body: "Test").deliver
+  end
+  
 end

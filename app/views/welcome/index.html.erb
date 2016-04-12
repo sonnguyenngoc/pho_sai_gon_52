@@ -32,7 +32,15 @@
                             <ul class="bxslider">
                                 
                                 <% @banners.each do |banner| %>
-                                    <li><img src="<%= banner.image_url.banner %>" title="<%= banner.title + ": " + banner.description %>" /></li>
+                                    <li><img src="<%= banner.image_url.banner %>" title="
+                                    ================================================================<br/>
+                                    <%= banner.title %><br/>
+                                    <%= banner.description %><br/>
+                                    Reservierung: 043 495 00 22<br/>
+                                    Order: phosaigon52@gmail.com<br/>
+                                    ================================================================
+                                    "/>
+                                    </li>
                                 <% end %>
                             </ul>
                         </div>

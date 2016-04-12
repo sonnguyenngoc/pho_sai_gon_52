@@ -57,7 +57,7 @@ header.header .navigation ul.nav li a {
     }
 }
 .about-story .block-first .image-wrap img {
-   max-width: 350px;
+   max-width: 261px;
 }
 .contact-first .contact-body .address {
     display: block;
@@ -84,7 +84,7 @@ header.header .navigation ul.nav li a {
     border: 1px solid black;
 }
 .about-story .block-first, .about-story .block-last {
-    margin: 40px 0;
+    margin: 1px 0;
 }
 header.header .logo a img {
     max-height: 126px;
@@ -142,4 +142,7 @@ ul.bxslider {
     .bx-wrapper .bx-caption span {
         font-size: 0.9em !important;
     }
+}
+.xmd, h4 {
+    font-size: 21px
 }

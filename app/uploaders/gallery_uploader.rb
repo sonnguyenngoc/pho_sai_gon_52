@@ -41,6 +41,9 @@ class GalleryUploader < CarrierWave::Uploader::Base
   version :sub_gallery do
     process :resize_to_fill => [220, 100]
   end
+  version :banner do
+    process :resize_to_fill => [960, 260]
+  end
   version :big_square do
     process :resize_to_fill => [800, 800]
   end

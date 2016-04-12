@@ -36,6 +36,11 @@ header.header .navigation ul.nav li a {
         padding: 5px 70px;
     }
 }
+@media screen and (min-width: 960px) {
+    .home-banner-box {
+        padding: 0 100px;
+    }
+}
 @media screen and (max-width: 480px) {
     .the-menu-item .the-menu-body {
         overflow: hidden;
@@ -108,4 +113,33 @@ header.header .navigation ul.nav li a {
 }
 .the-menu-item .the-menu-body .xsm {
     font-weight: 600;
+}
+ul.bxslider > li:before {
+    display: none;
+
+}
+ul.bxslider > li {
+    margin: 0;
+    padding: 0;
+}
+ul.bxslider {
+    margin: 0;
+    padding: 0;
+}
+.bx-wrapper img {
+    width: 100%;
+}
+.bx-wrapper .bx-caption span {
+    margin-bottom: 10px;
+    font-size: 1.1em !important;
+    color: #fff !important;
+    padding: 2px 10px !important;
+}
+.bx-wrapper .bx-caption {
+    background: rgba(80, 80, 80, 0.4) !important;
+}
+@media screen and (max-width: 480px) {
+    .bx-wrapper .bx-caption span {
+        font-size: 0.9em !important;
+    }
 }

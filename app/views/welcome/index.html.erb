@@ -25,6 +25,20 @@
                 </div>
             </div>
             
+            <% if @banners.count > 0 %>
+                <div class="block-first">
+                    <div class="row">
+                        <div class="col-md-12 home-banner-box">
+                            <ul class="bxslider">
+                                
+                                <% @banners.each do |banner| %>
+                                    <li><img src="<%= banner.image_url.banner %>" title="<%= banner.title + ": " + banner.description %>" /></li>
+                                <% end %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
         </div>
     </section>
     <!-- ABOUT STORY -->
@@ -49,5 +63,17 @@
 <%= javascript_include_tag '/frontend/js/lib/jquery.parallax-1.1.3.js' %>
 <%= javascript_include_tag '/frontend/js/lib/retina.min.js' %>
 <%= javascript_include_tag '/frontend/js/scripts.js' %>
+<%= javascript_include_tag '/frontend/js/jquery.bxslider.js' %>
+<%= javascript_include_tag '/frontend/js/jquery.bxslider.min.js' %>
+<%= javascript_include_tag '/frontend/js/jquery.easing.1.3.js' %>
+
+<script>
+    $('.bxslider').bxSlider({
+        captions: true,
+        auto: true,
+        speed: 1000,
+        pause: 4000
+    });
+</script>
 
 </body>

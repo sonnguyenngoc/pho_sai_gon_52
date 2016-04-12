@@ -1,31 +1,31 @@
 <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
 <li class="active"><%= link_to "<i class='icon-home4'></i> <span>Dashboard</span>".html_safe, {controller: "main", action: "index"} %></li>
 <li>
-    <a href="#"><i class="icon-copy"></i> <span>Restaurant Menu</span></a>
+    <a href="#"><i class="icon-list-unordered"></i> <span>Restaurant Menu</span></a>
     <ul>
-        <li><%= link_to "Menus Management <span class='label bg-warning-400'>Important</span>".html_safe, admin_menus_path %></li>
-        <li><%= link_to "Categories Management", admin_categories_path %></li>
+        <li class="<%= "active" if ["admin/menus"].include?(params[:controller]) %>"><%= link_to "Menus Management <span class='label bg-warning-400'>Important</span>".html_safe, admin_menus_path %></li>
+        <li class="<%= "active" if ["admin/categories"].include?(params[:controller]) %>"><%= link_to "Categories Management", admin_categories_path %></li>
     </ul>
 </li>
 <li>
-    <a href="#"><i class="icon-copy"></i> <span>Blogs Management</span></a>
+    <a href="#"><i class="icon-pencil3"></i> <span>Blogs Management</span></a>
     <ul>
-        <li><%= link_to "Blog Listing", admin_galleries_path %></li>
-        <li><%= link_to "Tags Management", admin_tags_path %></li>
+        <li class="<%= "active" if ["admin/galleries"].include?(params[:controller]) %>"><%= link_to "Blog Listing", admin_galleries_path %></li>
+        <li class="<%= "active" if ["admin/tags"].include?(params[:controller]) %>"><%= link_to "Tags Management", admin_tags_path %></li>
     </ul>
 </li>
 <li>
     <a href="#"><i class="icon-stack"></i> <span>Order, Reservation & Contact</span></a>
     <ul>
-        <li><%= link_to "Orders Management", admin_customer_orders_path %></li>
-        <li><%= link_to "Reservations Management", admin_customer_reservations_path %></li>
-        <li><%= link_to "Contacts Management", admin_customer_contacts_path %></li>
+        <li class="<%= "active" if ["admin/customer_orders"].include?(params[:controller]) %>"><%= link_to "Orders Management", admin_customer_orders_path %></li>
+        <li class="<%= "active" if ["admin/customer_reservations"].include?(params[:controller]) %>"><%= link_to "Reservations Management", admin_customer_reservations_path %></li>
+        <li class="<%= "active" if ["admin/customer_contacts"].include?(params[:controller]) %>"><%= link_to "Contacts Management", admin_customer_contacts_path %></li>
     </ul>
 </li>
 <li>
     <a href="#"><i class="icon-stack2"></i> <span>Restaurant Info</span></a>
     <ul>
-        <li><%= link_to "Restaurant Management", admin_restaurants_path %></a></li>
+        <li class="<%= "active" if ["admin/restaurants"].include?(params[:controller]) %>"><%= link_to "Restaurant Management", admin_restaurants_path %></a></li>
     </ul>
 </li>
 <li>

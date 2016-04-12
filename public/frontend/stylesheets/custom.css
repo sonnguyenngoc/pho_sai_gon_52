@@ -146,7 +146,7 @@ ul.bxslider {
 }
 @media screen and (max-width: 480px) {
     .bx-wrapper .bx-caption span {
-        font-size: 0.7em !important;
+        font-size: 0.6em !important;
     }
 }
 .xmd, h4 {

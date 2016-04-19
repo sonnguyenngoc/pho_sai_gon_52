@@ -131,7 +131,7 @@ ul.bxslider {
 }
 .bx-wrapper .bx-caption span {
     margin-bottom: 10px;
-    font-size: 1.5em !important;
+    font-size: 1.1em !important;
     color: #ffff00 !important;
     padding: 2px 10px !important;
     font-family: "Times New Roman", Georgia, Serif !important;
@@ -139,14 +139,14 @@ ul.bxslider {
 .bx-wrapper .bx-caption {
     background: rgba(80, 80, 80, 0.4) !important;
 }
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 1200px) {
     .bx-wrapper .bx-caption span {
-        font-size: 1.1em !important;
+        font-size: 0.9em !important;
     }
 }
-@media screen and (max-width: 480px) {
-    .bx-wrapper .bx-caption span {
-        font-size: 0.6em !important;
+@media screen and (max-width: 749px) {
+    .bx-wrapper img {
+        height: 220px;
     }
 }
 .xmd, h4 {

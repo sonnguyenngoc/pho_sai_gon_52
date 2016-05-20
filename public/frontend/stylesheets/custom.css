@@ -158,3 +158,9 @@ ul.bxslider {
 .header.header .head-social.icon-share a {
     padding: 0 !important;
 }
+#home-media .home-fixheight .bx-wrapper {
+    margin-bottom: 0px;
+}
+.home_footer {
+    font-size: 16px;
+}

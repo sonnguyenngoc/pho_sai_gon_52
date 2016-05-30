@@ -1,5 +1,9 @@
 ---
 en:
+  mon_fri: "Monday - Friday"
+  sat: "Saturday"
+  sun: "Sunday"
+  close: "Close"
   home: "Home"
   about: "About"
   menu: "Menu"

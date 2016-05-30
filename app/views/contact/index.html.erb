@@ -74,6 +74,8 @@
                                 <hr class="_hr">
                                 <address class="address-wrap">
                                     <span class="phone"><%= @info.name %></span>
+                                    <span class="color-white"><%=t :mon_fri %>: <%= @info.hour_en %></span>
+                                    <span class="color-white"><%=t :sat %>: <%= @info.hour_de %>; <%=t :sun %>: <%=t :close %></span>
                                     <span class="color-white"><%= @info.address %></span>
                                     <span class="address">Email: <%= @info.email %></span>
                                     <span class="address">Website: <%= @info.website %></span>

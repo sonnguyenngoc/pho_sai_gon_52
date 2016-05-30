@@ -1,5 +1,9 @@
 ---
 de:
+  mon_fri: "Montag - Freitag"
+  sat: "Samstag"
+  sun: "Sonntag"
+  close: "Geschlossen"
   home: "Startseite"
   about: "Über"
   menu: "Menü"

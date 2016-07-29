@@ -89,7 +89,7 @@
                                     </td>
                                     <td><%= link_to item.title, [:admin, item] %></td>
                                     <td><%= truncate(strip_tags(item.description), length: 50) %></td>
-                                    <td><span class="label label-info"><%= item.tag.title %></span></td>
+                                    <% if !item.tag.title.nil? %><td><span class="label label-info"><%= item.tag.title %></span></td><% end %>
                                     <td><%= item.created_at.strftime("%d/%m/%Y") %></td>
                                     <td class="text-center">
                                         <ul class="icons-list">

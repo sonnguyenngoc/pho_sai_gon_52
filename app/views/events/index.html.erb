@@ -28,7 +28,7 @@
                 
                 <div class="blog-list" style="margin-top: 0">
                         
-                    <% Gallery.all.each do |g| %>
+                    <% Gallery.order("created_at DESC").each do |g| %>
                         <!-- POST -->
                         <div class="post post-single">
                             <div class="post-media">

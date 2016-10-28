@@ -25,7 +25,7 @@
                 
                 <h2 style="margin-top: 0; margin-bottom: 10px;">
                     <a href="<%= events_path %>" class="color-tale">Events</a> / <%= @gallery.title %></h2>
-                <p><%= @gallery.description if !@gallery.description.empty? %></p>
+                <p><%= @gallery.description.html_safe if !@gallery.description.empty? %></p>
                 <br />         
                 
                 <!-- SECTION BLOG -->

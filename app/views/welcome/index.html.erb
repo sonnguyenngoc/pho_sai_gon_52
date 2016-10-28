@@ -29,7 +29,7 @@
                 <div class="block-first">
                     <div class="row">
                         <div class="col-md-12 home-banner-box">
-                            <ul class="bxslider custom-banner">
+                            <ul class="bxslider">
                                 
                                 <% @banners.each do |banner| %>
                                     <li><img src="<%= banner.image_url.banner %>" title="
@@ -44,6 +44,7 @@
                                     "/>
                                     </li>
                                 <% end %>
+                                
                             </ul>
                         </div>
                     </div>

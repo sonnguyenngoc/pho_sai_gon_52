@@ -5769,7 +5769,7 @@ textarea {
     background-color: #eee;
     color: #333;
 }
-.bx-caption p {
-  margin-top: 0px;
-  line-height: 1px;
+.about-story .block-first p, .about-story .block-last p {
+    margin-top: 0px;
+    line-height: 1em;
 }

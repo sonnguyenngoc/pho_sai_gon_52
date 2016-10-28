@@ -29,13 +29,13 @@
                 <div class="block-first">
                     <div class="row">
                         <div class="col-md-12 home-banner-box">
-                            <ul class="bxslider">
+                            <ul class="bxslider custom-banner">
                                 
                                 <% @banners.each do |banner| %>
                                     <li><img src="<%= banner.image_url.banner %>" title="
                                     ================================================================<br/>
                                     <%= banner.title %><br/>
-                                    <%= banner.description.html_safe %><br/>
+                                    <%= banner.description.html_safe %>
                                     Reservierung / Reservation: Phosaigon52 | Zürcherstrasse 91, 8952 Schlieren<br/>
                                     Telefon: 043 495 00 22<br/>
                                     E-Mail: phosaigon52@gmail.com</br>

@@ -5769,3 +5769,7 @@ textarea {
     background-color: #eee;
     color: #333;
 }
+.custom-banner p {
+  margin-top: 0px;
+  line-height: 1.3px;
+}

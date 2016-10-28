@@ -42,7 +42,7 @@
                                     <h3 class="xmd"><a href="<%= show_event_path(g_id: g.id) %>"><%= g.title %></a></h3>
                                 </div>
                                 <div class="post-content">
-                                    <p><%= g.description %></p>
+                                    <p><%= g.description.html_safe if !g.description.empty? %></p>
                                 </div>
                                 <div class="post-footer">
                                     <div class="awe-btn awe-btn-2 awe-btn-default text-uppercase"><a class="" href="<%= show_event_path(g_id: g.id) %>"><%= t('read_more') %></a></div>

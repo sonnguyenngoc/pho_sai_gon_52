@@ -5773,3 +5773,6 @@ textarea {
     margin-top: 0px;
     line-height: 1em;
 }
+.style-line {
+  line-height: 1.8em;
+}

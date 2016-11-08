@@ -1,4 +1,6 @@
 <body>
+    
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 <!-- PAGE WRAP -->
 <div id="page-wrap">
@@ -34,14 +36,10 @@
                                 
                                 <% @banners.each do |banner| %>
                                     <li><img src="<%= banner.image_url.banner %>" title="
-                                    ================================================================<br/>
-                                    <%= banner.title %><br/>
-                                    <%= banner.description.html_safe %>
+                                    <strong class='title'><%= banner.title %></strong><br/>
+                                    <p><%= banner.description.html_safe %></p>
                                     Reservierung / Reservation: Phosaigon52 | Zürcherstrasse 91, 8952 Schlieren<br/>
-                                    Telefon: 043 495 00 22<br/>
-                                    E-Mail: phosaigon52@gmail.com</br>
-                                    Website: www.phosaigon52.ch<br/>
-                                    ================================================================
+                                    <strong>Telefon:</strong> 043 495 00 22 <br> <strong>E-Mail:</strong> phosaigon52@gmail.com <br> <strong>Website:</strong> www.phosaigon52.ch<br/>
                                     "/>
                                     </li>
                                 <% end %>

@@ -27,6 +27,6 @@ class CustomerReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_reservation_params
-      params.require(:customer_reservation).permit(:customer_name, :customer_email, :customer_phone, :order_time, :note)
+      params.require(:customer_reservation).permit(:customer_name, :customer_email, :customer_phone, :order_time, :note, :number)
     end
 end

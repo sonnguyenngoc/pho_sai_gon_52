@@ -81,7 +81,10 @@
                         <tbody>
                             <% @customer_reservations.each do |item| %>
                                 <tr>
-                                    <td><%= link_to item.customer_name, [:admin, item] %></td>
+                                    <td>
+                                        <%= link_to item.customer_name, [:admin, item] %><br>
+                                        Number: <%= item.number %>
+                                    </td>
                                     <td><%= item.customer_phone %></td>
                                     <td><%= item.customer_email %></td>
                                     <td><%= item.order_time.strftime("%m/%d/%Y - %H:%M")  %></td>

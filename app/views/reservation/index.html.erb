@@ -44,11 +44,11 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr class="t-note">
+                                <tr class="t-number">
                                     <td colspan="2">
-                                        <label for="note"><%=t :note %></label>
+                                        <label for="customer_number"><%=t :customer_number %></label>
                                         <div class="form-item">
-                                            <%= f.text_field :note, placeholder: t(:your_note)+' (*)', required: true %>
+                                            <%= f.text_field :customer_number, placeholder: t(:customer_number)+' (*)', required: true %>
                                         </div>
                                     </td>
                                 </tr>
@@ -80,6 +80,22 @@
                                         <label for="email">Email</label>
                                         <div class="form-item">
                                             <%= f.text_field :customer_email, placeholder: 'Email (*)', required: true %>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="form-table reservation-note">
+                            <tbody>
+                                <tr class="t-note">
+                                    <td>
+                                        <label for="note"><%=t :note %></label>
+                                        <div class="form-item">
+                                            <%= f.text_area :note, placeholder: t(:your_note) + ' (*)', required: true %>
                                         </div>
                                     </td>
                                 </tr>

@@ -16,3 +16,6 @@
 	-webkit-transform: scale(1.3);
 	transform: scale(1.3);
 }
+.reservation-note textarea {
+    width: 100%;
+}

@@ -19,3 +19,9 @@
 .reservation-note textarea {
     width: 100%;
 }
+label.error {
+    display: none !important;
+}
+.reservation  input.error {
+    background: #FBE9E7;
+}

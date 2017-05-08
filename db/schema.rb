@@ -25,14 +25,6 @@ ActiveRecord::Schema.define(version: 20161108074857) do
     t.string   "is_drink",    default: "False"
   end
 
-  create_table "contacts", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.text     "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "customer_contacts", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -67,9 +59,9 @@ ActiveRecord::Schema.define(version: 20161108074857) do
     t.string   "customer_phone"
     t.datetime "order_time"
     t.text     "note"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.integer  "customer_number", default: 1
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "customer_number"
   end
 
   create_table "galleries", force: :cascade do |t|
@@ -139,16 +131,6 @@ ActiveRecord::Schema.define(version: 20161108074857) do
     t.integer  "gallery_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-  end
-
-  create_table "reservations", force: :cascade do |t|
-    t.datetime "time_order"
-    t.text     "note"
-    t.string   "customer_name"
-    t.string   "customer_phone"
-    t.string   "customer_email"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
   end
 
   create_table "restaurants", force: :cascade do |t|

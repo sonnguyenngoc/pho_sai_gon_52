@@ -143,11 +143,16 @@ ul.bxslider {
     line-height: 20px;
 }
 .bx-wrapper .bx-caption strong.title {
-    font-size: 18px;
+    font-size: 20px;
 }
 @media screen and (max-width: 1200px) {
     .bx-wrapper .bx-caption span {
         font-size: 0.9em !important;
+    }
+    .bx-wrapper img {
+        height: 280px;
+        width: 140%;
+        max-width: none !important;
     }
 }
 @media screen and (max-width: 749px) {
@@ -171,4 +176,7 @@ ul.bxslider {
 }
 .home_footer {
     font-size: 16px !important;
+}
+.bx-caption p {
+    margin: 0 0 4px;
 }

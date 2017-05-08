@@ -25,10 +25,17 @@
                             margin-top: 3px;
                         }
                     </style>
+                    <script>
+                        var APP_LANG = '<%= params[:locale] %>';
+                    </script>
                     <div class="addthis_sharing_toolbox"></div>
 
-                |   <% params[:locale] = 'en' %><a href="<%= url_for( params ) %>">EN</a>/
-                    <% params[:locale] = 'de' %><a href="<%= url_for( params ) %>">DE</a>
+                |   <% tmp = params %>
+                    <% tmp[:locale] = 'en' %>
+                    <a href="<%= url_for( params ) %>">EN</a>/
+                    <% tmp = params %>
+                    <% tmp[:locale] = 'de' %>
+                    <a href="<%= url_for( params ) %>">DE</a>
             </div>
             <!-- END / SOCIAL -->
             <br />

@@ -29,11 +29,11 @@
                             <span class="md"><%=t :find_us_here %></span>
                             <div class="location-1">
                                 <i class="icon awe_map_marker"></i>
-                                <strong>Location: <%= @info.address %></strong>
+                                <strong>Location: <%=t :address_val %></strong>
                             </div>
                             <div class="location-1">
                                 <i class="icon awe_map_marker"></i>
-                                <strong><%=t :see %> location: <%= link_to t(:here), "https://www.google.com/maps/place/Z%C3%BCrcherstrasse+91,+8952+Schlieren,+Thu%E1%BB%B5+S%C4%A9/@47.3981939,8.4569929,17z/data=!3m1!4b1!4m2!3m1!1s0x47900b8eb1097ab9:0x190058072b37d7a4", target: "_blank" %>
+                                <strong><%=t :see %> location: <%= link_to t(:here), "https://www.google.com/maps/place/Bahnstrasse+60,+8105+Regensdorf,+Switzerland/@47.4431052,8.4609175,19z/data=!3m1!4b1!4m8!1m2!2m1!1s3.+Stock,+Bahnstrasse+60,+8105,+Regensdorf!3m4!1s0x47900ca8c02c5ef9:0x214f38c7c58602b4!8m2!3d47.4431043!4d8.4614647", target: "_blank" %>
                             </div>
                         </address>
                     </div>
@@ -76,11 +76,10 @@
                                     <span class="phone"><%= @info.name %></span>
                                     <span class="color-white"><%=t :mon_fri %>: <%= @info.hour_en %></span>
                                     <span class="color-white"><%=t :sat %>: <%= @info.hour_de %>; <%=t :sun %>: <%=t :close %></span>
-                                    <span class="color-white"><%= @info.address %></span>
+                                    <br><span class="color-white"><%=t :address_val %></span>
                                     <span class="address">Email: <%= @info.email %></span>
                                     <span class="address">Website: <%= @info.website %></span>
                                     <span class="address">Telefon: <%= @info.phone %></span>
-                                    <span class="address">Fax: <%= @info.fax %></span>
                                 </address>
                             </div>
 
@@ -92,7 +91,7 @@
                 </div>
             </div>
             <!-- MAP -->
-            <div id="map" data-map-zoom="17" data-map-latlng="47.398197, 8.459163" data-snazzy-map-theme="grayscale" data-map-marker="<%= url_for("/images/here.png") %>" data-map-marker-size="55*70"></div>
+            <div id="map" data-map-zoom="17" data-map-latlng="47.4431052, 8.4609175" data-snazzy-map-theme="grayscale" data-map-marker="<%= url_for("/images/here.png") %>" data-map-marker-size="55*70"></div>
             <!-- END / MAP -->
         </div>
 

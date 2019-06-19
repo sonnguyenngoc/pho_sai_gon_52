@@ -36,11 +36,11 @@
                                     <h5>Take Away - Asia Buffet - Catering - Lieferung</h5>
                                 </div>
                                 <div class="item-event-content">
-                                    <p>Address: <%= @info.address %></p>
-                                    <p>Telefon: <%= @info.phone %> - Fax: <%= @info.fax %></p>
+                                    <p>Address: <%=t :address_val %></p>
+                                    <p>Telefon: <%= @info.phone %>
                                     <p>Email: <%= @info.email %></p>
                                     <p>Website: <%= link_to @info.website, @info.website, target: "_blank" %></p>
-                                    <p><%=t :see %> location: <%= link_to t(:here), "https://www.google.com/maps/place/Z%C3%BCrcherstrasse+91,+8952+Schlieren,+Thu%E1%BB%B5+S%C4%A9/@47.3981939,8.4569929,17z/data=!3m1!4b1!4m2!3m1!1s0x47900b8eb1097ab9:0x190058072b37d7a4", target: "_blank" %></p>
+                                    <p><%=t :see %> location: <%= link_to t(:here), "https://www.google.com/maps/place/Bahnstrasse+60,+8105+Regensdorf,+Switzerland/@47.4431052,8.4609175,19z/data=!3m1!4b1!4m8!1m2!2m1!1s3.+Stock,+Bahnstrasse+60,+8105,+Regensdorf!3m4!1s0x47900ca8c02c5ef9:0x214f38c7c58602b4!8m2!3d47.4431043!4d8.4614647", target: "_blank" %></p>
                                 </div>
                             </div>
                         </div>
